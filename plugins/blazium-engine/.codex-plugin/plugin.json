@@ -1,0 +1,18 @@
+{
+  "interface": {
+    "displayName": "Blazium Engine",
+    "shortDescription": "Engine skills: languages, scenes, 2D/physics, presentation, resources, localization, and multiplayer core. Blazium 0.6.x (Godot 4.3.2 fork).",
+    "longDescription": "Engine skills: languages, scenes, 2D/physics, presentation, resources, localization, and multiplayer core. Blazium 0.6.x (Godot 4.3.2 fork).",
+    "developerName": "blazium",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://docs.blazium.app",
+    "defaultPrompt": [
+      "Use Blazium Engine to work on a Blazium 0.6.x (Godot 4.3.2 fork) project.",
+      "Engine skills: languages, scenes, 2D/physics, presentation, resources, localization, and multiplayer core. Blazium 0.6.x (Godot 4.3.2 fork)."
+    ]
+  }
+}

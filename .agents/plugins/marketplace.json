@@ -1,0 +1,104 @@
+{
+  "name": "blazium-skills",
+  "interface": {
+    "displayName": "Blazium Skills"
+  },
+  "plugins": [
+    {
+      "name": "blazium-infra",
+      "source": {
+        "source": "local",
+        "path": "./plugins/blazium-infra"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "blazium-engine",
+      "source": {
+        "source": "local",
+        "path": "./plugins/blazium-engine"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "blazium-live-ops",
+      "source": {
+        "source": "local",
+        "path": "./plugins/blazium-live-ops"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "blazium-ship",
+      "source": {
+        "source": "local",
+        "path": "./plugins/blazium-ship"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "blazium-content",
+      "source": {
+        "source": "local",
+        "path": "./plugins/blazium-content"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "blazium-modules",
+      "source": {
+        "source": "local",
+        "path": "./plugins/blazium-modules"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "blazium-growth",
+      "source": {
+        "source": "local",
+        "path": "./plugins/blazium-growth"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "blazium",
+      "source": {
+        "source": "local",
+        "path": "./plugins/blazium"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

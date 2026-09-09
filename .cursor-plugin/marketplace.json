@@ -1,0 +1,52 @@
+{
+  "name": "blazium-skills",
+  "owner": {
+    "name": "blazium"
+  },
+  "metadata": {
+    "description": "Blazium engine agent skills: infrastructure, engine, live services, export/toolchain, content intelligence, extra modules, and growth adapters. Baseline Blazium 0.6.x (Godot 4.3.2 fork).",
+    "version": "0.6.0"
+  },
+  "plugins": [
+    {
+      "name": "blazium-infra",
+      "source": "./plugins/blazium-infra",
+      "description": "Agent infrastructure: fingerprint Blazium, connect editor/game MCP, run Autowork, verify claims, bootstrap a project."
+    },
+    {
+      "name": "blazium-engine",
+      "source": "./plugins/blazium-engine",
+      "description": "Engine skills: languages, scenes, 2D/physics, presentation, resources, localization, and multiplayer core. Blazium 0.6.x (Godot 4.3.2 fork)."
+    },
+    {
+      "name": "blazium-live-ops",
+      "source": "./plugins/blazium-live-ops",
+      "description": "Identity and live services: login, JWT, lobby, Steam/Discord, ENet-WebRTC, dedicated ENet, RCON, Games cloud MCP, crash analytics. Blazium 0.6.x (Godot 4.3.2 fork)."
+    },
+    {
+      "name": "blazium-ship",
+      "source": "./plugins/blazium-ship",
+      "description": "Export and toolchain: desktop/mobile/web export, GPL retro sidecar, specialty targets, GitHub Actions, CI watch, CLI, Hub, Crash Reporter, ColdStorage. Blazium 0.6.x (Godot 4.3.2 fork)."
+    },
+    {
+      "name": "blazium-content",
+      "source": "./plugins/blazium-content",
+      "description": "Content intelligence: asset tags, semantic search, SQLite, GOAP, addons, official GDScript templates. Blazium 0.6.x (Godot 4.3.2 fork)."
+    },
+    {
+      "name": "blazium-modules",
+      "source": "./plugins/blazium-modules",
+      "description": "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.6.x (Godot 4.3.2 fork)."
+    },
+    {
+      "name": "blazium-growth",
+      "source": "./plugins/blazium-growth",
+      "description": "Growth adapters: nine genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork)."
+    },
+    {
+      "name": "blazium",
+      "source": "./plugins/blazium",
+      "description": "Full bundle: router, MCP, Autowork, engine, live-ops, export/toolchain, content-intelligence, extra-module, and growth-adapter skills. Baseline Blazium 0.6.x (Godot 4.3.2 fork)."
+    }
+  ]
+}

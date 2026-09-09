@@ -1,0 +1,17 @@
+{
+  "name": "blazium-infra",
+  "displayName": "Blazium Infra",
+  "version": "0.6.0",
+  "description": "Agent infrastructure: fingerprint Blazium, connect editor/game MCP, run Autowork, verify claims, bootstrap a project.",
+  "author": {
+    "name": "blazium"
+  },
+  "homepage": "https://docs.blazium.app",
+  "keywords": [
+    "blazium",
+    "godot",
+    "gamedev",
+    "infra"
+  ],
+  "skills": "./skills/"
+}

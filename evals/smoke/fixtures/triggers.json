@@ -1,0 +1,97 @@
+{
+  "catalog": [
+    "blazium-router",
+    "blazium-mcp",
+    "blazium-game-mcp",
+    "blazium-cli-remote",
+    "blazium-games-mcp",
+    "blazium-cli",
+    "blazium-hub",
+    "blazium-toolchain"
+  ],
+  "cases": [
+    {
+      "id": "router-start",
+      "prompt": "This looks like a Blazium project. I am unsure which blazium skill to load first — detect project.blazium and classify.",
+      "expected": "blazium-router",
+      "not": ["blazium-mcp", "blazium-cli"]
+    },
+    {
+      "id": "mcp-connect",
+      "prompt": "Connect Cursor user-blazium-mcp to the editor JustAMCP server on 127.0.0.1:6506 and run blazium_list_toolsets.",
+      "expected": "blazium-mcp",
+      "not": ["blazium-game-mcp", "blazium-cli-remote", "blazium-games-mcp"]
+    },
+    {
+      "id": "mcp-negative-scenes",
+      "prompt": "The editor MCP is already connected. Create a PackedScene tree and add an autoload.",
+      "expected": "blazium-nodes-scenes",
+      "catalog": ["blazium-mcp", "blazium-nodes-scenes", "blazium-autowork"],
+      "not": ["blazium-mcp"]
+    },
+    {
+      "id": "game-mcp",
+      "prompt": "Add a project_echo tool in res://mcp/register.gd for user-blazium-game on port 6507.",
+      "expected": "blazium-game-mcp",
+      "not": ["blazium-mcp", "blazium-cli-remote", "blazium-games-mcp"]
+    },
+    {
+      "id": "cli-remote",
+      "prompt": "Use blazium-cli remote on HTTP /v1 port 6508 to run doctor and autowork from CI.",
+      "expected": "blazium-cli-remote",
+      "not": ["blazium-mcp", "blazium-game-mcp", "blazium-games-mcp"]
+    },
+    {
+      "id": "games-cloud",
+      "prompt": "Call the Blazium Games cloud MCP at https://mcp.blazium.games/mcp for store pages and deploy keys.",
+      "expected": "blazium-games-mcp",
+      "not": ["blazium-mcp", "blazium-game-mcp", "blazium-cli-remote"]
+    },
+    {
+      "id": "cli-install",
+      "prompt": "Install the missing Blazium editor with blazium-cli install and update apply --product toolchain.",
+      "expected": "blazium-cli",
+      "not": ["blazium-hub", "blazium-cli-remote", "blazium-toolchain"]
+    },
+    {
+      "id": "hub-ui",
+      "prompt": "Focus the desktop Hub window, run hub-remote ensure, and check port 39218.",
+      "expected": "blazium-hub",
+      "not": ["blazium-cli", "blazium-cli-remote"]
+    },
+    {
+      "id": "toolchain-n64",
+      "prompt": "Compile an N64 z64 with blazium-toolchain n64 rom; do not try n64 iso.",
+      "expected": "blazium-toolchain",
+      "not": ["blazium-cli", "blazium-specialty-export"]
+    },
+    {
+      "id": "save-slots",
+      "prompt": "Add versioned user:// save slots with atomic temp-plus-rename writes and a schema version field. Not ColdStorage VCS and not SQLite tables.",
+      "expected": "blazium-save-systems",
+      "catalog": ["blazium-save-systems", "blazium-sqlite", "blazium-coldstorage", "blazium-lobby"],
+      "not": ["blazium-sqlite", "blazium-coldstorage", "blazium-lobby"]
+    },
+    {
+      "id": "dialogue-graph",
+      "prompt": "Author a data-driven dialogue graph in a .tres resource with lines, choices, and flags using tr(). Do not require Ink or Yarn. Not a full visual-novel scene flow.",
+      "expected": "blazium-dialogue",
+      "catalog": ["blazium-dialogue", "blazium-genre-visual-novel", "blazium-localization"],
+      "not": ["blazium-genre-visual-novel", "blazium-localization"]
+    },
+    {
+      "id": "game-feel-juice",
+      "prompt": "Add camera punch hit-stop and squash juice with Tween on an existing mover. Not a new CharacterBody2D controller and not an AnimationTree clip library.",
+      "expected": "blazium-game-feel",
+      "catalog": ["blazium-game-feel", "blazium-2d-movement", "blazium-animation"],
+      "not": ["blazium-2d-movement", "blazium-animation"]
+    },
+    {
+      "id": "accessibility-pass",
+      "prompt": "Do an accessibility pass: InputMap remaps, Theme font scale, and locale-safe tr() copy. Not a visual art bible.",
+      "expected": "blazium-accessibility",
+      "catalog": ["blazium-accessibility", "blazium-input", "blazium-ui", "blazium-localization"],
+      "not": ["blazium-input", "blazium-ui", "blazium-localization"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+name: Skill request
+description: Propose a new or deeper Blazium skill
+title: "[skill] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: What an agent should do after loading the skill.
+    validations:
+      required: true
+  - type: textarea
+    id: apis
+    attributes:
+      label: Proven APIs
+      description: Classes, settings, or CLI verbs that already exist. Do not invent.
+    validations:
+      required: true

@@ -1,0 +1,18 @@
+{
+  "interface": {
+    "displayName": "Blazium Modules",
+    "shortDescription": "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.6.x (Godot 4.3.2 fork).",
+    "longDescription": "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.6.x (Godot 4.3.2 fork).",
+    "developerName": "blazium",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://docs.blazium.app",
+    "defaultPrompt": [
+      "Use Blazium Modules to work on a Blazium 0.6.x (Godot 4.3.2 fork) project.",
+      "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.6.x (Godot 4.3.2 fork)."
+    ]
+  }
+}

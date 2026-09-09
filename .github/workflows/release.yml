@@ -1,0 +1,106 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Sync and validate
+        run: |
+          python scripts/sync-plugin-packs.py
+          python scripts/validate-plugin-packs.py
+          python evals/smoke/check_triggers.py
+
+  pack-claude:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip Claude marketplace
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          STAGE="blazium-skills-claude-${TAG}"
+          mkdir -p "${STAGE}"
+          cp -a skills .claude-plugin templates scripts evals README.md LICENSE GETTING-STARTED.md CONTRIBUTING.md SECURITY.md "${STAGE}/"
+          zip -r "${STAGE}.zip" "${STAGE}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: claude
+          path: blazium-skills-claude-*.zip
+
+  pack-cursor:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Zip Cursor plugins
+        run: |
+          python scripts/sync-plugin-packs.py
+          TAG="${GITHUB_REF_NAME}"
+          STAGE="blazium-skills-cursor-${TAG}"
+          mkdir -p "${STAGE}"
+          cp -a plugins .cursor-plugin README.md LICENSE GETTING-STARTED.md CONTRIBUTING.md SECURITY.md "${STAGE}/"
+          zip -r "${STAGE}.zip" "${STAGE}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cursor
+          path: blazium-skills-cursor-*.zip
+
+  pack-codex:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Zip Codex plugins
+        run: |
+          python scripts/sync-plugin-packs.py
+          TAG="${GITHUB_REF_NAME}"
+          STAGE="blazium-skills-codex-${TAG}"
+          mkdir -p "${STAGE}"
+          cp -a plugins .agents README.md LICENSE GETTING-STARTED.md CONTRIBUTING.md SECURITY.md "${STAGE}/"
+          zip -r "${STAGE}.zip" "${STAGE}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codex
+          path: blazium-skills-codex-*.zip
+
+  publish:
+    needs: [pack-claude, pack-cursor, pack-codex]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          body: |
+            ## Install
+
+            | Host | Command |
+            |------|---------|
+            | Claude Code | `/plugin marketplace add blazium-games/blazium-skills` then `/plugin install blazium@blazium-skills` |
+            | Cursor | Add `blazium-games/blazium-skills` as a marketplace, install `blazium` |
+            | Codex | `codex plugin marketplace add blazium-games/blazium-skills` |
+
+            Use the host zip if you want a snapshot without cloning.
+          files: dist/*.zip

@@ -1,0 +1,81 @@
+{
+  "justamcp": {
+    "meta_tools": [
+      "search_tools",
+      "blazium_list_toolsets",
+      "describe_toolset"
+    ],
+    "toolsets": [
+      "editor_tools",
+      "documentation_tools",
+      "networking_tools",
+      "multiuser_tools",
+      "spatial_tools",
+      "runtime_tools",
+      "scene_tools",
+      "resource_tools",
+      "animation_tools",
+      "project_tools",
+      "profiling_tools",
+      "export_tools",
+      "batch_tools",
+      "script_tools",
+      "node_tools",
+      "audio_tools",
+      "input_tools",
+      "particle_tools",
+      "physics_tools",
+      "scene3d_tools",
+      "shader_tools",
+      "theme_tools",
+      "tilemap_tools",
+      "asset_tools",
+      "blueprint_tools",
+      "draw_tools",
+      "environment_tools",
+      "analysis_tools",
+      "autowork_tools"
+    ],
+    "ports": {
+      "editor_mcp": 6506,
+      "game_mcp": 6507,
+      "remote_control": 6508
+    }
+  },
+  "cli": {
+    "verbs": [
+      "install",
+      "uninstall",
+      "editors",
+      "install-path",
+      "templates",
+      "open",
+      "load",
+      "projects",
+      "handle-uri",
+      "upgrade",
+      "update",
+      "remote",
+      "hub-remote",
+      "version"
+    ],
+    "update_apply_products": [
+      "cli",
+      "hub",
+      "crash_reporter",
+      "toolchain"
+    ],
+    "update_check_products": [
+      "cli",
+      "hub",
+      "crash_reporter",
+      "toolchain",
+      "editor",
+      "templates"
+    ],
+    "denylist": [
+      "blazium-cli hub install",
+      "blazium-cli hub templates"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "blazium-live-ops",
+  "displayName": "Blazium Live Ops",
+  "version": "0.6.0",
+  "description": "Identity and live services: login, JWT, lobby, Steam/Discord, ENet-WebRTC, dedicated ENet, RCON, Games cloud MCP, crash analytics. Blazium 0.6.x (Godot 4.3.2 fork).",
+  "author": {
+    "name": "blazium"
+  },
+  "homepage": "https://docs.blazium.app",
+  "keywords": [
+    "blazium",
+    "godot",
+    "gamedev",
+    "live-ops"
+  ],
+  "skills": "./skills/"
+}

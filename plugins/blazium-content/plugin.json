@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "blazium-content",
+  "version": "0.6.0",
+  "description": "Content intelligence: asset tags, semantic search, SQLite, GOAP, addons, official GDScript templates. Blazium 0.6.x (Godot 4.3.2 fork).",
+  "author": {
+    "name": "blazium"
+  },
+  "homepage": "https://docs.blazium.app",
+  "keywords": [
+    "blazium",
+    "godot",
+    "gamedev",
+    "content"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Blazium Content",
+        "shortDescription": "Content intelligence: asset tags, semantic search, SQLite, GOAP, addons, official GDScript templates. Blazium 0.6.x (Godot 4.3.2 fork).",
+        "longDescription": "Content intelligence: asset tags, semantic search, SQLite, GOAP, addons, official GDScript templates. Blazium 0.6.x (Godot 4.3.2 fork).",
+        "developerName": "blazium",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://docs.blazium.app",
+        "defaultPrompt": [
+          "Use Blazium Content to work on a Blazium 0.6.x (Godot 4.3.2 fork) project.",
+          "Content intelligence: asset tags, semantic search, SQLite, GOAP, addons, official GDScript templates. Blazium 0.6.x (Godot 4.3.2 fork)."
+        ]
+      }
+    }
+  }
+}

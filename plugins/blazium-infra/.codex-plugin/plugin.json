@@ -1,0 +1,18 @@
+{
+  "interface": {
+    "displayName": "Blazium Infra",
+    "shortDescription": "Agent infrastructure: fingerprint Blazium, connect editor/game MCP, run Autowork, verify claims, bootstrap a project.",
+    "longDescription": "Agent infrastructure: fingerprint Blazium, connect editor/game MCP, run Autowork, verify claims, bootstrap a project.",
+    "developerName": "blazium",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://docs.blazium.app",
+    "defaultPrompt": [
+      "Use Blazium Infra to work on a Blazium 0.6.x (Godot 4.3.2 fork) project.",
+      "Agent infrastructure: fingerprint Blazium, connect editor/game MCP, run Autowork, verify claims, bootstrap a project."
+    ]
+  }
+}

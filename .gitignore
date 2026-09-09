@@ -1,0 +1,8 @@
+docs/
+plugins/*/skills/
+__pycache__/
+*.py[cod]
+# Local secrets — never commit
+.env
+.env.*
+*.local

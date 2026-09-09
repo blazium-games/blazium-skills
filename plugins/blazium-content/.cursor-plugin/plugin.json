@@ -1,0 +1,17 @@
+{
+  "name": "blazium-content",
+  "displayName": "Blazium Content",
+  "version": "0.6.0",
+  "description": "Content intelligence: asset tags, semantic search, SQLite, GOAP, addons, official GDScript templates. Blazium 0.6.x (Godot 4.3.2 fork).",
+  "author": {
+    "name": "blazium"
+  },
+  "homepage": "https://docs.blazium.app",
+  "keywords": [
+    "blazium",
+    "godot",
+    "gamedev",
+    "content"
+  ],
+  "skills": "./skills/"
+}

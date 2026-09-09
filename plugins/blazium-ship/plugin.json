@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "blazium-ship",
+  "version": "0.6.0",
+  "description": "Export and toolchain: desktop/mobile/web export, GPL retro sidecar, specialty targets, GitHub Actions, CI watch, CLI, Hub, Crash Reporter, ColdStorage. Blazium 0.6.x (Godot 4.3.2 fork).",
+  "author": {
+    "name": "blazium"
+  },
+  "homepage": "https://docs.blazium.app",
+  "keywords": [
+    "blazium",
+    "godot",
+    "gamedev",
+    "ship"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Blazium Ship",
+        "shortDescription": "Export and toolchain: desktop/mobile/web export, GPL retro sidecar, specialty targets, GitHub Actions, CI watch, CLI, Hub, Crash Reporter, ColdStorage. Blazium 0.6.x (Godot 4.3.2 fork).",
+        "longDescription": "Export and toolchain: desktop/mobile/web export, GPL retro sidecar, specialty targets, GitHub Actions, CI watch, CLI, Hub, Crash Reporter, ColdStorage. Blazium 0.6.x (Godot 4.3.2 fork).",
+        "developerName": "blazium",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://docs.blazium.app",
+        "defaultPrompt": [
+          "Use Blazium Ship to work on a Blazium 0.6.x (Godot 4.3.2 fork) project.",
+          "Export and toolchain: desktop/mobile/web export, GPL retro sidecar, specialty targets, GitHub Actions, CI watch, CLI, Hub, Crash Reporter, ColdStorage. Blazium 0.6.x (Godot 4.3.2 fork)."
+        ]
+      }
+    }
+  }
+}
