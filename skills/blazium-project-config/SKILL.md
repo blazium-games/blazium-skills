@@ -4,7 +4,14 @@ description: >
   Creates or migrates project.blazium / project.godot and safe blazium/*
   ProjectSettings (JustAMCP, remote_control, Autowork, tags). Use when pinning
   the editor, enabling MCP/remote, migrating from Godot, or auditing dangerous
-  flags such as allow_eval or bind 0.0.0.0.
+  flags such as allow_eval or bind 0.0.0.0. Not .env secrets and not a
+  greenfield scaffold.
+when-to-use: >
+  project.blazium, ProjectSettings, blazium/justamcp, remote_control,
+  allow_eval, bind 0.0.0.0, migrate from Godot, config_version
+metadata:
+  author: blazium-games
+  short-description: Own project.blazium and safe blazium/* settings
 ---
 
 # Blazium project config
@@ -26,7 +33,19 @@ E2E by default.
 
 **When not to use:** greenfield scaffold of tests/MCP files →
 `blazium-new-project` (then return here for settings). Connecting MCP after
-settings are correct → `blazium-mcp`.
+settings are correct → `blazium-mcp`. `.env` / `.ini` secrets →
+`blazium-config`.
+
+## Grok host
+
+On Grok, read `project.blazium` (or `project.godot`) with `read_file` before
+any patch. Spawn `blazium-specialist` or `tools-programmer` only for the
+settings edit. Child prompts must list the exact keys to change and the
+4.3.2 pin.
+
+Do not invent `blazium/foo` keys. Confirm names against
+`ProjectSettings.xml` / `https://docs.blazium.app`. Grok `code_execution` is
+not a settings store.
 
 ## Workflow
 
@@ -82,12 +101,21 @@ Pin editor version to the installed Blazium 0.6.x build. Do not claim Godot 4.7
 - Binding MCP or remote_control to `0.0.0.0` / public interfaces
 - Shipping Autowork in template_release (not available)
 
+## Output contract
+
+- Project file touched (`project.blazium` and/or `project.godot`)
+- Keys changed (name = value)
+- Dangerous flags left off, or user-requested exceptions
+- Verify path (`blazium-cli load` / `remote doctor` / editor opened)
+- Next skill (`blazium-mcp`, `blazium-cli-remote`, `blazium-new-project`)
+
 ## Pitfalls
 
 - **Godot skill rewrote `project.godot` as 4.7** → restore 4.3.2-safe features.
 - **Enabled eval and bound 0.0.0.0** → treat as incident; revert.
 - **Game MCP and remote both on 6507** → remote default is 6508; change the leftover pin.
 - **Invented a `blazium/foo` key** → check `ProjectSettings.xml` first.
+- **Wrote secrets into ProjectSettings** → `blazium-config` + `user://`.
 
 ## Resources
 
@@ -99,3 +127,4 @@ Pin editor version to the installed Blazium 0.6.x build. Do not claim Godot 4.7
 - `blazium-mcp` — JustAMCP keys
 - `blazium-cli-remote` — remote_control keys
 - `blazium-new-project` — writes the initial tree
+- `blazium-config` — `.env` / `.ini` (not ProjectSettings)
