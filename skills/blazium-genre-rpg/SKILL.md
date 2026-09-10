@@ -1,8 +1,14 @@
 ---
 name: blazium-genre-rpg
 description: >
-  Composes an RPG from pinned Blazium skills (resources, localization, UI,
-  GOAP, SQLite). Use for party/quest/stat games
+  Composes an RPG from pinned Blazium 0.6.x skills (resources, localization,
+  UI, GOAP, SQLite). Use when the request is party, quest, stats, inventory,
+  or dialogue-driven RPG. Not a card-only combat kit and not a VN director.
+when-to-use: >
+  RPG, party, quest log, stats, inventory, NPC planner, dialogue-driven RPG
+metadata:
+  author: blazium-games
+  short-description: Compose an RPG from resources, UI, GOAP, SQLite pins
 ---
 
 # Blazium genre: RPG
@@ -18,12 +24,20 @@ Do not fork a studio-clone skill pack.
 - Use when building quests, parties, stats, or dialogue-driven RPG loops.
 
 **When not to use:** card combat only → `blazium-genre-card-game`. NPC
-pathing without plans → `blazium-navigation`.
+pathing without plans → `blazium-navigation`. Talk graph only →
+`blazium-dialogue`. Full VN scene flow → `blazium-genre-visual-novel`.
+
+## Grok host
+
+Load this adapter plus one pin. Spawn `game-designer` for loops,
+`writer` for `tr()` keys, `ai-programmer` for GOAP. Return item Resource
+paths and the save query used.
 
 ## Workflow
 
 1. **Inspect.** Existing items / locales / save.
-2. **Choose.** Pins below for APIs.
+2. **Choose.** Pins below for APIs. Order: resources → localization → UI
+   menus → SQLite slots → GOAP if NPCs plan.
 3. **Implement.** Router + this adapter + one pin.
 4. **Verify.** Autowork on inventory/save; `tr()` smoke — not screenshots.
 5. **Handoff.** Planner → `blazium-goap`. Streamer → `blazium-streaming`.
@@ -50,13 +64,21 @@ var q: SQLiteQuery = db.create_query("SELECT quest FROM saves WHERE id = ?")
 var rows := q.execute([slot])
 ```
 
+## Output contract
+
+- Item / stat Resource paths
+- Locale keys added
+- Save path + query
+- Whether GOAP `init(actor)` is wired
+
 ## Pitfalls
 
 - **Invented a Unity ScriptableObject stack** → resources + csv.
 - **Rewrote GOAP as a behavior tree** → `blazium-goap`.
 - **Hardcoded English strings** → localization.
+- **Called GOAP without `init(actor)`** → planner never starts.
 
 ## Related skills
 
 - `blazium-resources`, `blazium-localization`, `blazium-ui`, `blazium-goap`,
-  `blazium-sqlite`
+  `blazium-sqlite`, `blazium-dialogue`
