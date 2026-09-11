@@ -4,6 +4,12 @@ description: >
   Authors a data-driven dialogue graph on Blazium 0.6.x (.tres or JSON nodes
   with lines, choices, and flags). All strings go through tr(). Use for
   branching talk, not a full visual-novel scene flow. Do not require Ink or Yarn.
+when-to-use: >
+  dialogue graph, branching talk, DialogueNode, choice flags, tr() lines,
+  .tres dialogue
+metadata:
+  author: blazium-games
+  short-description: Author a .tres/JSON talk graph with tr() and flags
 ---
 
 # Blazium dialogue
@@ -26,6 +32,15 @@ them. Do not invent a runtime DSL.
 **When not to use:** full VN composition (scenes, letterbox, CG) →
 `blazium-genre-visual-novel`. Locale tables only → `blazium-localization`.
 Persist flags across sessions → `blazium-save-systems` after the graph.
+
+## Grok host
+
+Read this skill, then `blazium-localization` if keys are missing. Spawn
+`writer` for `tr()` keys and `gameplay-programmer` for the walker. Child
+prompts must include the graph path and flag names. Do not dump the catalog.
+
+Evidence is Autowork: pick a choice, `assert_eq` next node id and a flag —
+not a screenshot of the textbox.
 
 ## Workflow
 
@@ -64,6 +79,13 @@ func show_node(node: DialogueNode) -> void:
 
 Keep speakers and portraits as Resource fields. Do not bake English into
 the walker.
+
+## Output contract
+
+- Graph path (`.tres` / JSON)
+- Flag names touched
+- Locale key prefix
+- Autowork next-id + flag assertions
 
 ## Pitfalls
 

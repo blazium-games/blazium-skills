@@ -4,6 +4,12 @@ description: >
   Exports Blazium to HTML5 with COOP/COEP, YouTube Playables
   (YoutubePlayablesClient), and Discord Embedded Apps host/Docker webbuild.
   Use for browser, Playables, or *.discordsays.com. Not native Discord SDK.
+when-to-use: >
+  HTML5 export, COOP COEP, SharedArrayBuffer, YouTube Playables,
+  YoutubePlayablesClient, Discord Embedded Apps, discordsays.com
+metadata:
+  author: blazium-games
+  short-description: Web export with COOP/COEP, Playables, and Discord embed host
 ---
 
 # Blazium export web
@@ -26,6 +32,16 @@ Size/shader stripping is text `.gdshader` + export filters only.
 
 **When not to use:** desktop/Android player → `blazium-export`. Native
 presence/OAuth → `blazium-discord`. Generic preset install → `blazium-cli`.
+
+## Grok host
+
+Read this skill, then `blazium-export` if no web preset exists. Spawn
+`tools-programmer` for headers/Docker and `qa-tester` for the load check.
+Child prompts must include threads vs no-threads and the host URL. Do not
+dump the catalog.
+
+Evidence is export success + `window.crossOriginIsolated` when threads are
+on — not a screenshot of the canvas. Grok `code_execution` is not evidence.
 
 ## Workflow
 
@@ -68,6 +84,13 @@ SDK methods.
 - Game: `DiscordEmbeddedAppClient` (wait `is_ready`, then authorize).
 - Host: web export + Docker webbuild targeting `*.discordsays.com`.
 - Native desktop SDK → `blazium-discord`, not this skill.
+
+## Output contract
+
+- Export preset / artifact path
+- Threads vs no-threads
+- Host headers (COOP/COEP) or `INCONCLUSIVE`
+- Client node added (`YoutubePlayablesClient` / `DiscordEmbeddedAppClient` / none)
 
 ## Pitfalls
 

@@ -4,6 +4,12 @@ description: >
   Makes a Blazium 0.6.x game remappable and readable: InputMap remaps, Theme
   font scale, contrast, and locale-safe copy via tr(). Use for accessibility
   pass, remapping, or scalable UI. Visual bible stays with art-director.
+when-to-use: >
+  remapping, font scale, contrast, subtitle scale, accessibility pass,
+  InputMap rebind, Theme default_font_size
+metadata:
+  author: blazium-games
+  short-description: Remap InputMap and scale Theme fonts; persist in user://
 ---
 
 # Blazium accessibility
@@ -26,6 +32,17 @@ Do not invent a screen-reader plugin. Do not own the art bible.
 `blazium-input`. Theme chrome without a11y → `blazium-ui`. Locale files
 only → `blazium-localization`. Visual identity → art-director, not this
 skill.
+
+## Grok host
+
+Read this skill, then `blazium-input` if actions are missing. Spawn
+`ux-designer` for the settings flow and `ui-programmer` for Theme scale.
+Child prompts must include action names and the Theme resource path.
+Do not dump the catalog.
+
+Evidence is Autowork: rebind an action, `assert_true` on
+`InputMap.action_has_event`; scale the Theme and assert font size. Not a
+screenshot of a settings menu. Grok `code_execution` is not evidence.
 
 ## Workflow
 
@@ -53,6 +70,13 @@ Persist under `user://settings.cfg` (`blazium-save-systems` / `ConfigFile`).
 Do not store remaps in `res://`.
 
 Avoid color-only failure states: pair hue with an icon or label via `tr()`.
+
+## Output contract
+
+- Action names rebound
+- Theme resource + font scale
+- Persist path (`user://settings.cfg`)
+- Autowork rebind + font-size asserts
 
 ## Pitfalls
 

@@ -2,8 +2,14 @@
 name: blazium-games-publish
 description: >
   Ships a game page on blazium.games (draft_game_page, bootstrap_game, deploy
-  keys, builds). Use for first-party store publish. Not scene editing and
-  not Steam/itch.
+  keys, builds). Use for first-party store publish, page copy, or CI deploy
+  key. Not scene editing, not Steam, and not itch.
+when-to-use: >
+  blazium.games page, draft_game_page, bootstrap_game, deploy key,
+  list_game_builds, first-party store
+metadata:
+  author: blazium-games
+  short-description: Ship a blazium.games page via cloud MCP, not editor MCP
 ---
 
 # Blazium Games publish
@@ -23,7 +29,18 @@ Tools live on `https://mcp.blazium.games/mcp`. Full tool list:
   issuing a deploy key for CI.
 
 **When not to use:** edit scenes → `blazium-mcp`. Steam/itch → those
-publish skills. Crash sidecar only → `blazium-crash-analytics`.
+publish skills. Crash sidecar only → `blazium-crash-analytics`. Tool
+discovery only → `blazium-games-mcp`.
+
+## Grok host
+
+Read this skill, then `blazium-games-mcp` if the tool names are unknown.
+Spawn `producer` for copy approval and `tools-programmer` for the deploy
+key handoff. Child prompts must include game uid (if any) and whether CI
+needs `request_deploy_key`. Do not dump the catalog.
+
+Evidence is `get_game` / `list_game_builds` JSON — not a screenshot of the
+store page. Never call editor JustAMCP on `:6506` for this skill.
 
 ## Workflow
 
@@ -48,6 +65,14 @@ publish skills. Crash sidecar only → `blazium-crash-analytics`.
 
 Do not invent editor tool names. Resources:
 `blazium-games://games/{uid}/…`.
+
+## Output contract
+
+- Game uid
+- Cloud tools called
+- Whether a deploy key was issued (never print the secret)
+- Build ids attached
+- Evidence: `get_game` / `list_game_builds` result or `INCONCLUSIVE`
 
 ## Pitfalls
 

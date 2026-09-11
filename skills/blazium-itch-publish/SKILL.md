@@ -1,8 +1,13 @@
 ---
 name: blazium-itch-publish
 description: >
-  Ships a Blazium build to itch.io with butler. Use for butler push / channels.
-  Not a Blazium-only store and not SteamPipe.
+  Ships a Blazium build to itch.io with butler. Use for butler push /
+  channels / status. Not a Blazium-only store and not SteamPipe.
+when-to-use: >
+  itch.io, butler push, butler status, itch channel, html5 itch
+metadata:
+  author: blazium-games
+  short-description: Push export artifacts to itch.io with butler
 ---
 
 # Blazium itch publish
@@ -19,6 +24,16 @@ Butler + Blazium export — not a custom store. Baseline: **Blazium 0.6.x
 
 **When not to use:** Steam depots → `blazium-steam-publish`. Games cloud
 page → `blazium-games-publish`. Building the binary → `blazium-export`.
+
+## Grok host
+
+Read this skill plus `blazium-export` if the artifact is missing. Spawn
+`tools-programmer` for butler and `qa-tester` for `butler status`. Child
+prompts must include user/game slug and channel name. Do not invent a
+Blazium itch API.
+
+Evidence is `butler status` / channel version — not a screenshot of the
+itch page.
 
 ## Workflow
 
@@ -37,6 +52,13 @@ page → `blazium-games-publish`. Building the binary → `blazium-export`.
 | `blazium-export` | desktop artifacts |
 | `blazium-export-web` | HTML5 |
 | `blazium-ci-export` | GHA |
+
+## Output contract
+
+- Channel name
+- Artifact path (export output, not `res://`)
+- butler command + status
+- Whether CI will own the next push
 
 ## Pitfalls
 
