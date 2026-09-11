@@ -1,10 +1,17 @@
 ---
 name: blazium-autowork
 description: >
-  Authors and runs Blazium Autowork tests (extends AutoworkTest, test_* methods,
-  .autoworkconfig.json). Use when adding unit/integration tests, CI headless
-  runs, JustAMCP autowork_* tools, or blazium-cli remote autowork. GDScript,
-  Luau, and C# AutoworkTest when MODULE_MONO_ENABLED.
+  Authors and runs Blazium Autowork tests (extends AutoworkTest, test_*
+  methods, .autoworkconfig.json). Use when adding unit/integration tests,
+  CI headless runs, JustAMCP autowork_* tools, or blazium-cli remote
+  autowork. GDScript, Luau, and C# AutoworkTest when MODULE_MONO_ENABLED.
+  Not a verify verdict and not only invoking a runner.
+when-to-use: >
+  AutoworkTest, test_*, .autoworkconfig.json, --aw-dir, run_tests.gd,
+  autowork_results.json, JustAMCP autowork_tools, blazium-cli remote autowork
+metadata:
+  author: blazium-games
+  short-description: Author and run AutoworkTest test_* on 0.6.x / 4.3.2
 ---
 
 # Blazium Autowork
@@ -23,14 +30,9 @@ GDScript-only CI:
 blazium --headless --path "$PROJECT" --aw-dir=res://tests/gdscript
 ```
 
-Mixed `.gd` / `.luau` still needs `-s run_tests.gd` (one config suffix cannot
-cover both):
+Mixed `.gd` / `.luau` still needs `-s run_tests.gd`.
 
-```bash
-blazium --headless --path "$PROJECT" -s run_tests.gd
-```
-
-All Autowork classes are marked experimental. Copy locked APIs from the pack
+All Autowork classes are marked experimental. Copy locked APIs from pack
 reference `07-autowork-reference.md` — do not invent `assert_*` names or ports.
 
 When `MODULE_MONO_ENABLED`, default suffix `.gd` also matches `.cs`.
@@ -42,26 +44,34 @@ When `MODULE_MONO_ENABLED`, default suffix `.gd` also matches `.cs`.
 - Use when running tests from MCP or `blazium-cli remote autowork`.
 
 **When not to use:** only invoking a runner without writing tests →
-`blazium-cli-remote` or `blazium-mcp`. E2E WebSocket is optional — do not
-make it the default path.
+`blazium-cli-remote` or `blazium-mcp`. Verdict on a claim → `blazium-verify`.
+E2E WebSocket is optional — do not make it the default path.
+
+## Grok host
+
+On Grok, keep context small: read this file, then `references/runner.md` only
+if the invoke path is unclear. Spawn `blazium-autowork-specialist` to author
+tests and `qa-tester` to run them. Child prompts must include the test path,
+`--aw-dir` or `-s run_tests.gd`, and the 4.3.2 pin.
+
+Use Grok `bash` for `blazium --headless --aw-dir=…`. Use connected MCP only
+when JustAMCP `:6506` is actually attached. Grok `code_execution` is **not**
+the Autowork runner — quote `user://autowork_results.json` or
+`autowork://latest_results`.
 
 ## Workflow
 
 1. **Inspect.** Look for `.autoworkconfig.json`, `run_tests.gd`, `res://tests/`.
 2. **Scaffold** if missing: copy [assets/](assets/) files when present.
-3. **Author.** `extends AutoworkTest`; methods `test_*`; files `test_` + `.gd`
-   (override suffix for `.luau`). Use lifecycle hooks and locked assertions only.
+3. **Author.** `extends AutoworkTest`; methods `test_*`; files `test_` + `.gd`.
 4. **Run.** `--aw-dir=` for one suffix, or `-s run_tests.gd` for mixed/Hub, or
    MCP (enable family first), or
    `blazium-cli remote autowork run --dir res://tests/gdscript --include-subdirs --wait`.
 5. **Read.** `user://autowork_results.json` or `autowork://latest_results`.
-   JUnit is one `<testsuite>` per script and one `<testcase>` per method.
 6. **Fix.** Prompt `blazium_autowork_fix_loop` / `analyze_autowork_test_failures`.
 7. **Handoff.** Pass/fail counts. Exit code = fail count in headless.
 
 ## Patterns
-
-### Minimal GDScript test
 
 ```gdscript
 extends AutoworkTest
@@ -70,77 +80,38 @@ func test_adds() -> void:
 	assert_eq(1 + 1, 2, "one plus one")
 ```
 
-### Discovery (locked)
+Discovery is locked: inherit `AutoworkTest`; methods `test_*`; suffix `.gd`
+(override for `.luau`). `include_subdirectories` default **false**. MCP family
+`blazium/justamcp/tools/autowork_tools` defaults **false**. JUnit path must be
+under `user://`. Nested runs are blocked. E2E autoload name is
+`AutomationServer` on port **6008**. Never in template_release.
 
-- Inherit `AutoworkTest`; methods `test_*`
-- Prefix `test_`, suffix `.gd` (override for `.luau`)
-- When `MODULE_MONO_ENABLED`, default `.gd` suffix also matches `.cs`
-- `include_subdirectories` default **false**
-- `AutoworkConfig.apply_options()` sets `include_subdirs` **before** `add_directory()`
-- Inner classes: constants starting with `Test`
-- Config: `res://.autoworkconfig.json` or legacy `.gutconfig.json`
+## Output contract
 
-### MCP
-
-Family `blazium/justamcp/tools/autowork_tools` defaults **false**. Enable it,
-then: `blazium_autowork_run_all_tests`, `run_tests_in_directory`,
-`run_test_script`, `run_test_by_name`, `list_tests`, `is_running`.
-
-JUnit path must be under `user://`. Nested runs are blocked. `--aw-*` disables
-MCP unless `--enable-mcp` is also passed.
-
-### Luau
-
-`extends = "AutoworkTest"` works. Newer engines bind `assert_*`, `wait_*`,
-`pass_test`, `fail_test`, `pending`, `print_log`, `p`. Do not invent names.
-Doubles are **GDScript only**. Hub release-editor CI may still use `error()` /
-`must()`. Hub example: `blazium-hub/tests/luau/test_001_hub_logic.luau`.
-
-### C#
-
-When `MODULE_MONO_ENABLED`, discover `AutoworkTest` subclasses with `test_*`.
-Empty `test_*` list prints a `--build-solutions` hint. Use existing ClassDB
-asserts — do not invent a C# assert DSL.
-
-### E2E (optional)
-
-`blazium/autowork/e2e_enabled` registers autoload **`AutomationServer`**
-(`AutoworkE2EServer`). Port **6008**. First command **`hello`** + HMAC.
-`AutoworkInputSender` is **not** injected — instantiate it.
-
-### Runtime UI
-
-`blazium/autowork/show_runtime_ui` (default **false**) places `AutoworkRuntimeUI`.
-
-### Build
-
-Editor: on by default. template_debug: `module_autowork_enabled=yes`.
-**Never in template_release.**
+- Test paths authored or run
+- Invoke path (`--aw-dir` / `-s run_tests.gd` / MCP / remote)
+- Pass / fail / pending counts (or `INCONCLUSIVE` if the runner did not start)
+- Results artifact (`user://autowork_results.json`)
+- Next skill (`blazium-verify` for a claim, `blazium-cli-remote` to invoke only)
 
 ## Pitfalls
 
 - **`--aw-e2e*` did nothing for unit tests** → those flags are not the unit runner.
 - **`-s` ignored `--aw-dir`** → `-s` wins if both are present.
-- **Luau `assert_foo` invented** → only locked helper names.
-- **`double_script` on Luau** → GDScript only.
+- **Grok `code_execution` used as the runner** → headless Autowork or remote.
+- **Looked up `AutoworkE2EServer` autoload** → name is `AutomationServer`.
 - **MCP autowork tools missing** → family default off.
 - **Second run errors "already running"** → nested Autowork blocked.
-- **`include_subdirs` false on remote** → default; pass `--include-subdirs`.
-- **`AutoworkRuntimeUI` missing** → enable `blazium/autowork/show_runtime_ui`.
-- **Looked up `AutoworkE2EServer` autoload** → name is `AutomationServer`.
-- **C# tests empty** → build the C# solution first.
 
 ## Resources
 
 - Runner catalog: [references/runner.md](references/runner.md)
 - Full locked API: pack reference `07-autowork-reference.md`
-- Hub: `blazium-hub/run_tests.gd`, `blazium-hub/.autoworkconfig.json`
 - Samples: https://github.com/blazium-games/autowork_module_tests
 
 ## Related skills
 
 - `blazium-cli-remote` — invoke Autowork over HTTP
 - `blazium-mcp` — MCP invoke + fix_loop prompt
+- `blazium-verify` — verdict from a run
 - `blazium-new-project` — scaffold tests/
-- `blazium-luau` — Luau AutoworkTest helpers
-- `blazium-csharp` — C# AutoworkTest discovery
