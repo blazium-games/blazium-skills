@@ -5,6 +5,12 @@ description: >
   (get_performance_monitors, profiling_detect_bottlenecks, profiling_monitor)
   plus Autowork soak. Use for FPS/memory bottlenecks. Not a generic
   profiler.
+when-to-use: >
+  FPS drop, hitch, memory leak, get_performance_monitors,
+  profiling_detect_bottlenecks, profiling_monitor, Autowork soak
+metadata:
+  author: blazium-games
+  short-description: Measure bottlenecks with JustAMCP profiling_tools + soak
 ---
 
 # Blazium performance
@@ -24,6 +30,16 @@ Toolset: JustAMCP `profiling_tools`.
 
 **When not to use:** feature work without a measured problem. Export size
 → `blazium-export`. A generic “optimize everything” pass.
+
+## Grok host
+
+Read this skill, then the domain skill that owns the bottleneck (3D /
+physics / UI). Spawn `qa-tester` for the soak and the domain specialist
+for the fix. Child prompts must include monitor names and the before
+snapshot. Do not dump the catalog.
+
+Evidence is monitor JSON + Autowork soak — not a screenshot of a profiler
+dock. Grok `code_execution` is not Blazium evidence.
 
 ## Workflow
 
@@ -52,6 +68,13 @@ Toolset: JustAMCP `profiling_tools`.
 
 Long `wait` / input simulate in `test_*.gd` — see `blazium-autowork`.
 Do not treat a single screenshot as proof.
+
+## Output contract
+
+- Surface used (`:6506` or files-only)
+- Monitor names + before/after
+- Domain skill used for the fix
+- Autowork soak name or `INCONCLUSIVE`
 
 ## Pitfalls
 
