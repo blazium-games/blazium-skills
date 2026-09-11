@@ -1,9 +1,15 @@
 ---
 name: blazium-discord
 description: >
-  Integrates Blazium Discord: native Social SDK (presence, OAuth, friends,
-  authenticate_with_server) and DiscordEmbeddedAppClient for Embedded Apps.
-  Use when adding Discord identity or activity. Not generic web export.
+  Integrates Blazium Discord on 0.6.x / 4.3.2: native Social SDK (presence,
+  OAuth, friends, authenticate_with_server) and DiscordEmbeddedAppClient
+  for Embedded Apps. Use for Discord identity or activity. Not generic web export.
+when-to-use: >
+  Discord, initialize_presence_only, authenticate_with_server,
+  DiscordEmbeddedAppClient, rich presence, discordsays
+metadata:
+  author: blazium-games
+  short-description: Discord Social SDK and Embedded App client
 ---
 
 # Blazium Discord
@@ -30,6 +36,16 @@ Native `Discord` and `DiscordEmbeddedAppClient` **are** in installed Blazium.
 **When not to use:** JWT persistence → `blazium-services`. Services lobby rooms
 → `blazium-lobby` (activity invites are Discord-side). Generic web export →
 `blazium-export-web`.
+
+## Grok host
+
+Load this file plus at most one pin (`blazium-services` after OAuth JWT, or
+`blazium-export-web` for Embedded host). Spawn `blazium-live-ops-specialist`.
+Child prompts must include surface (native vs Embedded), client id source,
+and that Autowork cannot fake a Discord client. Do not dump the catalog.
+
+Grok `code_execution` is not Discord evidence. Quote play-mode MCP, a live
+Discord client, or `INCONCLUSIVE`.
 
 ## Workflow
 
@@ -73,6 +89,13 @@ OAuth-only APIs (`accept_activity_invite`, friend requests) require
   `script_templates/DiscordEmbeddedAppClient/`. Host pipeline is
   `blazium-export-web` — do not treat native Social SDK as the iframe host.
 
+## Output contract
+
+- Surface (`native` / `embedded`)
+- Init path (`initialize_presence_only` vs `initialize` vs Embedded client)
+- Evidence: Discord client, play-mode MCP, or `INCONCLUSIVE`
+- Next skill (`blazium-services`, `blazium-lobby`, `blazium-export-web`)
+
 ## Pitfalls
 
 - **Skipped `run_callbacks()`** → OAuth/presence stalls (unless frame hook).
@@ -82,7 +105,6 @@ OAuth-only APIs (`accept_activity_invite`, friend requests) require
 ## Resources
 
 - Tests: https://github.com/blazium-games/discord_module_tests
-
 - Native: `blazium/modules/discord_module/doc_classes/Discord.xml`
 - Embedded: `blazium/modules/socialexports/doc_classes/DiscordEmbeddedAppClient.xml`
 - Template: `script_templates/DiscordEmbeddedAppClient/default.gd`
