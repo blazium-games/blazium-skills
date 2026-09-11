@@ -2,8 +2,15 @@
 name: blazium-clicker
 description: >
   Uses BlaziumBigNum for idle/incremental economies that overflow int/float.
-  Use for construct, ops, and serialize of huge numbers. Not a full idle
-  framework and not for normal games.
+  Use for construct, ops, and serialize of huge numbers (from_string,
+  as_string, add/mul). Not a full idle framework, not genre-idle composition,
+  and not for normal scores or HP.
+when-to-use: >
+  BlaziumBigNum, from_string, as_string, overflow int/float, 1e18 cookies,
+  clickertools, mantissa exponent
+metadata:
+  author: blazium-games
+  short-description: BlaziumBigNum construct / ops / serialize for idle math
 ---
 
 # Blazium clicker (BigNum)
@@ -16,16 +23,28 @@ Arbitrary-precision numbers — not an idle genre kit. Baseline: **Blazium
 
 Module: `blazium/modules/clickertools/` — class `BlaziumBigNum` (RefCounted).
 
-Idle/incremental loops also load a `blazium-genre-*` adapter if the user
-named a genre. This skill is numbers only.
+Idle/incremental *games* load `blazium-genre-idle`. This skill is numbers
+only.
 
 ## When to use
 
 - Use when currency / damage would overflow `int` or lose `float` precision.
 
 **When not to use:** normal scores, HP, timers → `int` / `float`. Economy
-tables → `blazium-resources` / `blazium-csv`. Saves → `blazium-sqlite`
-(store `as_string()`).
+tables → `blazium-resources` / `blazium-csv`. Saves → `blazium-save-systems`
+or `blazium-sqlite` (store `as_string()`). Full idle loop (click, upgrade,
+prestige, HUD) → `blazium-genre-idle`.
+
+## Grok host
+
+On Grok, keep context small: read this file for ops, then
+`blazium-genre-idle` only if the user asked for a game loop. Spawn
+`systems-designer` or `economy-designer` for balance, not for BigNum
+wrappers. Child prompts must include the serialized string format and the
+4.3.2 pin.
+
+Verify with Autowork `from_string` / `as_string` round-trips. Grok
+`code_execution` decimal math is **not** `BlaziumBigNum`.
 
 ## Workflow
 
@@ -33,7 +52,7 @@ tables → `blazium-resources` / `blazium-csv`. Saves → `blazium-sqlite`
 2. **Choose.** `BlaziumBigNum` vs built-in numbers.
 3. **Implement.** `from_string` / `from_float` / ops / `as_string`.
 4. **Verify.** Autowork: `from_string("1e20").add(...)` round-trips.
-5. **Handoff.** Serialized strings. Genre loop → .
+5. **Handoff.** Serialized strings. Genre loop → `blazium-genre-idle`.
 
 ## Patterns
 
@@ -55,22 +74,31 @@ Statics: `get_inf` / `get_min` / `get_max` / `get_nan`,
 
 Ops return a **new** `BlaziumBigNum` — assign the result.
 
+## Output contract
+
+- Values that use `BlaziumBigNum` vs `int`/`float`
+- Serialize format (`as_string()` into save / resource)
+- Autowork test name and pass/fail
+- Next skill (`blazium-genre-idle`, `blazium-save-systems`, `blazium-csv`)
+
 ## Pitfalls
 
 - **Used int for 1e40 cookies** → overflow.
-- **Built a whole idle game in this skill** → numbers only.
+- **Built a whole idle game in this skill** → numbers only; load
+  `blazium-genre-idle`.
 - **Compared with `==` on wrappers** → `is_equal_to` / `compare_to`.
-- **Saved as float** → `as_string()` into sqlite / resources.
+- **Saved as float** → `as_string()` into sqlite / resources / save slots.
+- **Grok Python int used as the economy** → `BlaziumBigNum` in GDScript.
 
 ## Resources
 
 - Tests: https://github.com/blazium-games/clickertools_module_tests
-
 - `blazium/modules/clickertools/doc_classes/BlaziumBigNum.xml`
-- Tests: github.com/blazium-games/clickertools_module_tests
 
 ## Related skills
 
+- `blazium-genre-idle` — compose the idle loop
 - `blazium-resources` — economy data
-- `blazium-sqlite` — save
+- `blazium-save-systems` — `user://` slots
+- `blazium-sqlite` — relational save
 - `blazium-csv` — balance tables

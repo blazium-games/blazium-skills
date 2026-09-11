@@ -1,9 +1,16 @@
 ---
 name: blazium-lobby
 description: >
-  Implements Blazium matchmaking rooms (LobbyClient / ScriptedLobbyClient,
-  reconnect tokens). Use after a JWT from blazium-services when creating,
-  joining, leaving, or reconnecting to rooms. Not raw @rpc or WebRTC transport.
+  Implements Blazium matchmaking rooms on 0.6.x / 4.3.2 (LobbyClient /
+  ScriptedLobbyClient, reconnect tokens in user://blazium.cfg). Use after a
+  JWT from blazium-services when creating, joining, leaving, or reconnecting.
+  Not raw @rpc, not WebRTCEnetSession, not ENetServer.
+when-to-use: >
+  LobbyClient, ScriptedLobbyClient, reconnection_token, connect_to_server,
+  connected_to_server, matchmaking room, user://blazium.cfg
+metadata:
+  author: blazium-games
+  short-description: Services rooms and reconnect tokens after JWT
 ---
 
 # Blazium Lobby
@@ -30,6 +37,18 @@ or vanilla ENet (`blazium-multiplayer-core`).
 **When not to use:** JWT / login → `blazium-services` first. Raw `@rpc` /
 Spawner → `blazium-multiplayer-core`. `WebRTCEnetSession` internals →
 `blazium-enet-webrtc`. Dedicated singleton + RCON → `blazium-enet-server`.
+
+## Grok host
+
+Load this file plus at most one pin (`blazium-services` if there is no JWT
+yet, or `blazium-multiplayer-core` after peers exist). Spawn
+`blazium-live-ops-specialist` for room code and `qa-tester` for disconnect /
+reconnect. Child prompts must include template class (`LobbyClient` vs
+`ScriptedLobbyClient`), token path, and whether JustAMCP `:6506` is connected.
+Do not dump the catalog.
+
+Grok `code_execution` is not lobby evidence. Quote two-client reconnect,
+play-mode MCP, Autowork, or `INCONCLUSIVE`.
 
 ## Workflow
 
@@ -65,6 +84,14 @@ func _connected_to_server(_peer: LobbyPeer, new_reconnection_token: String) -> v
 
 Backoff on disconnect (template): cap retries, clear token on
 `"Reconnect Close"`, then `connect_to_server()` again.
+
+## Output contract
+
+- Template class (`LobbyClient` / `ScriptedLobbyClient`)
+- Token path (`user://blazium.cfg` section)
+- Room id if known
+- Evidence: two-client reconnect, play-mode MCP, Autowork, or `INCONCLUSIVE`
+- Next skill (`blazium-multiplayer-core`, `blazium-enet-webrtc`, `blazium-services`)
 
 ## Pitfalls
 

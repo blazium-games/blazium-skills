@@ -10,20 +10,22 @@ fork)**. Do not apply Godot 4.7-only APIs.
 
 ## Why
 
-Agents declare "it works" from a screenshot. This skill forces a verdict
-from Autowork, remote, or MCP.
+Agents declare "it works" from a screenshot or a Grok `code_execution`
+session. This skill forces a verdict from Autowork, remote `--json`, or MCP.
 
 ## What
 
 Restate claim → one surface → `VERIFIED` / `NOT VERIFIED` / `INCONCLUSIVE`.
 
-**Non-goals:** Playwright, host-only harnesses, writing the whole suite.
+**Non-goals:** Playwright, host-only harnesses, Grok `code_execution` as
+the runner, writing the whole suite.
 
 ## How
 
-1. Name the metric.
-2. Run one published runner.
-3. Quote the artifact and verdict.
+1. Name the metric and the fail condition.
+2. Run one published runner (Autowork, `blazium-cli remote --json`, JustAMCP).
+3. Quote the artifact and return exactly one verdict.
+4. On Grok, never treat chat Python as Autowork JSON.
 
 ## Reasoning
 
