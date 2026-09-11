@@ -137,7 +137,8 @@ Keep the project's pin unless migration is requested.
 | Twitch / Kick / OBS / Crowd Control | `blazium-streaming` |
 | Xbox GDK | `blazium-xbox` |
 | Multiuser editor session | `blazium-multiuser-editor` |
-| Idle BigNum | `blazium-clicker` |
+| Idle / incremental / prestige / cookie clicker | `blazium-genre-idle` |
+| Idle BigNum only | `blazium-clicker` |
 | GIF import / record | `blazium-gif` |
 | Platformer | `blazium-genre-platformer` |
 | Roguelike | `blazium-genre-roguelike` |
@@ -165,12 +166,16 @@ Task: "run the tests"
 Load: blazium-autowork (author/run). Invoke via blazium-cli-remote or JustAMCP only if needed.
 ```
 
+Idle / incremental / prestige game → `blazium-genre-idle` then one pin.
+BigNum-only math → `blazium-clicker`. Do not treat clicker as the whole idle loop.
+
 ## Pitfalls
 
 - **Loaded Godot 4.7 skills on a Blazium project** → `project.blazium` or `blazium/` keys were ignored. Re-detect.
 - **Called game MCP tools on the editor server** → wrong layer. Read `blazium-mcp` vs `blazium-game-mcp`.
 - **Treated `remote_control` as MCP** → HTTP `/v1` is `blazium-cli-remote`.
 - **Dumped every catalog skill** → use the classifier table.
+- **Routed an idle game to clicker only** → composition is `blazium-genre-idle`; BigNum ops stay on `blazium-clicker`.
 
 ## Related skills
 
@@ -180,6 +185,7 @@ Load: blazium-autowork (author/run). Invoke via blazium-cli-remote or JustAMCP o
 - `blazium-game-mcp` — runtime project tools
 - `blazium-cli-remote` — HTTP automation
 - `blazium-autowork` — tests
+- `blazium-genre-idle` — idle / incremental composition
 - Engine pack — classifier table above (languages, scenes, 2D/physics, presentation, data/net)
 - Live-ops pack — classifier table above (JWT, lobby, Steam/Discord, transports, Games MCP)
 - Ship pack — classifier table above (export, web, toolchain, Hub, CI, ColdStorage)
