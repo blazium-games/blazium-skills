@@ -5,59 +5,48 @@ description: >
   slots, ConfigFile or ResourceSaver, and atomic temp-plus-rename writes.
   Use for save/load, save slots, autosave, or migrating old saves. Not
   ColdStorage VCS, lobby cloud state, or SQLite tables.
+when-to-use: >
+  save slots, user:// save, autosave, schema version, atomic temp-plus-rename,
+  ResourceSaver slot, ConfigFile settings.cfg
+metadata:
+  author: blazium-games
+  short-description: Versioned user:// save slots with atomic writes
 ---
 
 # Blazium save systems
 
 Local progress that survives quit. Baseline: **Blazium 0.6.x (Godot 4.3.2
 fork)**. Save **data**, not live node paths. Stamp `version` from slot 1.
-
-`user://` only. `ConfigFile` for settings; `JSON` + `FileAccess` or a
-`Resource` + `ResourceSaver` for slots. Atomic write: temp file, flush,
-keep `.bak`, then rename.
-
-**Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+`user://` only. Atomic write: temp file, flush, keep `.bak`, then rename.
 
 ## When to use
 
 - Use when adding save slots, quicksave, autosave, or a schema `version`.
-- Use when a patch must load an older `user://` file.
 
-**When not to use:** editor VCS / cstoraged → `blazium-coldstorage`.
-Cloud lobby / reconnect tokens → `blazium-lobby`. Relational tables →
-`blazium-sqlite`. Settings keys only with no slots → `blazium-config`.
+**When not to use:** editor VCS → `blazium-coldstorage`. Cloud lobby →
+`blazium-lobby`. Relational tables → `blazium-sqlite`. Settings-only →
+`blazium-config`.
+
+## Grok host
+
+Read this file only. Spawn `systems-designer` for the schema and
+`gameplay-programmer` for atomic write. Child prompts must include slot
+path and current `version`. Evidence is Autowork save → load `assert_eq`.
 
 ## Workflow
 
-1. **Inspect.** What is authoritative (hp, flags, seed) vs reconstructable.
-2. **Choose.** JSON dictionary, `ConfigFile`, or a `Resource` `.tres` / `.res`.
-3. **Implement.** Embed `version`. Write `path.tmp`, flush, rotate `.bak`,
-   rename onto `path`. Autosave a **separate** file.
-4. **Verify.** Save → quit → load. Load a previous `version`. Autowork
-   `assert_eq` on fields — not a screenshot of a menu.
-5. **Handoff.** Slot paths + current schema version.
+1. **Inspect.** Authoritative fields vs reconstructable.
+2. **Choose.** JSON, `ConfigFile`, or Resource `.tres`.
+3. **Implement.** Embed `version`. Write `path.tmp`, flush, rotate `.bak`, rename.
+4. **Verify.** Save → load previous `version`. Autowork field asserts.
+5. **Handoff.** Slot paths + schema version.
 
 ## Patterns
-
-### Capture data, not nodes
 
 ```gdscript
 const SAVE_VERSION := 1
 const SLOT := "user://save_0.json"
 
-func capture_state() -> Dictionary:
-	return {
-		"version": SAVE_VERSION,
-		"player": {"hp": player.hp, "pos": [player.position.x, player.position.y]},
-		"flags": world.flags,
-		"seed": world.seed,
-	}
-```
-
-### Atomic write + `.bak` (Windows-safe)
-
-```gdscript
 func save_atomic(path: String, data: Dictionary) -> void:
 	var tmp := path + ".tmp"
 	var f := FileAccess.open(tmp, FileAccess.WRITE)
@@ -69,28 +58,20 @@ func save_atomic(path: String, data: Dictionary) -> void:
 	DirAccess.rename_absolute(tmp, path)
 ```
 
-On load: parse → if `version` newer than `SAVE_VERSION`, refuse → migrate
-`v` to `v+1` in order → validate keys → reconstruct objects.
+## Output contract
 
-`ConfigFile` for options (`cfg.save("user://settings.cfg")`).
-`ResourceSaver.save(res, "user://slot_0.tres")` when the slot **is** a Resource.
+- Slot paths (`user://…`)
+- Schema `version`
+- Write method
+- Autowork save/load assertion
 
 ## Pitfalls
 
-- **Serialized node paths** → renaming a node breaks every old save.
-- **No `version` field** → the next patch cannot migrate.
-- **Wrote the slot in place** → a crash truncates the only copy.
-- **Autosave overwrote a manual slot** → use `user://autosave.json`.
-- **Trusted a local file for online state** → lobby / JWT stay server-side.
-
-## Resources
-
-- https://docs.blazium.app — `FileAccess`, `DirAccess`, `ConfigFile`, `ResourceSaver`
+- **Serialized node paths** → old saves break.
+- **No `version` field** → cannot migrate.
+- **Wrote the slot in place** → crash truncates the only copy.
+- **Autosave overwrote a manual slot** → `user://autosave.json`.
 
 ## Related skills
 
-- `blazium-resources` — Resource / `.tres` shape
-- `blazium-sqlite` — relational tables, not slot files
-- `blazium-lobby` — cloud room / reconnect token
-- `blazium-coldstorage` — editor VCS, not player saves
-- `blazium-config` — `.env` / ENV, not game slots
+- `blazium-resources`, `blazium-sqlite`, `blazium-lobby`, `blazium-coldstorage`, `blazium-config`
