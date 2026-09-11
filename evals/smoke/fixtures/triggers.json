@@ -92,6 +92,20 @@
       "expected": "blazium-accessibility",
       "catalog": ["blazium-accessibility", "blazium-input", "blazium-ui", "blazium-localization"],
       "not": ["blazium-input", "blazium-ui", "blazium-localization"]
+    },
+    {
+      "id": "genre-idle-loop",
+      "prompt": "Make an idle clicker with prestige, offline earnings, and a BigNum HUD. Not just BlaziumBigNum ops and not a platformer jump.",
+      "expected": "blazium-genre-idle",
+      "catalog": ["blazium-genre-idle", "blazium-clicker", "blazium-genre-platformer"],
+      "not": ["blazium-clicker", "blazium-genre-platformer"]
+    },
+    {
+      "id": "clicker-bignum-only",
+      "prompt": "Use BlaziumBigNum from_string and as_string so cookie counts do not overflow int. Do not build the idle HUD or prestige loop.",
+      "expected": "blazium-clicker",
+      "catalog": ["blazium-clicker", "blazium-genre-idle", "blazium-csv"],
+      "not": ["blazium-genre-idle"]
     }
   ]
 }
