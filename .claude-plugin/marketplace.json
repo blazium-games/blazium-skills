@@ -126,7 +126,7 @@
     {
       "name": "blazium-growth",
       "source": "./",
-      "description": "Growth adapters: nine genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork).",
+      "description": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork).",
       "strict": false,
       "skills": [
         "./skills/blazium-save-systems",
@@ -142,6 +142,7 @@
         "./skills/blazium-genre-visual-novel",
         "./skills/blazium-genre-survival-crafting",
         "./skills/blazium-genre-puzzle",
+        "./skills/blazium-genre-idle",
         "./skills/blazium-steam-publish",
         "./skills/blazium-itch-publish",
         "./skills/blazium-games-publish",
@@ -235,6 +236,7 @@
         "./skills/blazium-genre-visual-novel",
         "./skills/blazium-genre-survival-crafting",
         "./skills/blazium-genre-puzzle",
+        "./skills/blazium-genre-idle",
         "./skills/blazium-steam-publish",
         "./skills/blazium-itch-publish",
         "./skills/blazium-games-publish",

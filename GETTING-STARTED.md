@@ -1,7 +1,7 @@
 # Getting started — blazium-skills
 
 Agent skills for **Blazium 0.6.x (Godot 4.3.2 fork)**. GDScript-first.
-Same files load on Claude Code, Cursor, and Codex.
+Same files load on Claude Code, Cursor, Codex, and Grok.
 
 ## Install the marketplace
 
@@ -17,6 +17,7 @@ python scripts/validate-plugin-packs.py
 | Claude Code | `/plugin marketplace add blazium-games/blazium-skills` | `/plugin install blazium-infra@blazium-skills` (repeat for other packs or `blazium@blazium-skills`) |
 | Cursor | Add `blazium-games/blazium-skills` as a marketplace | Install `blazium-infra` … `blazium-growth` or `blazium` |
 | Codex | `codex plugin marketplace add blazium-games/blazium-skills` | Plugins Directory → **Blazium Skills** |
+| Grok | Clone this repo | Symlink `skills/` or a pack under `plugins/` into the Grok skills root. Grok also auto-reads the Claude marketplace. Full contract: [GROK.md](GROK.md) |
 
 ## First session
 
@@ -37,4 +38,5 @@ python scripts/validate-plugin-packs.py
 Games cloud is `https://mcp.blazium.games/mcp` (`blazium-games-mcp`).
 
 Prefer Autowork, JustAMCP, or `blazium-cli --json` over unverified clicks.
+Grok `code_execution` and screenshots are not evidence — see [GROK.md](GROK.md).
 See [CONTRIBUTING.md](CONTRIBUTING.md) to add a skill.

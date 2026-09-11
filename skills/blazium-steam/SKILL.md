@@ -1,9 +1,15 @@
 ---
 name: blazium-steam
 description: >
-  Integrates Blazium’s native Steam singleton (not GodotSteam): session
-  tickets → JWT, achievements, stats, inventory. Use when authenticating
-  with Steam or syncing Steamworks runtime data. Not SteamPipe publishing.
+  Integrates Blazium native Steam singleton on 0.6.x / 4.3.2 (not GodotSteam):
+  session tickets → JWT, achievements, stats, inventory. Use when
+  authenticating with Steam or syncing Steamworks runtime data. Not SteamPipe.
+when-to-use: >
+  Steam, request_web_api_ticket, authenticate_with_server, set_achievement,
+  store_stats, steamworks, GodotSteam
+metadata:
+  author: blazium-games
+  short-description: Native Steam tickets, achievements, and stats
 ---
 
 # Blazium Steam
@@ -31,6 +37,18 @@ The library loads at runtime. If missing, methods fail gracefully
 **When not to use:** JWT storage / Discord login → `blazium-services`.
 GodotSteam community APIs → do not use. SteamPipe / steamcmd →
 `blazium-steam-publish`.
+
+## Grok host
+
+Load this file plus at most one pin (`blazium-services` after a ticket JWT,
+or `blazium-steam-publish` for depots). Spawn `blazium-live-ops-specialist`
+for ticket exchange and `security-engineer` if JWT storage is in scope.
+Child prompts must include AppID (default Spacewar `480` unless the user
+sets `GAME_STEAM_ID`), whether Steam is running, and that Autowork cannot
+fake Steamworks. Do not dump the catalog.
+
+Grok `code_execution` is not Steam evidence. Quote a Steam-logged client,
+play-mode MCP, or `INCONCLUSIVE`.
 
 ## Workflow
 
@@ -70,6 +88,14 @@ Steam.store_stats()
 `clear_achievement` / `clear_stat` also need `store_stats()` to persist.
 Inventory: `add_promo_item`, `load_item_definitions` as documented on `Steam`.
 
+## Output contract
+
+- AppID used (Spacewar `480` or `GAME_STEAM_ID`)
+- Path taken (ticket → JWT vs local achievements)
+- `Steam.is_available()` result
+- Evidence: Steam-logged client, play-mode MCP, or `INCONCLUSIVE`
+- Next skill (`blazium-services`, `blazium-lobby`, `blazium-steam-publish`)
+
 ## Pitfalls
 
 - **Used GodotSteam** → wrong module. Use Blazium `Steam` only.
@@ -83,7 +109,6 @@ Live Steamworks cases are gated. Defaults use Spacewar AppID `480` via
 ## Resources
 
 - Tests: https://github.com/blazium-games/steam_module_tests
-
 - Module: `blazium/modules/steam/doc_classes/Steam.xml`
 - Classes: `Steam`, `SteamAuthResult`, `SteamAchievementInfo`,
   `SteamInventoryItem`, `SteamItemDefinition`

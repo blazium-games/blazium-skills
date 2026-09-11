@@ -2,9 +2,16 @@
 name: blazium-verify
 description: >
   Proves or disproves a falsifiable Blazium claim with one local surface:
-  Autowork test_*, blazium-cli remote, or editor/game JustAMCP. Returns
-  VERIFIED, NOT VERIFIED, or INCONCLUSIVE. Use when asked to verify, prove,
-  or show evidence. Not a recap and not a host-specific browser harness.
+  Autowork test_*, blazium-cli remote --json, or editor/game JustAMCP.
+  Returns VERIFIED, NOT VERIFIED, or INCONCLUSIVE. Use when asked to
+  verify, prove, or show evidence. Not a recap, not a screenshot, and not
+  a host-specific browser or Grok code_execution harness.
+when-to-use: >
+  verify, prove, evidence, VERIFIED, NOT VERIFIED, INCONCLUSIVE, Autowork
+  JSON, blazium-cli remote --json, JustAMCP tool result
+metadata:
+  author: blazium-games
+  short-description: Falsifiable verdict from Autowork, remote --json, or MCP
 ---
 
 # Blazium verify
@@ -15,7 +22,7 @@ Restate the claim so it can fail. Pick **one** surface. Capture the same
 command before and after when comparing. Return exactly one verdict:
 `VERIFIED`, `NOT VERIFIED`, or `INCONCLUSIVE`.
 
-Works the same on Claude, Cursor, and Codex — no host plugin required.
+Works the same on Claude, Cursor, Codex, and Grok — no host plugin required.
 
 ## When to use
 
@@ -25,6 +32,19 @@ Works the same on Claude, Cursor, and Codex — no host plugin required.
 **When not to use:** vague "the code is cleaner" — ask for a measurable
 claim first. Authoring the suite → `blazium-autowork`. Watching export CI
 → `blazium-ci-watch`. Connecting the editor catalog → `blazium-mcp`.
+
+## Grok host
+
+On Grok, keep context small: read this file, then the skill that owns the
+surface (`blazium-autowork`, `blazium-cli-remote`, `blazium-mcp`, or
+`blazium-game-mcp`). Spawn `qa-tester` or `blazium-autowork-specialist`
+when the claim is a `test_*`. Child prompts must include the claim, the
+surface, the project path, and the 4.3.2 pin.
+
+Grok `code_execution`, chat Python, `web_search`, and dock screenshots are
+**not** evidence. Quote Autowork JSON, CLI `--json`, or an MCP tool result.
+If the runner did not start, the verdict is `INCONCLUSIVE` — never dress
+that up as `VERIFIED`.
 
 ## Workflow
 
@@ -46,11 +66,20 @@ claim first. Authoring the suite → `blazium-autowork`. Watching export CI
 
 Never use a browser smoke harness. Never invent assert names.
 
+## Output contract
+
+- Claim restated (failable)
+- Surface used (or `files only — MCP off`)
+- Command + quoted artifact
+- Exactly one of `VERIFIED` / `NOT VERIFIED` / `INCONCLUSIVE`
+- Next skill if the claim needs a different surface
+
 ## Pitfalls
 
 - **Recapped the chat** → not evidence.
 - **Mixed 6506 / 6507 / 6508** → one surface.
 - **Screenshot of a dock** → use Autowork or `--json`.
+- **Grok `code_execution` treated as Autowork** → wrong runner; `INCONCLUSIVE`.
 - **INCONCLUSIVE hidden as VERIFIED** → say when the runner did not start.
 
 ## Related skills

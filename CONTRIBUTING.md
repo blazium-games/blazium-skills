@@ -14,7 +14,9 @@ Do not invent APIs, CLI verbs, or Godot 4.7-only calls. Baseline:
    and a README index row.
 5. Add a trigger case in [`evals/smoke/fixtures/triggers.json`](evals/smoke/fixtures/triggers.json)
    when the skill could collide with a sibling.
-6. Sync and validate:
+6. Keep the YAML `description` dense: outcome, trigger nouns, hard negatives.
+   Optional Grok keys: `when-to-use`, `metadata.short-description`.
+7. Sync and validate:
 
 ```bash
 python scripts/sync-plugin-packs.py
@@ -27,12 +29,16 @@ hand-edit those links.
 
 ## Hosts
 
-One catalog, three marketplaces (sync writes Cursor + Codex from Claude):
+One catalog, three marketplaces (sync writes Cursor + Codex from Claude).
+Grok auto-reads the Claude marketplace and also discovers `./.grok/skills/`
+and `~/.grok/skills/`. See [GROK.md](GROK.md). Do not invent a fourth
+marketplace schema.
 
 | Host | File |
 |------|------|
 | Claude Code | `.claude-plugin/marketplace.json` |
 | Cursor | `.cursor-plugin/marketplace.json` |
 | Codex | `.agents/plugins/marketplace.json` |
+| Grok | `skills/*/SKILL.md` + [GROK.md](GROK.md) |
 
 Official docs links: `https://docs.blazium.app` or `https://cdn.blazium.app` only.

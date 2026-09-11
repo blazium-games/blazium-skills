@@ -1,8 +1,15 @@
 ---
 name: blazium-3d
 description: >
-  Sets up Blazium 3D scenes (Node3D, Camera3D, lights, GridMap) on 4.3.2 /
-  0.6.x. Use when building 3D levels or cameras. Prefer JustAMCP scene3d_tools.
+  Sets up Blazium 3D scenes (Node3D, Camera3D, lights, GridMap) on 0.6.x /
+  Godot 4.3.2. Use when building 3D levels or cameras. Prefer JustAMCP
+  scene3d_tools. Not WorldEnvironment volumes, nav bake, or physics bodies.
+when-to-use: >
+  Node3D, Camera3D, GridMap, MeshLibrary, scene3d_tools, setup_camera_3d,
+  add_mesh_instance
+metadata:
+  author: blazium-games
+  short-description: 3D scenes, cameras, lights, and GridMap
 ---
 
 # Blazium 3D
@@ -18,6 +25,16 @@ Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. JustAMCP: `add_mesh_instance`,
 
 **When not to use:** WorldEnvironment volumes in depth → `blazium-environment`.
 Nav bake → `blazium-navigation`. Physics bodies → `blazium-physics`.
+
+## Grok host
+
+Load this file plus at most one pin (`blazium-environment` or `blazium-navigation`).
+Spawn `level-designer` for layout and `gameplay-programmer` if a controller
+moves the camera. Child prompts must include scene path and that exactly one
+`Camera3D.current` is true. Do not dump the catalog.
+
+Grok `code_execution` is not 3D evidence. Quote play-mode tree, Autowork
+`assert_true(cam.current)`, or `INCONCLUSIVE`.
 
 ## Workflow
 
@@ -44,6 +61,14 @@ func _ready() -> void:
 
 JustAMCP: `setup_camera_3d` then `add_mesh_instance` / `setup_lighting`. Call
 `add_gridmap` only after a MeshLibrary exists.
+
+## Output contract
+
+- Scene path
+- Current camera node
+- GridMap MeshLibrary if used
+- Evidence: play-mode tree, Autowork `cam.current`, or `INCONCLUSIVE`
+- Next skill (`blazium-environment`, `blazium-navigation`, `blazium-physics`)
 
 ## Pitfalls
 

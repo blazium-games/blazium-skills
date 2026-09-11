@@ -1,8 +1,14 @@
 ---
 name: blazium-audio
 description: >
-  Routes Blazium audio (AudioStreamPlayer, buses, ducking) on 4.3.2. Use when
-  adding SFX/music or mixer-style routing. Prefer JustAMCP audio_tools.
+  Routes Blazium audio (AudioStreamPlayer, buses, ducking) on 0.6.x / Godot
+  4.3.2. Use when adding SFX/music or mixer-style routing. Prefer JustAMCP
+  audio_tools. Not interactive_music internals.
+when-to-use: >
+  AudioStreamPlayer, audio bus, linear_to_db, add_audio_bus, ducking, SFX
+metadata:
+  author: blazium-games
+  short-description: Audio players, buses, and mixer routing
 ---
 
 # Blazium audio
@@ -18,6 +24,16 @@ Volume is in dB. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. JustAMCP:
 
 **When not to use:** interactive_music module internals (vanilla — skip).
 Localization of voice lines → `blazium-localization`.
+
+## Grok host
+
+Load this file plus at most one pin (`blazium-ui` for volume sliders).
+Spawn `audio-director` for bus layout and `sound-designer` for event lists.
+Child prompts must include bus names (Master / Music / SFX) and player paths.
+Do not dump the catalog.
+
+Grok `code_execution` is not mixer evidence. Quote `get_audio_bus_layout`,
+Autowork `assert_eq` on `bus`, play-mode MCP, or `INCONCLUSIVE`.
 
 ## Workflow
 
@@ -43,6 +59,13 @@ func _ready() -> void:
 ```
 
 JustAMCP: `add_audio_bus` then `add_audio_player` onto that bus.
+
+## Output contract
+
+- Bus names (Master / Music / SFX)
+- Player paths and assigned streams
+- Evidence: `get_audio_bus_layout`, Autowork bus assert, play-mode MCP, or `INCONCLUSIVE`
+- Next skill (`blazium-ui`, `blazium-localization`)
 
 ## Pitfalls
 
