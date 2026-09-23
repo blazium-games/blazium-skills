@@ -108,6 +108,8 @@ func first_hit(from: Vector2, to: Vector2, mask: int) -> Dictionary:
 Shape overlap: `PhysicsShapeQueryParameters2D` + `intersect_shape`.
 Do not query `ConcavePolygonShape3D` (trimesh) and expect stable hits.
 
+`physics/3d/physics_engine` selects the 3D server. On `blazium_4.8` the default is `GodotPhysics3D`. `Jolt Physics` is registered; use it only when that setting says so. Queries stay `PhysicsDirectSpaceState3D.intersect_ray`.
+
 JustAMCP: `setup_collision` / `setup_physics_body`, then
 `validate_physics_setup`.
 

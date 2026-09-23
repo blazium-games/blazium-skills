@@ -78,7 +78,7 @@ Do not treat a single screenshot as proof.
 
 ## Pitfalls
 
-- **Guessed a 4.7 profiler panel** → JustAMCP tools + 4.8.x debugger.
+- **Guessed a profiler dock** → `Performance.get_monitor(Performance.TIME_FPS)` and JustAMCP `get_performance_monitors`.
 - **Rewrote a performance discipline book** → three tools + soak.
 - **Changed three systems at once** → no evidence.
 

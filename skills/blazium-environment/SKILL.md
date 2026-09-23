@@ -55,7 +55,7 @@ JustAMCP: `environment_create` then `setup_environment` (also on `scene3d_tools`
 
 - **Invented URP Volume profiles** → Environment resource on WorldEnvironment.
 - **Glow + untonemapped HDR** → blown whites. Set tonemap before raising glow.
-- **Copied Godot 4.7 Environment properties** → check 4.8.x class docs.
+- **Invented Environment properties** → set `background_mode`, `tonemap_mode`, `glow_enabled`, `fog_enabled`, and `ssao_enabled` on the Environment resource.
 - **Two WorldEnvironment nodes** → last processed wins. Keep one per world.
 - **SSAO on Compatibility** → no effect. Drop SSAO or use Forward+.
 

@@ -41,13 +41,13 @@ func notify_all() -> void:
 	get_tree().call_group("enemies", "take_damage", 1)
 ```
 
-4.x: `signal.emit(...)` and `signal.connect(callable)` — not string connects.
+On `blazium_4.8`: `died.emit()` and `died.connect(_on_died)` — not `connect("died", self, "_on_died")`.
 
 ## Pitfalls
 
 - **Connected before the node is in tree** → connect in `_ready()`.
 - **Group name typos** → `node_find_in_group` to confirm.
-- **Godot 3 `connect("x", self, "y")`** → Callable form.
+- **Godot 3 `connect("x", self, "y")`** → `died.connect(_on_died)`.
 
 ## Resources
 

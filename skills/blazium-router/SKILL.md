@@ -181,7 +181,7 @@ BigNum-only math → `blazium-clicker`. Do not treat clicker as the whole idle l
 
 ## Pitfalls
 
-- **Loaded Godot 4.7 skills on a Blazium project** → `project.blazium` or `blazium/` keys were ignored. Re-detect.
+- **Loaded stock Godot skills on a Blazium project** → `project.blazium` or `blazium/` keys were ignored. Re-detect.
 - **Called game MCP tools on the editor server** → wrong layer. Read `blazium-mcp` vs `blazium-game-mcp`.
 - **Treated `remote_control` as MCP** → HTTP `/v1` is `blazium-cli-remote`.
 - **Dumped every catalog skill** → use the classifier table.

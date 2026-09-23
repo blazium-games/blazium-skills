@@ -87,7 +87,7 @@ camera). Do not invent a custom netcode stack.
 
 ## Pitfalls
 
-- **Godot 4.7 character APIs** → 4.8.x `CharacterBody3D`.
+- **Invented a character controller** → `CharacterBody3D.velocity` then `move_and_slide()`.
 - **Invented a netcode stack** → `blazium-multiplayer-core` first.
 - **Invented a shooter framework** → compose the pinned skills.
 - **Tuned recoil before the ray hits** → shot first, `blazium-game-feel` second.

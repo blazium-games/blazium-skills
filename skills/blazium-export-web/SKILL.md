@@ -102,7 +102,7 @@ SDK methods.
 
 - **Skipped COOP/COEP on a threads build** → SharedArrayBuffer missing.
 - **Taught native `Discord.initialize` here** → `blazium-discord`.
-- **Copied Godot 4.7 web-only APIs** → pin 4.8.x export options.
+- **Invented a web-export flag** → `variant/thread_support`. Threads need COOP/COEP; otherwise leave thread support off.
 
 ## Resources
 

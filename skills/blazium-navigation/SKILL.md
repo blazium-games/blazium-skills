@@ -42,7 +42,7 @@ not a gizmo screenshot.
 1. **Inspect.** Regions, agent radii, layer bits.
 2. **Bake.** `spatial_bake_navigation` or editor bake. Confirm with
    `navigation_get_info`.
-3. **Agent.** `NavigationAgent` `target_position`; move with CharacterBody.
+3. **Agent.** `NavigationAgent2D` or `NavigationAgent3D` `target_position`; move with `CharacterBody2D` or `CharacterBody3D`.
 4. **Verify.** Autowork wait until the body is near the target.
 5. **Handoff.** Region type (2D/3D), layer bits, agent radius.
 

@@ -82,8 +82,7 @@ CLI: `blazium-cli load`, `blazium-cli open`. Log path default:
 | `blazium/coldstorage/*` | leave default | `blazium-coldstorage` |
 | `blazium/gif/*` | leave default | `blazium-gif` |
 
-Pin editor version to the installed Blazium 0.8.x build. Do not claim Godot 4.7
-`features`.
+Pin editor version to the installed Blazium 0.8.x build. Do not write `features` that are not on `blazium_4.8`.
 
 ### Migrate from Godot
 
@@ -111,7 +110,7 @@ Pin editor version to the installed Blazium 0.8.x build. Do not claim Godot 4.7
 
 ## Pitfalls
 
-- **Godot skill rewrote `project.godot` as 4.7** → restore `blazium_4.8`-safe features.
+- **Stock Godot rewrote `project.godot`** → restore `features` that exist on `blazium_4.8`.
 - **Enabled eval and bound 0.0.0.0** → treat as incident; revert.
 - **Game MCP and remote both on 6507** → remote default is 6508; change the leftover pin.
 - **Invented a `blazium/foo` key** → check `ProjectSettings.xml` first.

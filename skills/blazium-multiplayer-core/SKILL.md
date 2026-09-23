@@ -121,7 +121,7 @@ not invent a custom bitstream first.
 
 - **Mixed lobby tokens into ENet peer setup** → `blazium-lobby`.
 - **Trusted client RPCs** → validate on authority.
-- **Copied Godot 3 `rpc_id` strings only** → 4.x `@rpc` annotations.
+- **Copied Godot 3 `rpc_id` strings only** → `@rpc("any_peer", "reliable")` on `blazium_4.8`.
 - **Configured `WebRTCEnetSession` here** → `blazium-enet-webrtc`.
 - **Opened RCON / dedicated singleton here** → `blazium-enet-server`.
 - **No second instance** → report `INCONCLUSIVE`; do not claim replication works.

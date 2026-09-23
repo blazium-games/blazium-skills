@@ -74,7 +74,7 @@ if not db.load_from("user://world.sqlite"):
 ```
 
 Persist needs/recipes with `blazium-sqlite`, not a custom binary dump.
-Do not invent Godot 4.7 voxel APIs.
+Do not invent voxel APIs. Stay on `MeshInstance3D` and `GridMap`.
 
 ## Output contract
 
@@ -86,7 +86,7 @@ Do not invent Godot 4.7 voxel APIs.
 ## Pitfalls
 
 - **Wrote a custom binary save** → `blazium-sqlite`.
-- **Godot 4.7 Voxel APIs** → not in 4.8.x; stay on meshes/grids you have.
+- **Invented voxel APIs** → not on `blazium_4.8`. Stay on `MeshInstance3D` and `GridMap`.
 - **Rewrote a studio survival pack** → compose pins.
 - **Saved world state in `res://`** → `user://` only.
 

@@ -145,7 +145,7 @@ Grok-side physics stepper.
 
 - **Moved in `_process`** → tunneling; use `_physics_process`.
 - **Forgot `move_and_slide`** → velocity never applied.
-- **Copied Godot 3 `move_and_slide` args** → 4.x uses the `velocity` property.
+- **Copied Godot 3 `move_and_slide` args** → set `velocity`, then call `move_and_slide()` with no arguments.
 - **Grounded body with no `up_direction`** → `is_on_floor()` stays false.
 - **Top-down still on `MOTION_MODE_GROUNDED`** → gravity pulls the walker.
 - **Tuned squash before the body lands** → mover first, `blazium-game-feel` second.

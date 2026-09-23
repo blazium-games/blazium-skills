@@ -66,7 +66,7 @@ Do not rewrite Login/Lobby APIs from memory.
 - **Invented LoginClient methods** → template + nightly only.
 - **Stayed in this skill for lobby reconnect** → `blazium-lobby`.
 - **Shipped `res://test.sqlite` from the SQLite template** → `user://`.
-- **Used a Godot 4.7 template pack** → these engine files only.
+- **Used a stock Godot template pack** → files under `modules/gdscript/editor/script_templates/` only.
 
 ## Resources
 

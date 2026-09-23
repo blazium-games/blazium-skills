@@ -29,7 +29,7 @@ Autowork authoring details → `blazium-autowork`.
 
 ## Workflow
 
-1. **Inspect.** `.csproj` / Godot .NET features. Confirm 4.3-compatible bindings.
+1. **Inspect.** `.csproj` / Godot .NET features. Confirm bindings from the installed Blazium 0.8.x editor (`modules/mono` on `blazium_4.8`).
 2. **Implement.** Partial classes, `[Export]`, `[Signal]`, `Callable` interop.
 3. **Verify.** Editor build (`--build-solutions` if needed). C# `AutoworkTest`
    + `test_*` when mono is enabled.
@@ -56,7 +56,7 @@ public partial class Spinner : Node2D
 - **Empty C# Autowork suite** → build the C# solution; inherit AutoworkTest
   and name methods `test_*`.
 - **Invented C# assert helpers** → use ClassDB asserts only.
-- **Copied Godot 4.7 C# APIs** → pin 4.8.x bindings.
+- **Copied stock Godot C# that is not in the Blazium bindings** → `partial class`, `[Export]`, and `[Signal]` from the installed 0.8.x editor.
 - **Expected full `script_tools` parity** → GDScript-first MCP.
 - **`SetScript()` after you keep the wrapper** → `SetScript()` disposes the C#
   wrapper. Attach scripts last; re-fetch the node if you still need the typed

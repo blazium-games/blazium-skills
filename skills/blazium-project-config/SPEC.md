@@ -23,7 +23,7 @@ Create or migrate the project file. Pin editor version. Enable MCP, remote_contr
 - Namespaces: `blazium/justamcp/*`, `blazium/remote_control/*` (`server_port` default **6508**), `blazium/semanticsearch/*`, `blazium/assettags/*`, `blazium/coldstorage/*`, `blazium/autowork/e2e_enabled`, `blazium/autowork/show_runtime_ui` (default false), `blazium/gif/*`.
 - Log path default `user://logs/blazium.log`.
 - CLI: `hub load`, `hub open`.
-- Migrate-from-Godot: keep `project.godot` readable; add `blazium/` keys; do not claim 4.7 features.
+- Migrate-from-Godot: keep `project.godot` readable; add `blazium/` keys; do not claim features that are not on `blazium_4.8`.
 
 ## Reasoning
 

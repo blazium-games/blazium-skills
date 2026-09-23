@@ -83,7 +83,7 @@ every edge cell when that terrain set already matches the art.
 
 ## Pitfalls
 
-- **Used Godot 3 `TileMap` API only** → prefer TileMapLayer on 4.3.x.
+- **Used Godot 3 `TileMap` API only** → `TileMapLayer.set_cell` on `blazium_4.8`.
 - **Imported Tiled as a screenshot** → `blazium-tiled`.
 - **Painted collision on the wrong layer** → validate with physics tools.
 - **TileMapLayer with no TileSet** → `set_cell` / `tilemap_set_cell` paints

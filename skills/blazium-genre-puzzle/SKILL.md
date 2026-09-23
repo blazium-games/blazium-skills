@@ -85,7 +85,7 @@ dock screenshot.
 ## Pitfalls
 
 - **Skipped tests on rules** → Autowork first; puzzles are deterministic.
-- **Invented a Godot 4.7 TileMap API** → 4.8.x `TileMapLayer` / Tiled pins.
+- **Invented a TileMap API other than `TileMapLayer.set_cell`** → `TileMapLayer` or `blazium-tiled`.
 - **Rewrote a studio puzzle kit** → compose pins.
 - **Tuned match juice before legal-move passes** → `blazium-game-feel` second.
 

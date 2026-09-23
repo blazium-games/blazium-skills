@@ -70,5 +70,5 @@ JustAMCP: `create_shader` / `edit_shader`, then `assign_shader_material` and
 ## Related skills
 
 - `blazium-environment` — post-fx
-- `blazium-3d` — materials on MeshInstance
+- `blazium-3d` — materials on MeshInstance3D
 - `blazium-autowork` — material asserts
