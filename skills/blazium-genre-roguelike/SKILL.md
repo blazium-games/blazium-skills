@@ -2,7 +2,7 @@
 name: blazium-genre-roguelike
 description: >
   Composes a run-based roguelike or proc-gen grid game from pinned Blazium
-  0.6.x skills (resources, CSV, SQLite, Autowork). Use when the request is
+  0.8.x skills (resources, CSV, SQLite, Autowork). Use when the request is
   roguelike, permadeath, run seed, dungeon crawl, or loot tables. Not a
   roguelike framework and not a real-time platformer.
 when-to-use: >
@@ -14,8 +14,8 @@ metadata:
 
 # Blazium genre: roguelike
 
-Thin adapter — not a roguelike framework. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**. Inspect `config_version` / `features`; keep 4.3.2-safe
+Thin adapter — not a roguelike framework. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**. Inspect `config_version` / `features`; keep `blazium_4.8`-safe
 APIs unless the user asks to migrate.
 
 Do not fork a studio-clone skill pack. Proc-gen lives in the game; this

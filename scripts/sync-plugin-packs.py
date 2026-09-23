@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CLAUDE = ROOT / ".claude-plugin" / "marketplace.json"
 PLUGINS = ROOT / "plugins"
-VERSION = "0.6.0"
+VERSION = "0.8.0"
 HOMEPAGE = "https://docs.blazium.app"
 
 
@@ -58,7 +58,7 @@ def keywords_for(plugin_name: str) -> list[str]:
 def default_prompts(plugin_name: str, desc: str) -> list[str]:
     label = display_name(plugin_name)
     return [
-        f"Use {label} to work on a Blazium 0.6.x (Godot 4.3.2 fork) project.",
+        f"Use {label} to work on a Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`) project.",
         desc,
     ]
 

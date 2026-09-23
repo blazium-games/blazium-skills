@@ -13,7 +13,7 @@ description: >
 The game host (`user-blazium-game`) exposes **only** tools registered from
 `res://mcp`. There is no editor catalog. Do not invent `mcp.gd` or `mcp.tscn`.
 
-Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 Default URL: `http://127.0.0.1:6507/mcp`  
 Server name: `blazium-game`  

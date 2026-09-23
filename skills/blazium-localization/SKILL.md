@@ -1,8 +1,8 @@
 ---
 name: blazium-localization
 description: >
-  Sets up Blazium 0.6.x localization with TranslationServer, tr() keys, and
-  CSV/PO translation files on Godot 4.3.2. Use when adding locales, wrapping
+  Sets up Blazium 0.8.x localization with TranslationServer, tr() keys, and
+  CSV/PO translation files on Godot 4.8.x. Use when adding locales, wrapping
   UI strings, or switching locale in play mode. Large CSV pipelines pair with
   blazium-csv. Not Theme/layout and not raw table queries.
 when-to-use: >
@@ -15,11 +15,11 @@ metadata:
 
 # Blazium localization
 
-Use `TranslationServer` + translation CSVs / PO. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**.
+Use `TranslationServer` + translation CSVs / PO. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 

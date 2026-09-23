@@ -8,8 +8,8 @@ description: >
 
 # Blazium Hub
 
-Desktop Hub for editors and projects. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**.
+Desktop Hub for editors and projects. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Hub ≠ Services.** No lobby buttons, no JWT login, no store dashboard.
 Hub does **not** install editors; it shells `blazium-cli --json`.

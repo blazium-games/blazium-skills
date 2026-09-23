@@ -5,7 +5,7 @@ pack: engine
 
 # blazium-2d-movement
 
-Engine baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. Do not apply Godot 4.7-only APIs.
+Engine baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. Use APIs that exist on `blazium_4.8`.
 
 ## Why
 
@@ -19,13 +19,13 @@ Platformer/top-down controllers are the default first game. Agents mix `MOTION_M
 
 ## How
 
-1. Inspect project version (4.3.2 / 0.6.x). Reject Godot 4.7-only APIs.
+1. Inspect project version (4.8.x / 0.8.x). Use APIs that exist on `blazium_4.8`.
 2. Choose grounded vs floating and state the assumption.
 3. Prefer JustAMCP `physics_tools` / `input_tools` when the editor MCP is connected.
 4. Set velocity in `_physics_process`; call `move_and_slide()`.
 5. Verify with Autowork or play-mode MCP, not screenshots alone.
 
-Engine / module path: `Godot CharacterBody2D (4.3.2)`.
+Engine / module path: `Godot CharacterBody2D (4.8.x)`.
 
 ## Reasoning
 
@@ -33,13 +33,13 @@ Godot-parity skill, Blazium-pinned, with JustAMCP handoff. Distinct so the route
 
 ## Sources
 
-- Blazium: Godot CharacterBody2D (4.3.2)
+- Blazium: Godot CharacterBody2D (4.8.x)
 - Asset: skills/blazium-2d-movement/assets/player_body_2d.gd
 - Docs: https://docs.blazium.app
 
 ## Limits
 
-Do not invent classes, flags, or CLI verbs. Pin Blazium 0.6.x (Godot 4.3.2 fork). Prefer JustAMCP, Autowork, or `blazium-cli` over unverified editor clicks. Grok `code_execution` is not a physics stepper.
+Do not invent classes, flags, or CLI verbs. Pin Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`). Prefer JustAMCP, Autowork, or `blazium-cli` over unverified editor clicks. Grok `code_execution` is not a physics stepper.
 
 ## Related skills
 

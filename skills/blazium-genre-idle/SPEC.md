@@ -5,7 +5,7 @@ pack: growth
 
 # blazium-genre-idle
 
-Engine baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. Do not apply Godot 4.7-only APIs.
+Engine baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. Use APIs that exist on `blazium_4.8`.
 
 ## Why
 
@@ -19,7 +19,7 @@ Compose pinned Blazium skills: clicker (BigNum), save-systems, csv/resources, ui
 
 ## How
 
-1. Compose the pinned Blazium skills (4.3.2 APIs) one pin per turn.
+1. Compose the pinned Blazium skills (4.8.x APIs) one pin per turn.
 2. Order: BigNum → `user://` saves → balance tables → HUD → juice → Autowork.
 3. Verify with Autowork round-trip + save load.
 
@@ -33,7 +33,7 @@ Compositional. Exists so the router can load an idle game without treating `blaz
 
 ## Limits
 
-Do not invent classes, flags, or CLI verbs. Pin Blazium 0.6.x (Godot 4.3.2 fork). Prefer JustAMCP, Autowork, or `blazium-cli` over unverified editor clicks.
+Do not invent classes, flags, or CLI verbs. Pin Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`). Prefer JustAMCP, Autowork, or `blazium-cli` over unverified editor clicks.
 
 ## Related skills
 

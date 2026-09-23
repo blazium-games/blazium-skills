@@ -8,7 +8,7 @@ description: >
 
 # Blazium behavior
 
-Tick-based decisions in GDScript. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Tick-based decisions in GDScript. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 There is no built-in behavior-tree class. A tree is `Node` children with
 `tick(actor, blackboard) -> int`. Status: `0` failure, `1` running, `2` success.
@@ -16,7 +16,7 @@ There is no built-in behavior-tree class. A tree is `Node` children with
 Native planned sequences stay on `blazium-goap` (`BlaziumGoapAgent`).
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 

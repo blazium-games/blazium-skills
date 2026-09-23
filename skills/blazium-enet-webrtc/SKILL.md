@@ -9,7 +9,7 @@ description: >
 
 # Blazium ENet over WebRTC
 
-Transport for lobby NAT traversal. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Transport for lobby NAT traversal. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Not in the default editor.** `blazium/modules/games_enet_webrtc/` uses
 **custom SCons** and is **not** in default `modules_enabled.gen.h`. Verify
@@ -17,7 +17,7 @@ the installed build: if `ClassDB.class_exists("WebRTCEnetSession")` is
 false, stop — do not invent a polyfill.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 Add `WebRTCEnetSession` to the tree so it can poll. It returns a normal
 `ENetMultiplayerPeer` via `get_peer()`. RPCs stay on `blazium-multiplayer-core`.

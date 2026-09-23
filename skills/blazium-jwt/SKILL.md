@@ -1,8 +1,8 @@
 ---
 name: blazium-jwt
 description: >
-  Encodes, decodes, and validates JWTs on Blazium 0.6.x with the in-engine
-  jwttool module (JWT, JWTBuilder, DecodedJWT) on Godot 4.3.2. Use for
+  Encodes, decodes, and validates JWTs on Blazium 0.8.x with the in-engine
+  jwttool module (JWT, JWTBuilder, DecodedJWT) on Godot 4.8.x. Use for
   HS256/RS256 sign/verify, claims, timing, and JTI revoke. Not LoginClient
   OAuth and not lobby rooms.
 when-to-use: >
@@ -15,7 +15,7 @@ metadata:
 
 # Blazium JWT
 
-In-engine JWT tools. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+In-engine JWT tools. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 Module: `blazium/modules/jwttool/` — `JWT`, `JWTBuilder`, `DecodedJWT`.
 
 Login / Discord OAuth / Steam ticket exchange → `blazium-services`.

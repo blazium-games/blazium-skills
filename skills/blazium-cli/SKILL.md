@@ -9,7 +9,7 @@ description: >
 
 # Blazium CLI
 
-Editor and product lifecycle. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Editor and product lifecycle. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Do not invent `blazium-cli hub install`.** Verbs are top-level. Full list:
 [references/verbs.md](references/verbs.md). Agent contract:

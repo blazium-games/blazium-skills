@@ -8,7 +8,7 @@ description: >
 
 # Blazium prototype
 
-One verb, playable. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+One verb, playable. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 `blazium-new-project` creates the repo, ignore file, and MCP hook. This
 skill starts after that folder exists and stops when one mechanic runs.

@@ -1,7 +1,7 @@
 ---
 name: blazium-multiplayer-core
 description: >
-  Implements Godot-style ENet multiplayer on Blazium 0.6.x / Godot 4.3.2:
+  Implements Godot-style ENet multiplayer on Blazium 0.8.x / Godot 4.8.x:
   ENetMultiplayerPeer host/join, @rpc annotations, multiplayer authority,
   MultiplayerSpawner and MultiplayerSynchronizer. Use for peer RPC and
   scene replication only. Not LobbyClient, not WebRTCEnetSession, not
@@ -21,16 +21,15 @@ metadata:
 Vanilla ENet + scene replication. **Do not** teach LobbyClient,
 `WebRTCEnetSession`, or `ENetServer` here.
 
-Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. Do not copy Godot 3
-`rpc_id("name")` strings as the only RPC path. Do not apply Godot
-4.7-only calls.
+Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. Do not copy Godot 3
+`rpc_id("name")` strings as the only RPC path. Use APIs that exist on `blazium_4.8`.
 
 JustAMCP: `networking_setup_multiplayer`, `networking_setup_rpc`,
 `networking_setup_sync`. Prompt: `blazium_multiplayer_architect` (then stay
 on this skill for ENet/RPC only).
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 
@@ -58,7 +57,7 @@ MCP, Autowork with mocked peers if present, or `INCONCLUSIVE`.
 
 1. **Inspect.** `multiplayer.multiplayer_peer`, existing `@rpc`, spawners.
 2. **Peer.** `ENetMultiplayerPeer` `create_server` / `create_client`
-   (4.3.2 API). Assign `multiplayer.multiplayer_peer`.
+   (4.8.x API). Assign `multiplayer.multiplayer_peer`.
 3. **Replicate.** `@rpc` + `MultiplayerSpawner` / `MultiplayerSynchronizer`
    — not custom streams first.
 4. **Verify.** Two instances or Autowork with mocked peers if present.
@@ -67,7 +66,7 @@ MCP, Autowork with mocked peers if present, or `INCONCLUSIVE`.
 
 ## Patterns
 
-### Host / join (4.3.2)
+### Host / join (4.8.x)
 
 ```gdscript
 func host_game(port: int) -> Error:
@@ -131,7 +130,7 @@ not invent a custom bitstream first.
 
 - JustAMCP: `networking_tools` (`networking_setup_multiplayer`,
   `networking_setup_rpc`, `networking_setup_sync`)
-- Docs: https://docs.blazium.app (MultiplayerAPI, 4.3.2-safe)
+- Docs: https://docs.blazium.app (MultiplayerAPI, `blazium_4.8`-safe)
 
 ## Related skills
 

@@ -1,8 +1,8 @@
 ---
 name: blazium-services
 description: >
-  Implements first-party Blazium 0.6.x login (Discord OAuth, Steam tickets,
-  LoginClient templates) on Godot 4.3.2. Use when exchanging platform auth
+  Implements first-party Blazium 0.8.x login (Discord OAuth, Steam tickets,
+  LoginClient templates) on Godot 4.8.x. Use when exchanging platform auth
   for a JWT. Deep JWT encode/decode stays on blazium-jwt. Not lobby rooms
   and not Games cloud MCP.
 when-to-use: >
@@ -15,7 +15,7 @@ metadata:
 
 # Blazium Services
 
-Login → JWT. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Login → JWT. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 Encode/decode/validate → `blazium-jwt`.
 
 **Nightly caveat:** `LoginClient` / `LobbyClient` / `MasterServerClient` are

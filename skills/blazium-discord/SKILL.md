@@ -1,7 +1,7 @@
 ---
 name: blazium-discord
 description: >
-  Integrates Blazium Discord on 0.6.x / 4.3.2: native Social SDK (presence,
+  Integrates Blazium Discord on 0.8.x / 4.8.x: native Social SDK (presence,
   OAuth, friends, authenticate_with_server) and DiscordEmbeddedAppClient
   for Embedded Apps. Use for Discord identity or activity. Not generic web export.
 when-to-use: >
@@ -14,14 +14,14 @@ metadata:
 
 # Blazium Discord
 
-Two surfaces. Do not mix them. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Two surfaces. Do not mix them. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Nightly caveat:** `LoginClient` OAuth helpers are templates +
 https://docs.blazium.app — not C++/xml class docs in the installed editor.
 Native `Discord` and `DiscordEmbeddedAppClient` **are** in installed Blazium.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 | Surface | Module | When |
 |---------|--------|------|

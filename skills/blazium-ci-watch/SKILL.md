@@ -8,8 +8,8 @@ description: >
 
 # Blazium CI watch
 
-First failing job, then a focused fix. Baseline: **Blazium 0.6.x (Godot
-4.3.2 fork)**. Host-neutral: Claude, Cursor, and Codex use the same steps.
+First failing job, then a focused fix. Baseline: **Blazium 0.8.x (Godot
+4.8.x fork, branch `blazium_4.8`)**. Host-neutral: Claude, Cursor, and Codex use the same steps.
 
 Fix **one** actionable failure, then re-check. Do not refactor the matrix.
 

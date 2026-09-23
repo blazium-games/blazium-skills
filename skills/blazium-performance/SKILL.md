@@ -16,10 +16,10 @@ metadata:
 # Blazium performance
 
 JustAMCP + Autowork soak. Baseline: **Blazium
-0.6.x (Godot 4.3.2 fork)**.
+0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 Toolset: JustAMCP `profiling_tools`.
 `disciplines/performance-optimization` into this skill.
@@ -78,7 +78,7 @@ Do not treat a single screenshot as proof.
 
 ## Pitfalls
 
-- **Guessed a 4.7 profiler panel** → JustAMCP tools + 4.3.2 debugger.
+- **Guessed a 4.7 profiler panel** → JustAMCP tools + 4.8.x debugger.
 - **Rewrote a performance discipline book** → three tools + soak.
 - **Changed three systems at once** → no evidence.
 

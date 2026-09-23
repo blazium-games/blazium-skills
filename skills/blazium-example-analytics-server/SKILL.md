@@ -9,7 +9,7 @@ description: >
 
 # Blazium example analytics server
 
-Self-hosted Go reference ingest. Baseline: **Blazium 0.6.x (Godot 4.3.2
+Self-hosted Go reference ingest. Baseline: **Blazium 0.8.x (Godot 4.8.x
 fork)**. Not a hosted product. Official cloud reads stay on
 `blazium-games-mcp`. In-engine `Analytics` APIs stay on
 `blazium-crash-analytics`.

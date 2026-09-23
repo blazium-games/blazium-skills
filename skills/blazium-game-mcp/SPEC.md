@@ -5,7 +5,7 @@ pack: infra
 
 # blazium-game-mcp
 
-Engine baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. Do not apply Godot 4.7-only APIs.
+Engine baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. Use APIs that exist on `blazium_4.8`.
 
 ## Why
 
@@ -35,7 +35,7 @@ Mixing editor and game MCP is the number-one agent error. This skill exists so t
 
 ## Limits
 
-Do not invent classes, flags, or CLI verbs. Pin Blazium 0.6.x (Godot 4.3.2 fork). Prefer JustAMCP, Autowork, or `blazium-cli` over unverified editor clicks.
+Do not invent classes, flags, or CLI verbs. Pin Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`). Prefer JustAMCP, Autowork, or `blazium-cli` over unverified editor clicks.
 
 ## Related skills
 

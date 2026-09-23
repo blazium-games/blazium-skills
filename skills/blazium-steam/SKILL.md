@@ -1,7 +1,7 @@
 ---
 name: blazium-steam
 description: >
-  Integrates Blazium native Steam singleton on 0.6.x / 4.3.2 (not GodotSteam):
+  Integrates Blazium native Steam singleton on 0.8.x / 4.8.x (not GodotSteam):
   session tickets → JWT, achievements, stats, inventory. Use when
   authenticating with Steam or syncing Steamworks runtime data. Not SteamPipe.
 when-to-use: >
@@ -15,7 +15,7 @@ metadata:
 # Blazium Steam
 
 Native Steamworks (`blazium/modules/steam/` class `Steam`). **Not GodotSteam.**
-Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Nightly caveat:** `LoginClient` methods that wrap Steam tickets live in
 script templates and https://docs.blazium.app — not as C++/xml class docs
@@ -23,7 +23,7 @@ in the installed editor. The `Steam` singleton **is** in installed Blazium.
 Do not invent LoginClient APIs.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 The library loads at runtime. If missing, methods fail gracefully
 (`is_available()`). Publishing depots / steamcmd → growth pack

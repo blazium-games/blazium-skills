@@ -8,10 +8,10 @@ description: >
 
 # Blazium export
 
-Ship a normal player. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Ship a normal player. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 Prefer JustAMCP `export_tools` when the editor MCP is connected. Templates
 come from `blazium-cli install … --templates` or `blazium-cli templates
@@ -73,7 +73,7 @@ blazium-cli templates path
 
 Headless (editor binary, after templates exist): use the project's export
 preset via JustAMCP or the editor `--export-release` / `--export-debug`
-flags matching 4.3.2. Do not invent a `blazium export` subcommand.
+flags matching 4.8.x. Do not invent a `blazium export` subcommand.
 
 ## Pitfalls
 

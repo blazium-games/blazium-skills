@@ -8,8 +8,8 @@ description: >
 
 # Blazium Tiled importer
 
-Tiled → Blazium scenes / parser objects. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**. **Pick one pipeline:** `.tmx` / Tileson here, or
+Tiled → Blazium scenes / parser objects. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**. **Pick one pipeline:** `.tmx` / Tileson here, or
 native `TileMapLayer` paint in `blazium-tilemap`. Do not mix both on the
 same layer blindly.
 

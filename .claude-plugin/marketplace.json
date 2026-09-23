@@ -2,9 +2,9 @@
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "blazium-skills",
   "owner": { "name": "blazium" },
-  "version": "0.6.0",
+  "version": "0.8.0",
   "metadata": {
-    "description": "Blazium engine agent skills: infrastructure, engine, live services, export/toolchain, content intelligence, extra modules, and growth adapters. Baseline Blazium 0.6.x (Godot 4.3.2 fork)."
+    "description": "Blazium engine agent skills: infrastructure, engine, live services, export/toolchain, content intelligence, extra modules, and growth adapters. Baseline Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)."
   },
   "plugins": [
     {
@@ -27,7 +27,7 @@
     {
       "name": "blazium-engine",
       "source": "./",
-      "description": "Engine skills: languages, scenes, 2D/physics, presentation, resources, localization, and multiplayer core. Blazium 0.6.x (Godot 4.3.2 fork).",
+      "description": "Engine skills: languages, scenes, 2D/physics, presentation, resources, localization, and multiplayer core. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
       "strict": false,
       "skills": [
         "./skills/blazium-gdscript",
@@ -59,7 +59,7 @@
     {
       "name": "blazium-live-ops",
       "source": "./",
-      "description": "Identity and live services: login, JWT, lobby, Steam/Discord, ENet-WebRTC, dedicated ENet, RCON, Games cloud MCP, crash analytics. Blazium 0.6.x (Godot 4.3.2 fork).",
+      "description": "Identity and live services: login, JWT, lobby, Steam/Discord, ENet-WebRTC, dedicated ENet, RCON, Games cloud MCP, crash analytics. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
       "strict": false,
       "skills": [
         "./skills/blazium-services",
@@ -78,7 +78,7 @@
     {
       "name": "blazium-ship",
       "source": "./",
-      "description": "Export and toolchain: desktop/mobile/web export, GPL retro sidecar, specialty targets, GitHub Actions, CI watch, CLI, Hub, Crash Reporter, ColdStorage. Blazium 0.6.x (Godot 4.3.2 fork).",
+      "description": "Export and toolchain: desktop/mobile/web export, GPL retro sidecar, specialty targets, GitHub Actions, CI watch, CLI, Hub, Crash Reporter, ColdStorage. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
       "strict": false,
       "skills": [
         "./skills/blazium-export",
@@ -99,7 +99,7 @@
     {
       "name": "blazium-content",
       "source": "./",
-      "description": "Content intelligence: asset tags, semantic search, SQLite, GOAP, addons, official GDScript templates. Blazium 0.6.x (Godot 4.3.2 fork).",
+      "description": "Content intelligence: asset tags, semantic search, SQLite, GOAP, addons, official GDScript templates. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
       "strict": false,
       "skills": [
         "./skills/blazium-asset-tags",
@@ -115,7 +115,7 @@
     {
       "name": "blazium-modules",
       "source": "./",
-      "description": "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.6.x (Godot 4.3.2 fork).",
+      "description": "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
       "strict": false,
       "skills": [
         "./skills/blazium-config",
@@ -132,7 +132,7 @@
     {
       "name": "blazium-growth",
       "source": "./",
-      "description": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork).",
+      "description": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
       "strict": false,
       "skills": [
         "./skills/blazium-save-systems",
@@ -162,7 +162,7 @@
     {
       "name": "blazium",
       "source": "./",
-      "description": "Full bundle: router, MCP, Autowork, engine, live-ops, export/toolchain, content-intelligence, extra-module, and growth-adapter skills. Baseline Blazium 0.6.x (Godot 4.3.2 fork).",
+      "description": "Full bundle: router, MCP, Autowork, engine, live-ops, export/toolchain, content-intelligence, extra-module, and growth-adapter skills. Baseline Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
       "strict": false,
       "skills": [
         "./skills/blazium-router",

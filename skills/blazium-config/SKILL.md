@@ -9,10 +9,10 @@ description: >
 # Blazium config (ENV / INI)
 
 First-party `.env` and `.ini` — not `OS.get_environment` glue. Baseline:
-**Blazium 0.6.x (Godot 4.3.2 fork)**.
+**Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 - `ENV` singleton (`Engine.get_singleton("ENV")`) — module `dotenv/`
 - `DotIniFile` (RefCounted) — module `dotini/`

@@ -1,8 +1,8 @@
 ---
 name: blazium-resources
 description: >
-  Authors Blazium 0.6.x Resource / .tres data (items, stats, configs) on
-  Godot 4.3.2 with class_name and @export fields. Use when defining custom
+  Authors Blazium 0.8.x Resource / .tres data (items, stats, configs) on
+  Godot 4.8.x with class_name and @export fields. Use when defining custom
   Resource types or shared data assets. JustAMCP resource_tools
   (create_resource, read_resource_file, edit_resource_file). Not
   ScriptableObjects, CSV tables, or SQLite.
@@ -16,12 +16,12 @@ metadata:
 
 # Blazium resources
 
-`Resource` + `.tres` / `.res`. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+`Resource` + `.tres` / `.res`. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 JustAMCP: `resource_tools` (`create_resource`, `read_resource_file`,
 `edit_resource_file`).
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 

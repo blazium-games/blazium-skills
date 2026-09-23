@@ -10,11 +10,11 @@ description: >
 
 **Not in the default editor.** GDK is disabled in `config.py`. Verify the
 installed build (`ClassDB.class_exists("GDK")`) before writing calls.
-Do not write tutorials that assume it exists. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**.
+Do not write tutorials that assume it exists. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 Module: `blazium/modules/xbox_module/` — SCons `is_enabled()` returns
 **false**. Enable only with `module_xbox_module_enabled=yes` on

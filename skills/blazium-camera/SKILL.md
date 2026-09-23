@@ -9,13 +9,13 @@ description: >
 
 # Blazium camera
 
-Framing and follow. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Framing and follow. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 Use `Camera2D` / `Camera3D`. Do not hand-roll a follow rig when drag margins,
 limits, and position smoothing already cover the shot.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 

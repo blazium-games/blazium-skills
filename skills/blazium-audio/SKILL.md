@@ -1,8 +1,8 @@
 ---
 name: blazium-audio
 description: >
-  Routes Blazium audio (AudioStreamPlayer, buses, ducking) on 0.6.x / Godot
-  4.3.2. Use when adding SFX/music or mixer-style routing. Prefer JustAMCP
+  Routes Blazium audio (AudioStreamPlayer, buses, ducking) on 0.8.x / Godot
+  4.8.x. Use when adding SFX/music or mixer-style routing. Prefer JustAMCP
   audio_tools. Not interactive_music internals.
 when-to-use: >
   AudioStreamPlayer, audio bus, linear_to_db, add_audio_bus, ducking, SFX
@@ -13,10 +13,10 @@ metadata:
 
 # Blazium audio
 
-Volume is in dB. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. JustAMCP:
+Volume is in dB. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. JustAMCP:
 `get_audio_bus_layout`, `add_audio_bus`, `add_audio_player`.
 
-**Version drift:** inspect `config_version` / `features` in `project.blazium` (or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+**Version drift:** inspect `config_version` / `features` in `project.blazium` (or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 

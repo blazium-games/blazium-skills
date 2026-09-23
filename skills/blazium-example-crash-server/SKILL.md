@@ -9,7 +9,7 @@ description: >
 # Blazium example crash server
 
 Self-hosted Go reference ingest + Breakpad stackwalk. Baseline: **Blazium
-0.6.x (Godot 4.3.2 fork)**. Not a hosted product. Official sidecar install
+0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. Not a hosted product. Official sidecar install
 → `blazium-crash-reporter`. Recreate the consent UI →
 `blazium-example-crash-sidecar`. Cloud list → `blazium-games-mcp`.
 

@@ -1,8 +1,8 @@
 # Contributing to blazium-skills
 
 Canonical skills live in `skills/<name>/` with `SKILL.md` plus `SPEC.md`.
-Do not invent APIs, CLI verbs, or Godot 4.7-only calls. Baseline:
-**Blazium 0.6.x (Godot 4.3.2 fork)**.
+Do not invent APIs, CLI verbs, or calls that are not on `blazium_4.8`. Baseline:
+**Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 ## Community
 

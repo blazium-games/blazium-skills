@@ -1,21 +1,20 @@
 ---
 name: blazium-gdscript
 description: >
-  Writes typed GDScript on Blazium 0.6.x / Godot 4.3.2 (static types,
+  Writes typed GDScript on Blazium 0.8.x / Godot 4.8.x (static types,
   signals, await, class_name). Use when authoring or fixing .gd files.
-  Not C#, not Luau, not a scene layout skill, and not Godot 4.7-only syntax.
+  Not C#, not Luau, not a scene layout skill, and not non-`blazium_4.8` syntax.
 when-to-use: >
   GDScript, .gd, typed gdscript, class_name, signal, await, @onready,
-  @export, Godot 4.3.2 script
+  @export, Godot 4.8.x script
 metadata:
   author: blazium-games
-  short-description: Typed GDScript on Blazium 0.6.x / Godot 4.3.2
+  short-description: Typed GDScript on Blazium 0.8.x / Godot 4.8.x
 ---
 
 # Blazium GDScript
 
-Typed `.gd` on **Blazium 0.6.x (Godot 4.3.2 fork)**. Do not apply Godot
-4.7-only syntax. Inspect `config_version` / `features` in `project.blazium`
+Typed `.gd` on **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. Use APIs that exist on `blazium_4.8`. Inspect `config_version` / `features` in `project.blazium`
 (or `project.godot`) before treating the tree as stock Godot.
 
 ## When to use
@@ -31,7 +30,7 @@ Scene tree / packed scenes → `blazium-nodes-scenes`. Tests →
 
 On Grok, keep context small: read this file plus the one `.gd` being edited.
 Spawn `blazium-gdscript-specialist` for the script and `qa-tester` for
-Autowork. Child prompts must include the script path and the 4.3.2 pin.
+Autowork. Child prompts must include the script path and the 4.8.x pin.
 
 Edit with Grok file tools or JustAMCP `script_tools` when `:6506` is
 connected. Evidence is Autowork or `--headless` parse — not a screenshot
@@ -77,7 +76,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 ## Pitfalls
 
-- **Used Godot 4.7-only syntax** → stay on 4.3.2.
+- **Used non-`blazium_4.8` syntax** → stay on 4.8.x.
 - **Untyped public API** → annotate params and returns.
 - **Edited C# / Luau here** → wrong skill.
 - **Invented a ClassDB method** → check docs.blazium.app.

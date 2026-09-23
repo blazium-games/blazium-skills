@@ -1,7 +1,7 @@
 ---
 name: blazium-accessibility
 description: >
-  Makes a Blazium 0.6.x game remappable and readable: InputMap remaps, Theme
+  Makes a Blazium 0.8.x game remappable and readable: InputMap remaps, Theme
   font scale, contrast, and locale-safe copy via tr(). Use for accessibility
   pass, remapping, or scalable UI. Visual bible stays with art-director.
 when-to-use: >
@@ -14,13 +14,13 @@ metadata:
 
 # Blazium accessibility
 
-Players must remap, read, and play in their locale. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**. Use `InputMap`, `Theme` font size, and `tr()`.
+Players must remap, read, and play in their locale. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**. Use `InputMap`, `Theme` font size, and `tr()`.
 
 Do not invent a screen-reader plugin. Do not own the art bible.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 
@@ -83,7 +83,7 @@ Avoid color-only failure states: pair hue with an icon or label via `tr()`.
 - **Hardcoded "Press E"** → `tr()` and the current InputMap event.
 - **Contrast-only on one Theme color** → check hover/disabled too.
 - **Owned the sprite bible** → art-director.
-- **Invented a TTS singleton** → not in 4.3.2 core; say so.
+- **Invented a TTS singleton** → not in 4.8.x core; say so.
 
 ## Resources
 

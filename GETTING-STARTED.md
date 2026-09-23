@@ -1,6 +1,6 @@
 # Getting started — blazium-skills
 
-Agent skills for **Blazium 0.6.x (Godot 4.3.2 fork)**. GDScript-first.
+Agent skills for **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. GDScript-first.
 Same files load on Claude Code, Cursor, Codex, and Grok.
 
 ## Community

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "blazium-infra",
-  "version": "0.6.0",
+  "version": "0.8.0",
   "description": "Agent infrastructure: fingerprint Blazium, connect editor/game MCP, run Autowork, verify claims, bootstrap a project.",
   "author": {
     "name": "blazium"
@@ -27,7 +27,7 @@
         ],
         "websiteURL": "https://docs.blazium.app",
         "defaultPrompt": [
-          "Use Blazium Infra to work on a Blazium 0.6.x (Godot 4.3.2 fork) project.",
+          "Use Blazium Infra to work on a Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`) project.",
           "Agent infrastructure: fingerprint Blazium, connect editor/game MCP, run Autowork, verify claims, bootstrap a project."
         ]
       }

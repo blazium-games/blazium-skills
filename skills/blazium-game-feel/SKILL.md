@@ -1,7 +1,7 @@
 ---
 name: blazium-game-feel
 description: >
-  Adds juice on Blazium 0.6.x with Tween, AnimationPlayer, particles, and
+  Adds juice on Blazium 0.8.x with Tween, AnimationPlayer, particles, and
   camera punch (hit-stop, squash, screenshake). Use for feedback polish
   on an existing mover or Control. Movement controllers stay on
   blazium-2d-movement; clip libraries on blazium-animation.
@@ -15,8 +15,8 @@ metadata:
 
 # Blazium game feel
 
-Short feedback on hit, land, and UI press. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**. Use 4.3.2 `Tween`, `AnimationPlayer`,
+Short feedback on hit, land, and UI press. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**. Use 4.8.x `Tween`, `AnimationPlayer`,
 `GPUParticles2D` / `CPUParticles2D`, `Camera2D` offset.
 
 ## When to use
@@ -62,7 +62,7 @@ func punch_camera(cam: Camera2D, strength: float = 4.0) -> void:
 - **Rewrote `move_and_slide`** → `blazium-2d-movement`.
 - **Left camera `offset` dirty** → tween back to `Vector2.ZERO`.
 - **Forgot to restore `time_scale`** → game stays slow.
-- **Used Godot 4.7-only tweeners** → 4.3.2 `create_tween()` only.
+- **Used non-`blazium_4.8` tweeners** → 4.8.x `create_tween()` only.
 
 ## Related skills
 

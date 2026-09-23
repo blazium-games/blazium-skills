@@ -1,12 +1,12 @@
 # Blazium Skills
 
-Agent skills for the Blazium engine (Godot 4.3.2 fork, product **0.6.x**).
+Agent skills for the Blazium engine (Godot 4.8.x fork, product **0.8.x**).
 
-Each skill lives at `skills/<name>/` with a loadable `SKILL.md` and a `SPEC.md` reference. Do not apply Godot 4.7-only APIs. Prefer JustAMCP, Autowork, or `blazium-cli` over unverified editor clicks.
+Each skill lives at `skills/<name>/` with a loadable `SKILL.md` and a `SPEC.md` reference. Use APIs that exist on `blazium_4.8`. Prefer JustAMCP, Autowork, or `blazium-cli` over unverified editor clicks.
 
 [GETTING-STARTED.md](GETTING-STARTED.md) · [CONTRIBUTING.md](CONTRIBUTING.md)
 
-Skill packs publish their own semver to [skills.json](https://cdn.blazium.app/skills/skills.json). That product version is separate from the 0.6.x API baseline.
+Skill packs publish their own semver to [skills.json](https://cdn.blazium.app/skills/skills.json). That product version is separate from the 0.8.x API baseline.
 
 ## Community
 
@@ -23,7 +23,7 @@ Skill packs publish their own semver to [skills.json](https://cdn.blazium.app/sk
 | [Hub](https://github.com/blazium-games/blazium-hub) | Desktop companion; installers bundle the CLI | Linux and Windows, x86_64 and x86_32. Engine builds track `blazium_4.8` |
 | [Crash reporter](https://github.com/blazium-games/blazium_crash_reporter) | Sidecar UI for engine and Hub crash reports | Linux and Windows, x86_64 and x86_32. Catalog: [crash_reporter.json](https://cdn.blazium.app/crash_reporter/crash_reporter.json). Engine builds track `blazium_4.8` |
 | [Toolchain](https://github.com/blazium-games/blazium-toolchain) | PS1, PS2, N64, and Interactive DVD | Linux and Windows, x86_64 and x86_32. Catalog: [toolchain.json](https://cdn.blazium.app/toolchain/toolchain.json) |
-| [Skills](https://github.com/blazium-games/blazium-skills) | Agent skill packs for Claude, Cursor, Codex, and Grok | Own semver, separate from the 0.6.x API baseline. Catalog: [skills.json](https://cdn.blazium.app/skills/skills.json) |
+| [Skills](https://github.com/blazium-games/blazium-skills) | Agent skill packs for Claude, Cursor, Codex, and Grok | Own semver, separate from the 0.8.x API baseline. Catalog: [skills.json](https://cdn.blazium.app/skills/skills.json) |
 | [Subagents](https://github.com/blazium-games/blazium-subagents) | Studio roster that loads those skills | Own semver. Catalog: [subagents.json](https://cdn.blazium.app/subagents/subagents.json) |
 
 ## Install
@@ -89,7 +89,7 @@ codex plugin marketplace add blazium-games/blazium-skills
 
 | Skill | Outcome |
 |-------|---------|
-| [blazium-gdscript](skills/blazium-gdscript/SKILL.md) | GDScript 2.0 on 4.3.2 ([ref](skills/blazium-gdscript/SPEC.md)) |
+| [blazium-gdscript](skills/blazium-gdscript/SKILL.md) | GDScript 2.0 on 4.8.x ([ref](skills/blazium-gdscript/SPEC.md)) |
 | [blazium-luau](skills/blazium-luau/SKILL.md) | First-class Luau ([ref](skills/blazium-luau/SPEC.md)) |
 | [blazium-csharp](skills/blazium-csharp/SKILL.md) | C# scripts ([ref](skills/blazium-csharp/SPEC.md)) |
 | [blazium-nodes-scenes](skills/blazium-nodes-scenes/SKILL.md) | Scene trees and autoloads ([ref](skills/blazium-nodes-scenes/SPEC.md)) |

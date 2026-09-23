@@ -2,7 +2,7 @@
 name: blazium-animation
 description: >
   Authors AnimationPlayer clips, AnimationTree states, and Tween one-shots on
-  Blazium 0.6.x / Godot 4.3.2. Use when keyframing properties, wiring state
+  Blazium 0.8.x / Godot 4.8.x. Use when keyframing properties, wiring state
   machines, or fading UI. Prefer JustAMCP animation_tools. SpriteFrames
   flipbooks go to blazium-sprites. Not shaders that scroll UVs.
 when-to-use: >
@@ -10,17 +10,17 @@ when-to-use: >
   UI fade, animation_finished
 metadata:
   author: blazium-games
-  short-description: AnimationPlayer, AnimationTree, and Tween on 4.3.2
+  short-description: AnimationPlayer, AnimationTree, and Tween on 4.8.x
 ---
 
 # Blazium animation
 
-Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. JustAMCP: `create_animation`,
+Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. JustAMCP: `create_animation`,
 `set_animation_keyframe`, `add_animation_track`, `configure_sprite_frames`.
-Do not apply Godot 4.7-only AnimationMixer APIs.
+Do not apply non-`blazium_4.8` AnimationMixer APIs.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 
@@ -87,7 +87,7 @@ func test_intro_finishes() -> void:
 ## Resources
 
 - JustAMCP: `animation_tools`
-- Docs: https://docs.blazium.app (AnimationPlayer, 4.3.2-safe)
+- Docs: https://docs.blazium.app (AnimationPlayer, `blazium_4.8`-safe)
 
 ## Related skills
 

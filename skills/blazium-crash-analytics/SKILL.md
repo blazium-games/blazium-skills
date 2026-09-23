@@ -8,12 +8,12 @@ description: >
 
 # Blazium crash analytics
 
-Runtime telemetry + crash dumps. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Runtime telemetry + crash dumps. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Do not disable consent prompts.** Do not implement a custom Breakpad.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 Singletons: `Analytics` (`blazium/modules/analytics/`), `CrashReporter`
 (`blazium/modules/crash_reporter/`). Shared identity: `get_app_id()` /

@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "blazium-modules",
-  "version": "0.6.0",
-  "description": "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.6.x (Godot 4.3.2 fork).",
+  "version": "0.8.0",
+  "description": "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
   "author": {
     "name": "blazium"
   },
@@ -17,8 +17,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Blazium Modules",
-        "shortDescription": "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.6.x (Godot 4.3.2 fork).",
-        "longDescription": "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.6.x (Godot 4.3.2 fork).",
+        "shortDescription": "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
+        "longDescription": "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
         "developerName": "blazium",
         "category": "Developer Tools",
         "capabilities": [
@@ -27,8 +27,8 @@
         ],
         "websiteURL": "https://docs.blazium.app",
         "defaultPrompt": [
-          "Use Blazium Modules to work on a Blazium 0.6.x (Godot 4.3.2 fork) project.",
-          "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.6.x (Godot 4.3.2 fork)."
+          "Use Blazium Modules to work on a Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`) project.",
+          "Extra modules: ENV/INI, CSV, HTTPServer, Socket.IO, streaming, Xbox GDK, multiuser editor, BigNum, GIF. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)."
         ]
       }
     }

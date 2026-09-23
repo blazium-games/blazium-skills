@@ -1,7 +1,7 @@
 ---
 name: blazium-physics
 description: >
-  Sets up Blazium 0.6.x / Godot 4.3.2 collision layers, masks, Area2D/Area3D
+  Sets up Blazium 0.8.x / Godot 4.8.x collision layers, masks, Area2D/Area3D
   triggers, CharacterBody/RigidBody/StaticBody, and PhysicsDirectSpaceState
   ray / shape queries. Use when bodies overlap, raycasts miss, monitoring is
   off, or imported GLB collision is trimesh. Prefer JustAMCP physics_tools
@@ -13,17 +13,16 @@ when-to-use: >
   one-way platform collider, ConcavePolygonShape3D
 metadata:
   author: blazium-games
-  short-description: Layers, masks, Areas, and space-state queries on 4.3.2
+  short-description: Layers, masks, Areas, and space-state queries on 4.8.x
 ---
 
 # Blazium physics
 
-Layers and masks are the usual silent bug. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**. Do not invent Unity layers. Do not apply Godot
-4.7-only calls.
+Layers and masks are the usual silent bug. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**. Do not invent Unity layers. Use APIs that exist on `blazium_4.8`.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 
@@ -93,7 +92,7 @@ func _ready() -> void:
 Static world / character / hitboxes on **separate layers**.
 `Area2D`/`Area3D` for triggers; bodies for blocking.
 
-### Ray / shape query (4.3.2)
+### Ray / shape query (4.8.x)
 
 ```gdscript
 func first_hit(from: Vector2, to: Vector2, mask: int) -> Dictionary:
@@ -134,7 +133,7 @@ JustAMCP: `setup_collision` / `setup_physics_body`, then
 ## Resources
 
 - JustAMCP: `physics_tools` (`setup_collision`, `setup_physics_body`, `validate_physics_setup`)
-- Docs: https://docs.blazium.app (PhysicsDirectSpaceState2D, 4.3.2-safe)
+- Docs: https://docs.blazium.app (PhysicsDirectSpaceState2D, `blazium_4.8`-safe)
 
 ## Related skills
 

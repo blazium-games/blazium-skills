@@ -5,7 +5,7 @@ pack: growth
 
 # blazium-balance
 
-Economy and combat tables. Engine baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. Do not apply Godot 4.7-only APIs.
+Economy and combat tables. Engine baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. Use APIs that exist on `blazium_4.8`.
 
 ## Why
 
@@ -33,7 +33,7 @@ Distinct from `blazium-clicker` and `blazium-genre-idle`.
 
 ## Limits
 
-Do not invent an economy service. Pin Blazium 0.6.x (Godot 4.3.2 fork).
+Do not invent an economy service. Pin Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).
 
 ## Related skills
 

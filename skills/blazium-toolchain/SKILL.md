@@ -10,7 +10,7 @@ description: >
 # Blazium toolchain
 
 Retro compilers are a **separate GPL binary**. The editor only spawns it.
-Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. Do not vendor GPL sources
+Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. Do not vendor GPL sources
 into the engine or this skill pack.
 
 Install the sidecar: `blazium-cli update apply --product toolchain`.

@@ -1,8 +1,8 @@
 {
   "interface": {
     "displayName": "Blazium Live Ops",
-    "shortDescription": "Identity and live services: login, JWT, lobby, Steam/Discord, ENet-WebRTC, dedicated ENet, RCON, Games cloud MCP, crash analytics. Blazium 0.6.x (Godot 4.3.2 fork).",
-    "longDescription": "Identity and live services: login, JWT, lobby, Steam/Discord, ENet-WebRTC, dedicated ENet, RCON, Games cloud MCP, crash analytics. Blazium 0.6.x (Godot 4.3.2 fork).",
+    "shortDescription": "Identity and live services: login, JWT, lobby, Steam/Discord, ENet-WebRTC, dedicated ENet, RCON, Games cloud MCP, crash analytics. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
+    "longDescription": "Identity and live services: login, JWT, lobby, Steam/Discord, ENet-WebRTC, dedicated ENet, RCON, Games cloud MCP, crash analytics. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
     "developerName": "blazium",
     "category": "Developer Tools",
     "capabilities": [
@@ -11,8 +11,8 @@
     ],
     "websiteURL": "https://docs.blazium.app",
     "defaultPrompt": [
-      "Use Blazium Live Ops to work on a Blazium 0.6.x (Godot 4.3.2 fork) project.",
-      "Identity and live services: login, JWT, lobby, Steam/Discord, ENet-WebRTC, dedicated ENet, RCON, Games cloud MCP, crash analytics. Blazium 0.6.x (Godot 4.3.2 fork)."
+      "Use Blazium Live Ops to work on a Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`) project.",
+      "Identity and live services: login, JWT, lobby, Steam/Discord, ENet-WebRTC, dedicated ENet, RCON, Games cloud MCP, crash analytics. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)."
     ]
   }
 }

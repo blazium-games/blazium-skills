@@ -1,7 +1,7 @@
 ---
 name: blazium-genre-rpg
 description: >
-  Composes an RPG from pinned Blazium 0.6.x skills (resources, localization,
+  Composes an RPG from pinned Blazium 0.8.x skills (resources, localization,
   UI, GOAP, SQLite). Use when the request is party, quest, stats, inventory,
   or dialogue-driven RPG. Not a card-only combat kit and not a VN director.
 when-to-use: >
@@ -13,8 +13,8 @@ metadata:
 
 # Blazium genre: RPG
 
-Thin adapter — not an RPG framework. Baseline: **Blazium 0.6.x (Godot 4.3.2
-fork)**. Inspect `config_version` / `features`; keep 4.3.2-safe APIs unless
+Thin adapter — not an RPG framework. Baseline: **Blazium 0.8.x (Godot 4.8.x
+fork)**. Inspect `config_version` / `features`; keep `blazium_4.8`-safe APIs unless
 the user asks to migrate.
 
 Do not fork a studio-clone skill pack.

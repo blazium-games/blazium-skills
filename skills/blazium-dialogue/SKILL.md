@@ -1,7 +1,7 @@
 ---
 name: blazium-dialogue
 description: >
-  Authors a data-driven dialogue graph on Blazium 0.6.x (.tres or JSON nodes
+  Authors a data-driven dialogue graph on Blazium 0.8.x (.tres or JSON nodes
   with lines, choices, and flags). All strings go through tr(). Use for
   branching talk, not a full visual-novel scene flow. Do not require Ink or Yarn.
 when-to-use: >
@@ -15,14 +15,14 @@ metadata:
 # Blazium dialogue
 
 A graph of lines, choices, and flags — not a VN director. Baseline:
-**Blazium 0.6.x (Godot 4.3.2 fork)**. Store the graph as a `Resource` `.tres`
+**Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. Store the graph as a `Resource` `.tres`
 or JSON under `res://`. Every player-facing string is `tr("key")`.
 
 Ink / Yarn are **optional addons** only (`blazium-addons`). Do not require
 them. Do not invent a runtime DSL.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 

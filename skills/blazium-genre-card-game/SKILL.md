@@ -1,7 +1,7 @@
 ---
 name: blazium-genre-card-game
 description: >
-  Composes a deck/hand/table card game from pinned Blazium 0.6.x skills
+  Composes a deck/hand/table card game from pinned Blazium 0.8.x skills
   (resources, UI, CSV, localization). Use when the request is deckbuilder,
   hand of cards, play/resolve, collectible table, or card combat kit. Not an
   RPG quest framework and not a visual-novel director.
@@ -15,8 +15,8 @@ metadata:
 
 # Blazium genre: card game
 
-Thin adapter — not a card engine. Baseline: **Blazium 0.6.x (Godot 4.3.2
-fork)**. Inspect `config_version` / `features`; keep 4.3.2-safe APIs unless
+Thin adapter — not a card engine. Baseline: **Blazium 0.8.x (Godot 4.8.x
+fork)**. Inspect `config_version` / `features`; keep `blazium_4.8`-safe APIs unless
 the user asks to migrate.
 
 Do not fork a studio-clone skill pack. Compose pins; implement one pin per

@@ -1,8 +1,8 @@
 ---
 name: blazium-tilemap
 description: >
-  Builds Blazium 0.6.x 2D tile worlds with TileMapLayer and TileSet on
-  Godot 4.3.2. Use when painting cells, autotile, terrains, or JustAMCP
+  Builds Blazium 0.8.x 2D tile worlds with TileMapLayer and TileSet on
+  Godot 4.8.x. Use when painting cells, autotile, terrains, or JustAMCP
   tilemap_tools (tilemap_set_cell, tilemap_fill_rect, tilemap_configure_atlas,
   validate_tilemap_structure). Tiled TMX/Tileson import → blazium-tiled.
   Not a player controller.
@@ -16,12 +16,12 @@ metadata:
 
 # Blazium tilemap
 
-Blazium 0.6.x uses **`TileMapLayer`** (not the old single `TileMap` as the
+Blazium 0.8.x uses **`TileMapLayer`** (not the old single `TileMap` as the
 primary API). **Pick one pipeline:** paint cells here, or import TMX via
 `blazium-tiled`. Do not mix both on the same layer blindly.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 

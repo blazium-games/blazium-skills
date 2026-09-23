@@ -41,7 +41,7 @@ jobs:
         with:
           personal_github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Finalize version (0.1.0 baseline + CDN monotonic)
+      - name: Finalize version (0.8.0 baseline + CDN monotonic)
         id: finalize
         run: |
           set -euo pipefail
@@ -49,7 +49,7 @@ jobs:
             CANDIDATE="${GITHUB_REF#refs/tags/v}"
           else
             COMPUTED="${{ steps.version.outputs.simple_version }}"
-            BASE="0.1.0"
+            BASE="0.8.0"
             CDN_LATEST="$(curl -fsSL https://cdn.blazium.app/skills/skills.json | jq -r '.latest // empty' || true)"
             if [[ "$CDN_LATEST" == "null" ]]; then
               CDN_LATEST=""

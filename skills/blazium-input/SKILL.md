@@ -1,8 +1,8 @@
 ---
 name: blazium-input
 description: >
-  Configures Blazium 0.6.x InputMap actions, remapping, deadzones, and
-  multi-device bindings on Godot 4.3.2. Use when adding jump/move_* actions,
+  Configures Blazium 0.8.x InputMap actions, remapping, deadzones, and
+  multi-device bindings on Godot 4.8.x. Use when adding jump/move_* actions,
   rebinding, gamepad axes, or JustAMCP input_tools (simulate_action,
   simulate_key, input_record). Not movement math and not Autowork
   AutoworkInputSender setup.
@@ -16,9 +16,9 @@ metadata:
 
 # Blazium input
 
-InputMap is first-class. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+InputMap is first-class. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 Inspect `config_version` / `features` in `project.blazium` (or
-`project.godot`). Keep 4.3.2-safe `InputEvent*` types unless the user asks
+`project.godot`). Keep `blazium_4.8`-safe `InputEvent*` types unless the user asks
 to migrate.
 
 JustAMCP: `simulate_key`, `simulate_mouse_click`, `simulate_action`,
@@ -45,7 +45,7 @@ the Input Map dock.
 ## Workflow
 
 1. **Inspect.** `blazium://input_map` or ProjectSettings Input Map.
-2. **Add actions** with keyboard/gamepad events (4.3.2 InputEvent types).
+2. **Add actions** with keyboard/gamepad events (4.8.x InputEvent types).
 3. **Read** with `Input.is_action_pressed` / `get_axis` / `get_vector`.
 4. **Verify.** MCP `simulate_action` in play mode or Autowork InputSender.
 5. **Handoff.** Action names + devices bound.

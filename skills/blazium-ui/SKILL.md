@@ -1,8 +1,8 @@
 ---
 name: blazium-ui
 description: >
-  Builds Blazium 0.6.x Control UI (anchors, Containers, Theme, focus) on
-  Godot 4.3.2. Use for HUDs, menus, layout, and JustAMCP theme_tools
+  Builds Blazium 0.8.x Control UI (anchors, Containers, Theme, focus) on
+  Godot 4.8.x. Use for HUDs, menus, layout, and JustAMCP theme_tools
   (create_theme, set_control_theme_color, setup_control,
   runtime_find_ui_elements). Prefer Label / RichTextLabel. Not InputMap
   and not localization tables.
@@ -16,12 +16,12 @@ metadata:
 
 # Blazium UI
 
-Control nodes — not UITK/uGUI/IMGUI. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Control nodes — not UITK/uGUI/IMGUI. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 JustAMCP: `theme_tools` (`create_theme`, `set_control_theme_color`,
 `setup_control`), prompt `blazium_ui_scaffolder`.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`.
-Keep 4.3.2-safe APIs unless the user asks to migrate.
+Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 

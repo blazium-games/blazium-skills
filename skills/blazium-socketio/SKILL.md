@@ -8,7 +8,7 @@ description: >
 
 # Blazium Socket.IO
 
-In-engine **client**. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+In-engine **client**. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 Module: `blazium/modules/socketio/` — singleton `SocketIOClient`,
 `SocketIONamespace`.

@@ -12,8 +12,8 @@ description: >
 
 # Blazium MCP (JustAMCP editor)
 
-Connect and discover the **editor** JustAMCP catalog. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**.
+Connect and discover the **editor** JustAMCP catalog. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 Server: Streamable HTTP `POST http://127.0.0.1:6506/mcp`  
 Name: `blazium-mcp-server`  

@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "blazium",
-  "version": "0.6.0",
-  "description": "Full bundle: router, MCP, Autowork, engine, live-ops, export/toolchain, content-intelligence, extra-module, and growth-adapter skills. Baseline Blazium 0.6.x (Godot 4.3.2 fork).",
+  "version": "0.8.0",
+  "description": "Full bundle: router, MCP, Autowork, engine, live-ops, export/toolchain, content-intelligence, extra-module, and growth-adapter skills. Baseline Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
   "author": {
     "name": "blazium"
   },
@@ -17,8 +17,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Blazium",
-        "shortDescription": "Full bundle: router, MCP, Autowork, engine, live-ops, export/toolchain, content-intelligence, extra-module, and growth-adapter skills. Baseline Blazium 0.6.x (Godot 4.3.2 fork).",
-        "longDescription": "Full bundle: router, MCP, Autowork, engine, live-ops, export/toolchain, content-intelligence, extra-module, and growth-adapter skills. Baseline Blazium 0.6.x (Godot 4.3.2 fork).",
+        "shortDescription": "Full bundle: router, MCP, Autowork, engine, live-ops, export/toolchain, content-intelligence, extra-module, and growth-adapter skills. Baseline Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
+        "longDescription": "Full bundle: router, MCP, Autowork, engine, live-ops, export/toolchain, content-intelligence, extra-module, and growth-adapter skills. Baseline Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
         "developerName": "blazium",
         "category": "Developer Tools",
         "capabilities": [
@@ -27,8 +27,8 @@
         ],
         "websiteURL": "https://docs.blazium.app",
         "defaultPrompt": [
-          "Use Blazium to work on a Blazium 0.6.x (Godot 4.3.2 fork) project.",
-          "Full bundle: router, MCP, Autowork, engine, live-ops, export/toolchain, content-intelligence, extra-module, and growth-adapter skills. Baseline Blazium 0.6.x (Godot 4.3.2 fork)."
+          "Use Blazium to work on a Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`) project.",
+          "Full bundle: router, MCP, Autowork, engine, live-ops, export/toolchain, content-intelligence, extra-module, and growth-adapter skills. Baseline Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)."
         ]
       }
     }

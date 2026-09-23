@@ -10,8 +10,8 @@ description: >
 # Blazium Router
 
 Fingerprint a Blazium project, classify the task, and load the **minimal** skill
-set. Dispatch only — do not re-teach APIs. Engine baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**. Do not apply Godot 4.7-only APIs.
+set. Dispatch only — do not re-teach APIs. Engine baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**. Use APIs that exist on `blazium_4.8`.
 
 Detect `project.blazium` first. If it is a Blazium project, stay in this pack.
 

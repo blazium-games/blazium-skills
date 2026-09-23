@@ -8,7 +8,7 @@ description: >
 
 # Blazium Crash Reporter
 
-Official sidecar UI. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Official sidecar UI. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 This binary does **not** contain Breakpad. The engine writes
 `{crash-dir}/{id}.dmp` plus `{id}.json`. The sidecar only presents those

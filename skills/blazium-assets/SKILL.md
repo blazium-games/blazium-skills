@@ -9,7 +9,7 @@ description: >
 
 # Blazium assets
 
-Import settings and slice margins. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Import settings and slice margins. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 Flipbook animations stay on `blazium-sprites`. This skill owns the file
 landing in `res://`, the filter, and stretchable frames.

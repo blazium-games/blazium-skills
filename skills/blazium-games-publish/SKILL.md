@@ -14,11 +14,11 @@ metadata:
 
 # Blazium Games publish
 
-First-party store checklist — not JustAMCP. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**.
+First-party store checklist — not JustAMCP. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 Tools live on `https://mcp.blazium.games/mcp`. Full tool list:
 `blazium-games-mcp`. This skill is the **ship a page** order.

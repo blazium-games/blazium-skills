@@ -2,18 +2,18 @@
 name: blazium-shaders
 description: >
   Writes Godot Shading Language (.gdshader) canvas_item and spatial shaders on
-  Blazium 0.6.x. Use when authoring or assigning shaders. Prefer JustAMCP
+  Blazium 0.8.x. Use when authoring or assigning shaders. Prefer JustAMCP
   shader_tools.
 ---
 
 # Blazium shaders
 
-Text `.gdshader` only. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Text `.gdshader` only. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 JustAMCP: `create_shader`, `edit_shader`, `assign_shader_material`,
 `set_shader_param`. Prompt: `blazium_shader_expert`.
 
-**Version drift:** inspect `config_version` / `features` in `project.blazium` (or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+**Version drift:** inspect `config_version` / `features` in `project.blazium` (or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 
@@ -50,7 +50,7 @@ JustAMCP: `create_shader` / `edit_shader`, then `assign_shader_material` and
 
 - **Wrote HLSL** → Godot SL only (`.gdshader`).
 - **Wrong shader_type** → `canvas_item` vs `spatial`.
-- **Copied 4.7-only built-ins** → check 4.3.2 docs via `docs_search`.
+- **Copied built-ins that are not on `blazium_4.8`** → check 4.8.x docs via `docs_search`.
 - **Uniform name mismatch in `set_shader_param`** → silent no-op. Match the
   shader `uniform` identifier exactly.
 

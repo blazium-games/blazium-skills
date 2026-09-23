@@ -5,7 +5,7 @@ pack: growth
 
 # blazium-playtest
 
-Play session notes and one regression assert. Engine baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. Do not apply Godot 4.7-only APIs.
+Play session notes and one regression assert. Engine baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. Use APIs that exist on `blazium_4.8`.
 
 ## Why
 
@@ -33,7 +33,7 @@ Distinct from `blazium-autowork` (how to write tests) and `blazium-verify` (verd
 
 ## Limits
 
-Do not invent a test framework. Pin Blazium 0.6.x (Godot 4.3.2 fork).
+Do not invent a test framework. Pin Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).
 
 ## Related skills
 

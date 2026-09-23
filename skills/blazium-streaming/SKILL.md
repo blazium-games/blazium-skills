@@ -8,11 +8,11 @@ description: >
 
 # Blazium streaming
 
-One streamer loop — not five skills. Baseline: **Blazium 0.6.x (Godot 4.3.2
+One streamer loop — not five skills. Baseline: **Blazium 0.8.x (Godot 4.8.x
 fork)**.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 | Job | Module / classes |
 |-----|------------------|

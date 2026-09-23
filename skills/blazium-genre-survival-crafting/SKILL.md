@@ -1,7 +1,7 @@
 ---
 name: blazium-genre-survival-crafting
 description: >
-  Composes a gather/craft/needs loop from pinned Blazium 0.6.x skills
+  Composes a gather/craft/needs loop from pinned Blazium 0.8.x skills
   (resources, SQLite, 3D). Use when the request is survival, crafting,
   hunger, heat, recipe, or base piece. Not a shop-only idle and not a pure
   FPS kit.
@@ -15,8 +15,8 @@ metadata:
 
 # Blazium genre: survival / crafting
 
-Thin adapter — not a survival framework. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**. Inspect `config_version` / `features`; keep 4.3.2-safe
+Thin adapter — not a survival framework. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**. Inspect `config_version` / `features`; keep `blazium_4.8`-safe
 APIs unless the user asks to migrate.
 
 Do not fork a studio-clone skill pack. Compose pins; implement one pin per
@@ -86,7 +86,7 @@ Do not invent Godot 4.7 voxel APIs.
 ## Pitfalls
 
 - **Wrote a custom binary save** → `blazium-sqlite`.
-- **Godot 4.7 Voxel APIs** → not in 4.3.2; stay on meshes/grids you have.
+- **Godot 4.7 Voxel APIs** → not in 4.8.x; stay on meshes/grids you have.
 - **Rewrote a studio survival pack** → compose pins.
 - **Saved world state in `res://`** → `user://` only.
 

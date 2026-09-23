@@ -8,11 +8,11 @@ description: >
 
 # Blazium semantic search
 
-Query the index — do not `search_in_files` forever. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**.
+Query the index — do not `search_in_files` forever. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 Tags are the index convention (`blazium-asset-tags`). This skill queries
 `SemanticAssetIndex` via JustAMCP `semantic_search_tools`.

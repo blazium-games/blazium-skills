@@ -8,8 +8,8 @@ description: >
 # Replace with skill title
 
 Deliver the outcome in one sentence. State the baseline version for new projects:
-**Blazium 0.6.x (Godot 4.3.2 fork)**. Preserve an existing project's pinned version
-unless migration is requested. Do not apply Godot 4.7-only APIs.
+**Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. Preserve an existing project's pinned version
+unless migration is requested. Use APIs that exist on `blazium_4.8`.
 
 ## When to use
 

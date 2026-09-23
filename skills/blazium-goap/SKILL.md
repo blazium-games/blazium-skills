@@ -8,11 +8,11 @@ description: >
 
 # Blazium GOAP
 
-Native planner. Baseline: **Blazium 0.6.x (Godot 4.3.2
+Native planner. Baseline: **Blazium 0.8.x (Godot 4.8.x
 fork)**.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 Module: `blazium/modules/goap/` — `BlaziumGoapAgent`, `BlaziumGoapAction`,
 `BlaziumGoapGoal`, `BlaziumGoapWorldState`, `BlaziumGoapActionPlanner`.

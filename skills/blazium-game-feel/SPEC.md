@@ -5,8 +5,8 @@ pack: growth
 
 # blazium-game-feel
 
-Juice with Tween / particles / camera punch. Engine baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**. Do not apply Godot 4.7-only APIs.
+Juice with Tween / particles / camera punch. Engine baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**. Use APIs that exist on `blazium_4.8`.
 
 ## Why
 
@@ -15,7 +15,7 @@ punches only.
 
 ## What
 
-Hit-stop, squash, screenshake, particle bursts on 4.3.2 nodes.
+Hit-stop, squash, screenshake, particle bursts on 4.8.x nodes.
 
 **Non-goals:** CharacterBody controllers, AnimationTree libraries, shaders.
 
@@ -31,11 +31,11 @@ Distinct from `blazium-2d-movement` (math) and `blazium-animation` (clips).
 
 ## Sources
 
-- Blazium: `Tween`, `Camera2D`, particles (4.3.2)
+- Blazium: `Tween`, `Camera2D`, particles (4.8.x)
 
 ## Limits
 
-Do not invent classes, flags, or CLI verbs. Pin Blazium 0.6.x (Godot 4.3.2 fork). Prefer JustAMCP, Autowork, or `blazium-cli` over unverified editor clicks.
+Do not invent classes, flags, or CLI verbs. Pin Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`). Prefer JustAMCP, Autowork, or `blazium-cli` over unverified editor clicks.
 
 ## Related skills
 

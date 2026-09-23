@@ -1,16 +1,16 @@
 ---
 name: blazium-sprites
 description: >
-  Sets up Blazium 2D sprite atlases (AtlasTexture, SpriteFrames) on 4.3.2.
+  Sets up Blazium 2D sprite atlases (AtlasTexture, SpriteFrames) on 4.8.x.
   Use when slicing sprites, building SpriteFrames, or packing atlases. Not GIF
   (blazium-gif) and not TileSet terrains (blazium-tilemap).
 ---
 
 # Blazium sprites
 
-Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
-**Version drift:** inspect `config_version` / `features` in `project.blazium` (or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+**Version drift:** inspect `config_version` / `features` in `project.blazium` (or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 

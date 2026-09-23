@@ -9,8 +9,8 @@ description: >
 
 # Blazium playtest
 
-Session notes that become one regression. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**.
+Session notes that become one regression. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 Do not invent a second test runner. The assert is Autowork
 (`blazium-autowork`). A pass/fail claim about the product is

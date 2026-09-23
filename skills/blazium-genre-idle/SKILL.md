@@ -1,7 +1,7 @@
 ---
 name: blazium-genre-idle
 description: >
-  Composes an idle or incremental clicker from pinned Blazium 0.6.x skills
+  Composes an idle or incremental clicker from pinned Blazium 0.8.x skills
   (BlaziumBigNum, user:// saves, juice, HUD, CSV balance). Use when the
   request is idle game, incremental, cookie clicker, prestige, or offline
   earnings. Load this adapter plus one pin at a time. Not BigNum-only and
@@ -16,8 +16,8 @@ metadata:
 
 # Blazium genre: idle
 
-Thin adapter — not an idle framework. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**. Inspect `config_version` / `features`; keep 4.3.2-safe
+Thin adapter — not an idle framework. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**. Inspect `config_version` / `features`; keep `blazium_4.8`-safe
 APIs unless the user asks to migrate.
 
 Do not fork a studio-clone skill pack. Compose pins; implement one pin per
@@ -38,7 +38,7 @@ turn.
 On Grok, keep context small: read this file, then **one** pin `SKILL.md`.
 Spawn `systems-designer` or `economy-designer` for the loop and
 `blazium-gdscript-specialist` for the HUD script. Child prompts must
-include scene path, save path (`user://`), and the 4.3.2 pin. Do not dump
+include scene path, save path (`user://`), and the 4.8.x pin. Do not dump
 the catalog.
 
 Prefer project files over memory. Evidence is Autowork (BigNum round-trip
@@ -68,7 +68,7 @@ Prefer project files over memory. Evidence is Autowork (BigNum round-trip
 | `blazium-game-feel` | click punch / number pop |
 | `blazium-autowork` | tests |
 
-### Scene sketch (4.3.2)
+### Scene sketch (4.8.x)
 
 `Control` HUD (currency `Label`, click `Button`, shop list) + one Autoload
 economy node that owns `BlaziumBigNum` fields. Persist with

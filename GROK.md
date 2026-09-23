@@ -3,8 +3,8 @@
 How Grok should load and use this catalog. Same files as Claude, Cursor, and
 Codex. No invented marketplace schema.
 
-Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. GDScript-first. Do not apply
-Godot 4.7-only APIs. Do not invent JustAMCP tools, `blazium-cli` verbs, or
+Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. GDScript-first. Do not apply
+non-`blazium_4.8` APIs. Do not invent JustAMCP tools, `blazium-cli` verbs, or
 classes.
 
 ## Community
@@ -108,7 +108,7 @@ Thin descriptions miss. Host-specific browser harnesses do not belong here.
 ## Workflow every skill already encodes
 
 1. **Inspect.** Version pin, existing files, current conventions.
-2. **Choose.** Smallest 4.3.2-safe approach. State assumptions.
+2. **Choose.** Smallest `blazium_4.8`-safe approach. State assumptions.
 3. **Implement.** Project patterns. No invented APIs.
 4. **Verify.** Autowork, JustAMCP, or CLI `--json`.
 5. **Handoff.** Changed files, evidence, caveats, next skill.
@@ -125,7 +125,7 @@ When Grok finishes a Blazium task, report:
 
 ## Quality bar
 
-- Pin **0.6.x / 4.3.2**. Reject Godot 4.7-only APIs.
+- Pin **0.8.x / 4.8.x**. Use APIs that exist on `blazium_4.8`.
 - Skills own verbs. Do not invent `blazium-cli hub install`.
 - Catalogs live in `SPEC.md` / `references/`. Keep `SKILL.md` under ~500 lines.
 - Official docs links only: `https://docs.blazium.app` or `https://cdn.blazium.app`.

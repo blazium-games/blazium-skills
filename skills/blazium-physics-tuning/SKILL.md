@@ -8,14 +8,14 @@ description: >
 
 # Blazium physics tuning
 
-How motion feels after collision already works. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**.
+How motion feels after collision already works. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 Layers, masks, and queries stay on `blazium-physics`. This skill only changes
 gravity, `PhysicsMaterial` friction/bounce, and body damping.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 

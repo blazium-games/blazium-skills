@@ -1,7 +1,7 @@
 ---
 name: blazium-lobby
 description: >
-  Implements Blazium matchmaking rooms on 0.6.x / 4.3.2 (LobbyClient /
+  Implements Blazium matchmaking rooms on 0.8.x / 4.8.x (LobbyClient /
   ScriptedLobbyClient, reconnect tokens in user://blazium.cfg). Use after a
   JWT from blazium-services when creating, joining, leaving, or reconnecting.
   Not raw @rpc, not WebRTCEnetSession, not ENetServer.
@@ -15,15 +15,15 @@ metadata:
 
 # Blazium Lobby
 
-Session layer after JWT — not transport. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**.
+Session layer after JWT — not transport. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Nightly caveat:** `LoginClient` / `LobbyClient` / `MasterServerClient` are
 script templates and https://docs.blazium.app — not C++/xml class docs in the installed editor. Copy
 only template methods. Do not invent APIs. Verify against the installed nightly.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 JustAMCP prompt `blazium_multiplayer_architect` can plan netcode; stay on this
 skill for rooms. After a room exists, assign peers via `blazium-enet-webrtc`

@@ -1,7 +1,7 @@
 ---
 name: blazium-genre-tower-defense
 description: >
-  Composes a path-follow wave tower defense from pinned Blazium 0.6.x skills
+  Composes a path-follow wave tower defense from pinned Blazium 0.8.x skills
   (navigation, tilemap, resources, UI). Use when the request is TD, waves,
   creep path, tower placement, or spend-to-build. Not an RTS sandbox and not
   an idle numbers kit.
@@ -15,8 +15,8 @@ metadata:
 
 # Blazium genre: tower defense
 
-Thin adapter — not a TD framework. Baseline: **Blazium 0.6.x (Godot 4.3.2
-fork)**. Inspect `config_version` / `features`; keep 4.3.2-safe APIs unless
+Thin adapter — not a TD framework. Baseline: **Blazium 0.8.x (Godot 4.8.x
+fork)**. Inspect `config_version` / `features`; keep `blazium_4.8`-safe APIs unless
 the user asks to migrate.
 
 Do not fork a studio-clone skill pack. Compose pins; implement one pin per

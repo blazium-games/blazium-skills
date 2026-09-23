@@ -1,8 +1,8 @@
 ---
 name: blazium-navigation
 description: >
-  Bakes and queries Blazium 0.6.x navigation (NavigationRegion2D/3D,
-  NavigationAgent2D/3D) on Godot 4.3.2. Use when pathfinding, baking nav, or
+  Bakes and queries Blazium 0.8.x navigation (NavigationRegion2D/3D,
+  NavigationAgent2D/3D) on Godot 4.8.x. Use when pathfinding, baking nav, or
   carving obstacles. JustAMCP spatial_bake_navigation, navigation_set_layers,
   navigation_get_info. Not raw physics movement and not GOAP decisions.
 when-to-use: >
@@ -16,11 +16,11 @@ metadata:
 # Blazium navigation
 
 Use `NavigationRegion2D`/`3D` + `NavigationAgent2D`/`3D`. Baseline:
-**Blazium 0.6.x (Godot 4.3.2 fork)**. JustAMCP: `spatial_bake_navigation`,
+**Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. JustAMCP: `spatial_bake_navigation`,
 `navigation_set_layers`, `navigation_get_info`.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs. Do not invent Unity
+(or `project.godot`). Keep `blazium_4.8`-safe APIs. Do not invent Unity
 `NavMeshAgent` names.
 
 ## When to use

@@ -5,8 +5,8 @@ pack: growth
 
 # blazium-save-systems
 
-Versioned local save/load on `user://`. Engine baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**. Do not apply Godot 4.7-only APIs.
+Versioned local save/load on `user://`. Engine baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**. Use APIs that exist on `blazium_4.8`.
 
 ## Why
 
@@ -32,11 +32,11 @@ Distinct from sqlite (tables), lobby (cloud), and coldstorage (VCS).
 
 ## Sources
 
-- Blazium: `FileAccess`, `DirAccess`, `ConfigFile`, `ResourceSaver` (4.3.2)
+- Blazium: `FileAccess`, `DirAccess`, `ConfigFile`, `ResourceSaver` (4.8.x)
 
 ## Limits
 
-Do not invent classes, flags, or CLI verbs. Pin Blazium 0.6.x (Godot 4.3.2 fork). Prefer JustAMCP, Autowork, or `blazium-cli` over unverified editor clicks.
+Do not invent classes, flags, or CLI verbs. Pin Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`). Prefer JustAMCP, Autowork, or `blazium-cli` over unverified editor clicks.
 
 ## Related skills
 

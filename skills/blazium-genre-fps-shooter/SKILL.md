@@ -1,7 +1,7 @@
 ---
 name: blazium-genre-fps-shooter
 description: >
-  Composes an FPS or 3D shooter from pinned Blazium 0.6.x skills (3D, input,
+  Composes an FPS or 3D shooter from pinned Blazium 0.8.x skills (3D, input,
   physics, navigation, multiplayer-core). Use when the request is first-person,
   hitscan, projectile gunplay, or CharacterBody3D look/fire. Not a 2D
   platformer and not a dedicated-server ops kit.
@@ -15,8 +15,8 @@ metadata:
 
 # Blazium genre: FPS / shooter
 
-Thin adapter — not a shooter framework. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**. Inspect `config_version` / `features`; keep 4.3.2-safe
+Thin adapter — not a shooter framework. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**. Inspect `config_version` / `features`; keep `blazium_4.8`-safe
 APIs unless the user asks to migrate.
 
 Do not fork a studio-clone skill pack. Compose pins; implement one pin per
@@ -87,7 +87,7 @@ camera). Do not invent a custom netcode stack.
 
 ## Pitfalls
 
-- **Godot 4.7 character APIs** → 4.3.2 `CharacterBody3D`.
+- **Godot 4.7 character APIs** → 4.8.x `CharacterBody3D`.
 - **Invented a netcode stack** → `blazium-multiplayer-core` first.
 - **Invented a shooter framework** → compose the pinned skills.
 - **Tuned recoil before the ray hits** → shot first, `blazium-game-feel` second.

@@ -2,15 +2,15 @@
 name: blazium-signals-groups
 description: >
   Decouples Blazium nodes with typed signals, Callables, and groups on
-  4.3.2 / 0.6.x. Use when connecting signals, call_group, or designing event
+  4.8.x / 0.8.x. Use when connecting signals, call_group, or designing event
   flow. Prefer JustAMCP connect_signal / node_find_in_group.
 ---
 
 # Blazium signals and groups
 
-Decouple nodes without hard parent paths. Baseline: **Blazium 0.6.x**.
+Decouple nodes without hard parent paths. Baseline: **Blazium 0.8.x**.
 
-**Version drift:** inspect `config_version` / `features` in `project.blazium` (or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+**Version drift:** inspect `config_version` / `features` in `project.blazium` (or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 

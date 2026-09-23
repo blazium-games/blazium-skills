@@ -1,7 +1,7 @@
 ---
 name: blazium-2d-movement
 description: >
-  Implements CharacterBody2D controllers on Blazium 0.6.x / Godot 4.3.2
+  Implements CharacterBody2D controllers on Blazium 0.8.x / Godot 4.8.x
   (MOTION_MODE_GROUNDED platformer with coyote float, MOTION_MODE_FLOATING
   top-down, slopes, floor_snap). Use when writing player or enemy 2D movers
   with move_and_slide. Verify with Autowork simulate(SIMULATE_PHYSICS).
@@ -11,16 +11,16 @@ when-to-use: >
   MOTION_MODE_GROUNDED, MOTION_MODE_FLOATING, player controller 2D
 metadata:
   author: blazium-games
-  short-description: CharacterBody2D grounded or floating movers on 4.3.2
+  short-description: CharacterBody2D grounded or floating movers on 4.8.x
 ---
 
 # Blazium 2D movement
 
-`CharacterBody2D` + `move_and_slide()` on **Blazium 0.6.x (Godot 4.3.2 fork)**.
-Do not invent Unity `Rigidbody2D` APIs. Do not apply Godot 4.7-only calls.
+`CharacterBody2D` + `move_and_slide()` on **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
+Do not invent Unity `Rigidbody2D` APIs. Do not apply calls that are not on `blazium_4.8`.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 
@@ -155,7 +155,7 @@ Grok-side physics stepper.
 
 - Asset: [assets/player_body_2d.gd](assets/player_body_2d.gd)
 - JustAMCP: `physics_tools`, `input_tools`
-- Docs: https://docs.blazium.app (CharacterBody2D, 4.3.2-safe)
+- Docs: https://docs.blazium.app (CharacterBody2D, `blazium_4.8`-safe)
 
 ## Related skills
 

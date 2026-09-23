@@ -8,9 +8,9 @@ description: >
 # Blazium environment
 
 URP Volume analog — Godot `WorldEnvironment` + `Environment` resource.
-No URP Renderer Features. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+No URP Renderer Features. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
-**Version drift:** inspect `config_version` / `features` in `project.blazium` (or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+**Version drift:** inspect `config_version` / `features` in `project.blazium` (or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 
@@ -47,7 +47,7 @@ JustAMCP: `environment_create` then `setup_environment` (also on `scene3d_tools`
 
 - **Invented URP Volume profiles** → Environment resource on WorldEnvironment.
 - **Glow + untonemapped HDR** → blown whites. Set tonemap before raising glow.
-- **Copied Godot 4.7 Environment properties** → check 4.3.2 class docs.
+- **Copied Godot 4.7 Environment properties** → check 4.8.x class docs.
 - **Two WorldEnvironment nodes** → last processed wins. Keep one per world.
 - **SSAO on Compatibility** → no effect. Drop SSAO or use Forward+.
 

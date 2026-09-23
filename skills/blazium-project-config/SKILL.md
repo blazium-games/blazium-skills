@@ -17,7 +17,7 @@ metadata:
 # Blazium project config
 
 Own the project file and `blazium/*` settings. Other infra skills assume
-this is correct. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+this is correct. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 Prefer **`project.blazium`** (`blazium-cli` hub does). `project.godot` remains
 readable for Godot tools.
@@ -41,7 +41,7 @@ settings are correct → `blazium-mcp`. `.env` / `.ini` secrets →
 On Grok, read `project.blazium` (or `project.godot`) with `read_file` before
 any patch. Spawn `blazium-specialist` or `tools-programmer` only for the
 settings edit. Child prompts must list the exact keys to change and the
-4.3.2 pin.
+4.8.x pin.
 
 Do not invent `blazium/foo` keys. Confirm names against
 `ProjectSettings.xml` / `https://docs.blazium.app`. Grok `code_execution` is
@@ -82,7 +82,7 @@ CLI: `blazium-cli load`, `blazium-cli open`. Log path default:
 | `blazium/coldstorage/*` | leave default | `blazium-coldstorage` |
 | `blazium/gif/*` | leave default | `blazium-gif` |
 
-Pin editor version to the installed Blazium 0.6.x build. Do not claim Godot 4.7
+Pin editor version to the installed Blazium 0.8.x build. Do not claim Godot 4.7
 `features`.
 
 ### Migrate from Godot
@@ -90,7 +90,7 @@ Pin editor version to the installed Blazium 0.6.x build. Do not claim Godot 4.7
 1. Keep `project.godot`.
 2. Copy or add `project.blazium` if Hub/CLI expects it.
 3. Add only the `blazium/` keys you need.
-4. Do not rename nodes or upgrade to 4.7-only APIs.
+4. Do not rename nodes or upgrade to APIs that are not on `blazium_4.8`.
 5. Add Autowork / `res://mcp` only if the user wants agent workflows.
 
 ### Dangerous flags (do not enable by default)
@@ -111,7 +111,7 @@ Pin editor version to the installed Blazium 0.6.x build. Do not claim Godot 4.7
 
 ## Pitfalls
 
-- **Godot skill rewrote `project.godot` as 4.7** → restore 4.3.2-safe features.
+- **Godot skill rewrote `project.godot` as 4.7** → restore `blazium_4.8`-safe features.
 - **Enabled eval and bound 0.0.0.0** → treat as incident; revert.
 - **Game MCP and remote both on 6507** → remote default is 6508; change the leftover pin.
 - **Invented a `blazium/foo` key** → check `ProjectSettings.xml` first.

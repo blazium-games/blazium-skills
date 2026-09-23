@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "blazium-growth",
-  "version": "0.6.0",
-  "description": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork).",
+  "version": "0.8.0",
+  "description": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
   "author": {
     "name": "blazium"
   },
@@ -17,8 +17,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Blazium Growth",
-        "shortDescription": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork).",
-        "longDescription": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork).",
+        "shortDescription": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
+        "longDescription": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
         "developerName": "blazium",
         "category": "Developer Tools",
         "capabilities": [
@@ -27,8 +27,8 @@
         ],
         "websiteURL": "https://docs.blazium.app",
         "defaultPrompt": [
-          "Use Blazium Growth to work on a Blazium 0.6.x (Godot 4.3.2 fork) project.",
-          "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork)."
+          "Use Blazium Growth to work on a Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`) project.",
+          "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)."
         ]
       }
     }

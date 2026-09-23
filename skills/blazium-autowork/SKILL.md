@@ -11,14 +11,14 @@ when-to-use: >
   autowork_results.json, JustAMCP autowork_tools, blazium-cli remote autowork
 metadata:
   author: blazium-games
-  short-description: Author and run AutoworkTest test_* on 0.6.x / 4.3.2
+  short-description: Author and run AutoworkTest test_* on 0.8.x / 4.8.x
 ---
 
 # Blazium Autowork
 
 Native GUT-compatible tests. Three invoke paths: unit `--aw-*` / `run_tests.gd`,
-JustAMCP, and `blazium-cli remote autowork`. Baseline: **Blazium 0.6.x (Godot
-4.3.2 fork)**.
+JustAMCP, and `blazium-cli remote autowork`. Baseline: **Blazium 0.8.x (Godot
+4.8.x fork, branch `blazium_4.8`)**.
 
 Unit `--aw-*` flags (not `--aw-e2e*`) self-start `run_tests()` without `-s`.
 If both `-s` and unit `--aw-*` are present, `-s` wins. `--aw-*` still skips
@@ -52,7 +52,7 @@ E2E WebSocket is optional — do not make it the default path.
 On Grok, keep context small: read this file, then `references/runner.md` only
 if the invoke path is unclear. Spawn `blazium-autowork-specialist` to author
 tests and `qa-tester` to run them. Child prompts must include the test path,
-`--aw-dir` or `-s run_tests.gd`, and the 4.3.2 pin.
+`--aw-dir` or `-s run_tests.gd`, and the 4.8.x pin.
 
 Use Grok `bash` for `blazium --headless --aw-dir=…`. Use connected MCP only
 when JustAMCP `:6506` is actually attached. Grok `code_execution` is **not**

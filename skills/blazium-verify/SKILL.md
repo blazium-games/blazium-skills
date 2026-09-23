@@ -16,7 +16,7 @@ metadata:
 
 # Blazium verify
 
-Evidence, not a recap. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Evidence, not a recap. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 Restate the claim so it can fail. Pick **one** surface. Capture the same
 command before and after when comparing. Return exactly one verdict:
@@ -39,7 +39,7 @@ On Grok, keep context small: read this file, then the skill that owns the
 surface (`blazium-autowork`, `blazium-cli-remote`, `blazium-mcp`, or
 `blazium-game-mcp`). Spawn `qa-tester` or `blazium-autowork-specialist`
 when the claim is a `test_*`. Child prompts must include the claim, the
-surface, the project path, and the 4.3.2 pin.
+surface, the project path, and the 4.8.x pin.
 
 Grok `code_execution`, chat Python, `web_search`, and dock screenshots are
 **not** evidence. Quote Autowork JSON, CLI `--json`, or an MCP tool result.

@@ -1,7 +1,7 @@
 ---
 name: blazium-pixel-perfect
 description: >
-  Configures pixel-perfect 2D rendering on Blazium 0.6.x (Camera2D snap,
+  Configures pixel-perfect 2D rendering on Blazium 0.8.x (Camera2D snap,
   viewport stretch canvas_items + integer scale, nearest filter). Use when
   pixel art must stay crisp, design resolution is 320x180-class, or the
   camera crawls. Not tile painting and not sprite atlas slicing.
@@ -15,8 +15,8 @@ metadata:
 
 # Blazium pixel-perfect
 
-Use Camera2D + stretch settings. Baseline: **Blazium 0.6.x (Godot 4.3.2
-fork)**. Inspect `config_version` / `features`; keep 4.3.2-safe APIs.
+Use Camera2D + stretch settings. Baseline: **Blazium 0.8.x (Godot 4.8.x
+fork)**. Inspect `config_version` / `features`; keep `blazium_4.8`-safe APIs.
 
 ## When to use
 

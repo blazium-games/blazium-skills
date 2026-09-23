@@ -1,7 +1,7 @@
 ---
 name: blazium-genre-puzzle
 description: >
-  Composes a grid, match, or logic puzzle from pinned Blazium 0.6.x skills
+  Composes a grid, match, or logic puzzle from pinned Blazium 0.8.x skills
   (UI, input, tilemap, Autowork). Use when the request is slide puzzle,
   match-3, sokoban, legal move, undo, or win-condition grid. Not a platformer
   and not a card-combat kit.
@@ -15,8 +15,8 @@ metadata:
 
 # Blazium genre: puzzle
 
-Thin adapter — not a puzzle framework. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**. Inspect `config_version` / `features`; keep 4.3.2-safe
+Thin adapter — not a puzzle framework. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**. Inspect `config_version` / `features`; keep `blazium_4.8`-safe
 APIs unless the user asks to migrate.
 
 Do not fork a studio-clone skill pack. Puzzles are deterministic — tests
@@ -85,7 +85,7 @@ dock screenshot.
 ## Pitfalls
 
 - **Skipped tests on rules** → Autowork first; puzzles are deterministic.
-- **Invented a Godot 4.7 TileMap API** → 4.3.2 `TileMapLayer` / Tiled pins.
+- **Invented a Godot 4.7 TileMap API** → 4.8.x `TileMapLayer` / Tiled pins.
 - **Rewrote a studio puzzle kit** → compose pins.
 - **Tuned match juice before legal-move passes** → `blazium-game-feel` second.
 

@@ -2,7 +2,7 @@
 name: blazium-genre-platformer
 description: >
   Composes a 2D side-scroll or single-screen jump game from pinned Blazium
-  0.6.x skills. Use when the request is platformer, Mario-like, Metroidvania
+  0.8.x skills. Use when the request is platformer, Mario-like, Metroidvania
   start, coyote jump, one-way platforms, or "make a jump game". Load this
   adapter plus one pin at a time. Not a platformer framework and not top-down.
 when-to-use: >
@@ -15,8 +15,8 @@ metadata:
 
 # Blazium genre: platformer
 
-Thin adapter — not a platformer framework. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**. Inspect `config_version` / `features`; keep 4.3.2-safe
+Thin adapter — not a platformer framework. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**. Inspect `config_version` / `features`; keep `blazium_4.8`-safe
 APIs unless the user asks to migrate.
 
 Do not fork a studio-clone skill pack. Compose pins; implement one pin per
@@ -37,7 +37,7 @@ only → `blazium-game-feel`.
 On Grok, keep context small: read this file, then **one** pin `SKILL.md`.
 Spawn `gameplay-programmer` for CharacterBody code and `qa-tester` for the
 jump/land Autowork. Child prompts must include scene path, action names, and
-the 4.3.2 pin. Do not dump the catalog.
+the 4.8.x pin. Do not dump the catalog.
 
 Prefer project files over memory. Evidence is Autowork, not a screenshot.
 
@@ -63,7 +63,7 @@ Prefer project files over memory. Evidence is Autowork, not a screenshot.
 | `blazium-pixel-perfect` | camera snap |
 | `blazium-autowork` | tests |
 
-### Scene sketch (4.3.2)
+### Scene sketch (4.8.x)
 
 `Node2D` → `CharacterBody2D` (script) + `CollisionShape2D` + `AnimatedSprite2D`
 or `Sprite2D`; `TileMapLayer` for solids; `Camera2D` current. Floor collision
@@ -95,7 +95,7 @@ func test_jump_then_lands() -> void:
 ## Pitfalls
 
 - **Rewrote the genre skill** → read it; implement with pins.
-- **Used Godot 4.7-only APIs** → stay on 4.3.2 CharacterBody2D / TileMapLayer.
+- **Used non-`blazium_4.8` APIs** → stay on 4.8.x CharacterBody2D / TileMapLayer.
 - **Skipped Autowork** → add a jump/land test before juice.
 - **Tuned squash before the body lands** → mover first, `blazium-game-feel` second.
 

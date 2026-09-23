@@ -36,7 +36,7 @@ On Grok, keep context small: read this file, then copy sibling assets
 (`blazium-autowork/assets/`, `blazium-game-mcp/assets/`). Spawn
 `blazium-orchestrator` or `producer` after the tree exists — not during
 scaffold. Child prompts must include the absolute project path and the
-4.3.2 pin.
+4.8.x pin.
 
 Use Grok `bash` for `git init` and `blazium-cli open`. Do not invent a
 Unity/Unreal layout. Do not implement a player controller in this skill.
@@ -45,7 +45,7 @@ Unity/Unreal layout. Do not implement a player controller in this skill.
 
 1. **Intake.** Ask (or infer): concept, platforms (desktop/web/mobile),
    live-ops (Services vs local-only).
-2. **Editor.** Confirm a Blazium 0.6.x editor exists
+2. **Editor.** Confirm a Blazium 0.8.x editor exists
    (`blazium-cli editors`).
 3. **Scaffold** Autowork, `res://mcp`, and `.gitignore` from sibling assets.
 4. **Git.** `git init` if missing. Apply [assets/.gitignore](assets/.gitignore).

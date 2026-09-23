@@ -1,7 +1,7 @@
 ---
 name: blazium-save-systems
 description: >
-  Persists local game state on Blazium 0.6.x with a versioned schema, user://
+  Persists local game state on Blazium 0.8.x with a versioned schema, user://
   slots, ConfigFile or ResourceSaver, and atomic temp-plus-rename writes.
   Use for save/load, save slots, autosave, or migrating old saves. Not
   ColdStorage VCS, lobby cloud state, or SQLite tables.
@@ -15,7 +15,7 @@ metadata:
 
 # Blazium save systems
 
-Local progress that survives quit. Baseline: **Blazium 0.6.x (Godot 4.3.2
+Local progress that survives quit. Baseline: **Blazium 0.8.x (Godot 4.8.x
 fork)**. Save **data**, not live node paths. Stamp `version` from slot 1.
 `user://` only. Atomic write: temp file, flush, keep `.bak`, then rename.
 

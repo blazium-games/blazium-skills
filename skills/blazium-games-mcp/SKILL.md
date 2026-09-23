@@ -8,7 +8,7 @@ description: >
 
 # Blazium Games cloud MCP
 
-Store / ops — **not scene editing**. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Store / ops — **not scene editing**. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Do not conflate with editor JustAMCP.** This is layer 3 only:
 
@@ -22,7 +22,7 @@ Store / ops — **not scene editing**. Baseline: **Blazium 0.6.x (Godot 4.3.2 fo
 Code: `blazium.games/games_mcp/` (OAuth 2.1 + Streamable HTTP).
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 

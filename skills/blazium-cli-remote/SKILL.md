@@ -10,7 +10,7 @@ description: >
 
 # Blazium CLI remote
 
-Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 Engine: `blazium/modules/remote_control/`  
 CLI: `blazium-cli/remote/`  

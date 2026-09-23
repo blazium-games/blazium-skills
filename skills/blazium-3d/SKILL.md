@@ -1,8 +1,8 @@
 ---
 name: blazium-3d
 description: >
-  Sets up Blazium 3D scenes (Node3D, Camera3D, lights, GridMap) on 0.6.x /
-  Godot 4.3.2. Use when building 3D levels or cameras. Prefer JustAMCP
+  Sets up Blazium 3D scenes (Node3D, Camera3D, lights, GridMap) on 0.8.x /
+  Godot 4.8.x. Use when building 3D levels or cameras. Prefer JustAMCP
   scene3d_tools. Not WorldEnvironment volumes, nav bake, or physics bodies.
 when-to-use: >
   Node3D, Camera3D, GridMap, MeshLibrary, scene3d_tools, setup_camera_3d,
@@ -14,10 +14,10 @@ metadata:
 
 # Blazium 3D
 
-Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. JustAMCP: `add_mesh_instance`,
+Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. JustAMCP: `add_mesh_instance`,
 `setup_lighting`, `setup_environment`, `setup_camera_3d`, `add_gridmap`.
 
-**Version drift:** inspect `config_version` / `features` in `project.blazium` (or `project.godot`). Keep 4.3.2-safe APIs unless the user asks to migrate.
+**Version drift:** inspect `config_version` / `features` in `project.blazium` (or `project.godot`). Keep `blazium_4.8`-safe APIs unless the user asks to migrate.
 
 ## When to use
 

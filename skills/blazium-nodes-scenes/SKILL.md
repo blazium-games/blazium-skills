@@ -1,8 +1,8 @@
 ---
 name: blazium-nodes-scenes
 description: >
-  Designs Blazium 0.6.x scene trees (PackedScene instancing, autoloads,
-  composition) on Godot 4.3.2. Use when creating .tscn files, spawning
+  Designs Blazium 0.8.x scene trees (PackedScene instancing, autoloads,
+  composition) on Godot 4.8.x. Use when creating .tscn files, spawning
   instances, or adding autoloads. Prefer JustAMCP scene_tools and node_tools
   (create_scene, add_node, instance_scene, save_scene, add_autoload). Not
   editor MCP connect and not signal wiring.
@@ -16,13 +16,13 @@ metadata:
 
 # Blazium nodes and scenes
 
-Compose `.tscn` trees the 4.3.2 way. Prefer JustAMCP `scene_tools` /
+Compose `.tscn` trees the 4.8.x way. Prefer JustAMCP `scene_tools` /
 `node_tools` (`create_scene`, `add_node`, `instance_scene`, `save_scene`,
-`add_autoload`) over clicking the editor. Baseline: **Blazium 0.6.x
-(Godot 4.3.2 fork)**.
+`add_autoload`) over clicking the editor. Baseline: **Blazium 0.8.x
+(Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 **Version drift:** inspect `config_version` / `features` in `project.blazium`
-(or `project.godot`). Keep 4.3.2-safe APIs. No 4.7-only nodes.
+(or `project.godot`). Keep `blazium_4.8`-safe APIs. No nodes outside `blazium_4.8`.
 
 ## When to use
 
