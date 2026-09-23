@@ -4,7 +4,7 @@ description: >
   Bootstraps a version-controlled Blazium project via Hub/CLI (blazium://open)
   with Autowork, res://mcp, and .gitignore. Use when starting a new Blazium
   game. Does not implement gameplay. Not project.blazium settings-only and
-  not blazium-cli editor install.
+  not an editor install via blazium-cli.
 when-to-use: >
   new Blazium game, greenfield, bootstrap, blazium://open, scaffold Autowork,
   res://mcp, .gitignore, empty folder
