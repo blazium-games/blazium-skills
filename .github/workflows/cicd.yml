@@ -1,0 +1,310 @@
+name: Build and Publish Skills
+
+on:
+  push:
+    branches: [main, master]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Sync and validate
+        run: |
+          python scripts/sync-plugin-packs.py
+          python scripts/validate-plugin-packs.py
+          python evals/smoke/check_triggers.py
+
+  resolve-version:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    outputs:
+      simple_version: ${{ steps.finalize.outputs.simple_version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get Version with Bioblaze/game-semver-action
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+        uses: Bioblaze/game-semver-action@v10
+        id: version
+        with:
+          personal_github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Finalize version (0.1.0 baseline + CDN monotonic)
+        id: finalize
+        run: |
+          set -euo pipefail
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            CANDIDATE="${GITHUB_REF#refs/tags/v}"
+          else
+            COMPUTED="${{ steps.version.outputs.simple_version }}"
+            BASE="0.1.0"
+            CDN_LATEST="$(curl -fsSL https://cdn.blazium.app/skills/skills.json | jq -r '.latest // empty' || true)"
+            if [[ "$CDN_LATEST" == "null" ]]; then
+              CDN_LATEST=""
+            fi
+            CANDIDATE="$(printf '%s\n%s\n' "$COMPUTED" "$BASE" | sort -V | tail -n1)"
+            bump_patch() {
+              local v="$1" major minor patch
+              IFS=. read -r major minor patch <<< "$v"
+              patch="${patch%%[^0-9]*}"
+              echo "${major}.${minor}.$((patch + 1))"
+            }
+            if [[ -n "$CDN_LATEST" ]]; then
+              HIGHER="$(printf '%s\n%s\n' "$CANDIDATE" "$CDN_LATEST" | sort -V | tail -n1)"
+              if [[ "$HIGHER" == "$CDN_LATEST" ]]; then
+                CANDIDATE="$(bump_patch "$CDN_LATEST")"
+              fi
+            fi
+            echo "computed=${COMPUTED} base=${BASE} cdn_latest=${CDN_LATEST:-none} => ${CANDIDATE}"
+          fi
+          test -n "$CANDIDATE"
+          echo "simple_version=${CANDIDATE}" >> "$GITHUB_OUTPUT"
+
+  pack-claude:
+    needs: [validate, resolve-version]
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip Claude marketplace
+        run: |
+          VER="${{ needs.resolve-version.outputs.simple_version }}"
+          STAGE="blazium-skills-claude-${VER}"
+          mkdir -p "${STAGE}"
+          cp -a skills .claude-plugin templates scripts evals README.md LICENSE GETTING-STARTED.md CONTRIBUTING.md SECURITY.md "${STAGE}/"
+          zip -r "${STAGE}.zip" "${STAGE}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: claude
+          path: blazium-skills-claude-*.zip
+
+  pack-cursor:
+    needs: [validate, resolve-version]
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Zip Cursor plugins
+        run: |
+          python scripts/sync-plugin-packs.py
+          VER="${{ needs.resolve-version.outputs.simple_version }}"
+          STAGE="blazium-skills-cursor-${VER}"
+          mkdir -p "${STAGE}"
+          cp -a plugins .cursor-plugin README.md LICENSE GETTING-STARTED.md CONTRIBUTING.md SECURITY.md "${STAGE}/"
+          zip -r "${STAGE}.zip" "${STAGE}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cursor
+          path: blazium-skills-cursor-*.zip
+
+  pack-codex:
+    needs: [validate, resolve-version]
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Zip Codex plugins
+        run: |
+          python scripts/sync-plugin-packs.py
+          VER="${{ needs.resolve-version.outputs.simple_version }}"
+          STAGE="blazium-skills-codex-${VER}"
+          mkdir -p "${STAGE}"
+          cp -a plugins .agents README.md LICENSE GETTING-STARTED.md CONTRIBUTING.md SECURITY.md "${STAGE}/"
+          zip -r "${STAGE}.zip" "${STAGE}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codex
+          path: blazium-skills-codex-*.zip
+
+  publish:
+    needs: [resolve-version, pack-claude, pack-cursor, pack-codex]
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: claude
+          path: dist/claude
+      - uses: actions/download-artifact@v4
+        with:
+          name: cursor
+          path: dist/cursor
+      - uses: actions/download-artifact@v4
+        with:
+          name: codex
+          path: dist/codex
+
+      - name: Require every pack and write skills.json
+        id: packs
+        env:
+          VERSION: ${{ needs.resolve-version.outputs.simple_version }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          version = os.environ["VERSION"]
+          hosts = {}
+          for host in ("claude", "cursor", "codex"):
+              matches = list(Path("dist") .joinpath(host).glob("*.zip"))
+              if len(matches) != 1:
+                  raise SystemExit(f"{host}: expected 1 zip, found {matches}")
+              data = matches[0].read_bytes()
+              hosts[host] = {
+                  "file": matches[0].name,
+                  "sha256": hashlib.sha256(data).hexdigest(),
+                  "size": len(data),
+                  "path": str(matches[0]),
+              }
+          catalog = {
+              "latest": version,
+              "versions": {version: {"hosts": {k: {kk: vv for kk, vv in v.items() if kk != "path"} for k, v in hosts.items()}}},
+          }
+          Path("skills.json").write_text(json.dumps(catalog, indent=2) + "\n", encoding="utf-8")
+          Path("pack-paths.txt").write_text("\n".join(f"{k} {v['path']}" for k, v in hosts.items()) + "\n", encoding="utf-8")
+          PY
+
+      - name: Upload packs and catalog
+        env:
+          VERSION: ${{ needs.resolve-version.outputs.simple_version }}
+        run: |
+          set -euo pipefail
+          upload() {
+            local source="$1" out_dir="$2"
+            # do-spaces-action equivalent via the action below; this step only checks files.
+            test -f "$source"
+            echo "ready ${source} -> ${out_dir}"
+          }
+          while read -r host path; do
+            upload "$path" "skills/${VERSION}"
+          done < pack-paths.txt
+          upload skills.json "skills"
+          upload skills.json "skills/${VERSION}"
+
+      - uses: BetaHuhn/do-spaces-action@v2
+        with:
+          access_key: ${{ secrets.DO_ACCESS_KEY }}
+          secret_key: ${{ secrets.DO_SECRET_KEY }}
+          space_name: ${{ secrets.DO_SPACE_NAME }}
+          space_region: ${{ secrets.DO_SPACE_REGION }}
+          source: dist/claude
+          out_dir: skills/${{ needs.resolve-version.outputs.simple_version }}
+
+      - uses: BetaHuhn/do-spaces-action@v2
+        with:
+          access_key: ${{ secrets.DO_ACCESS_KEY }}
+          secret_key: ${{ secrets.DO_SECRET_KEY }}
+          space_name: ${{ secrets.DO_SPACE_NAME }}
+          space_region: ${{ secrets.DO_SPACE_REGION }}
+          source: dist/cursor
+          out_dir: skills/${{ needs.resolve-version.outputs.simple_version }}
+
+      - uses: BetaHuhn/do-spaces-action@v2
+        with:
+          access_key: ${{ secrets.DO_ACCESS_KEY }}
+          secret_key: ${{ secrets.DO_SECRET_KEY }}
+          space_name: ${{ secrets.DO_SPACE_NAME }}
+          space_region: ${{ secrets.DO_SPACE_REGION }}
+          source: dist/codex
+          out_dir: skills/${{ needs.resolve-version.outputs.simple_version }}
+
+      - uses: BetaHuhn/do-spaces-action@v2
+        with:
+          access_key: ${{ secrets.DO_ACCESS_KEY }}
+          secret_key: ${{ secrets.DO_SECRET_KEY }}
+          space_name: ${{ secrets.DO_SPACE_NAME }}
+          space_region: ${{ secrets.DO_SPACE_REGION }}
+          source: skills.json
+          out_dir: skills
+
+      - uses: BetaHuhn/do-spaces-action@v2
+        with:
+          access_key: ${{ secrets.DO_ACCESS_KEY }}
+          secret_key: ${{ secrets.DO_SECRET_KEY }}
+          space_name: ${{ secrets.DO_SPACE_NAME }}
+          space_region: ${{ secrets.DO_SPACE_REGION }}
+          source: skills.json
+          out_dir: skills/${{ needs.resolve-version.outputs.simple_version }}
+
+      - name: Register with Cerebro
+        env:
+          CEREBRO_URL: ${{ secrets.CEREBRO_URL }}
+          BLAZIUM_AUTH: ${{ secrets.BLAZIUM_AUTH }}
+          VERSION: ${{ needs.resolve-version.outputs.simple_version }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, urllib.request
+          from datetime import datetime, timezone
+          version = os.environ["VERSION"]
+          catalog = json.load(open("skills.json", encoding="utf-8"))
+          hosts = catalog["versions"][version]["hosts"]
+          url = os.environ["CEREBRO_URL"].rstrip("/") + "/api/v1/tools"
+          auth = os.environ["BLAZIUM_AUTH"]
+          released = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+          for host, meta in hosts.items():
+              body = {
+                  "name": "Blazium Skills",
+                  "type": "skills",
+                  "version": version,
+                  "os": host,
+                  "arch": "pack",
+                  "file": f"https://cdn.blazium.app/skills/{version}/{meta['file']}",
+                  "sig": "",
+                  "sha256": meta["sha256"],
+                  "size": meta["size"],
+                  "signing": "",
+                  "released_on": released,
+              }
+              req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={
+                  "Content-Type": "application/json",
+                  "BLAZIUM_AUTH": auth,
+              })
+              with urllib.request.urlopen(req, timeout=60) as resp:
+                  print(host, resp.status)
+          PY
+
+      - name: Create or update GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VER: ${{ needs.resolve-version.outputs.simple_version }}
+        run: |
+          set -euo pipefail
+          TAG="v${VER}"
+          mapfile -t FILES < <(find dist -type f -name '*.zip' | sort)
+          test "${#FILES[@]}" -eq 3
+          NOTES="Blazium Skills ${VER}
+
+          | Host | Zip |
+          |------|-----|
+          | Claude | \`blazium-skills-claude-${VER}.zip\` |
+          | Cursor | \`blazium-skills-cursor-${VER}.zip\` |
+          | Codex | \`blazium-skills-codex-${VER}.zip\` |
+
+          CDN: https://cdn.blazium.app/skills/skills.json
+          "
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "${FILES[@]}" --clobber
+          else
+            gh release create "$TAG" "${FILES[@]}" --title "Blazium Skills ${VER}" --notes "$NOTES" --target "$GITHUB_SHA"
+          fi
