@@ -69,6 +69,7 @@ Keep the project's pin unless migration is requested.
 | Task | Load |
 |------|------|
 | New / empty / "make a Blazium game" | `blazium-new-project` |
+| One-mechanic vertical slice / idea-to-running proof | `blazium-prototype` |
 | `project.blazium` / settings / migrate from Godot | `blazium-project-config` |
 | Connect editor MCP, toolsets, `blazium://` resources | `blazium-mcp` |
 | `res://mcp`, game tools, `user-blazium-game` | `blazium-game-mcp` |
@@ -84,6 +85,7 @@ Keep the project's pin unless migration is requested.
 | TileMapLayer paint | `blazium-tilemap` |
 | Tiled TMX / Tileson | `blazium-tiled` |
 | Collision layers / raycasts | `blazium-physics` |
+| Gravity / friction / bounce / damping feel | `blazium-physics-tuning` |
 | Nav bake / pathfinding | `blazium-navigation` |
 | HUD / Theme / Controls | `blazium-ui` |
 | AnimationPlayer / Tween | `blazium-animation` |
@@ -95,6 +97,7 @@ Keep the project's pin unless migration is requested.
 | InputMap / rebind | `blazium-input` |
 | AtlasTexture / SpriteFrames | `blazium-sprites` |
 | Pixel-perfect camera | `blazium-pixel-perfect` |
+| Follow / deadzone / orbit / SpringArm3D | `blazium-camera` |
 | `tr()` / locales | `blazium-localization` |
 | `@rpc` / ENet / synchronizer | `blazium-multiplayer-core` |
 | Login / OAuth / Steam ticket → JWT | `blazium-services` |
@@ -119,6 +122,7 @@ Keep the project's pin unless migration is requested.
 | Wallpaper / screensaver / autorun / InterDVD | `blazium-specialty-export` |
 | GitHub Actions export / deploy | `blazium-ci-export` |
 | Watch / triage a failing CI job | `blazium-ci-watch` |
+| Launch or patch gate | `blazium-release-checklist` |
 | ColdStorage / cstoraged | `blazium-coldstorage` |
 | Asset tags / dictionary | `blazium-asset-tags` |
 | Similar assets / embeddings | `blazium-semantic-search` |
@@ -126,8 +130,14 @@ Keep the project's pin unless migration is requested.
 | Local save slots / autosave / schema version | `blazium-save-systems` |
 | Dialogue graph / choices / talk flags | `blazium-dialogue` |
 | Hit-stop / camera punch / juice | `blazium-game-feel` |
+| Seeded noise / dungeon / weighted loot | `blazium-procedural` |
+| Level beats / tile or meter metrics | `blazium-level-design` |
+| Playtest note / one regression assert | `blazium-playtest` |
+| Economy or combat number tables | `blazium-balance` |
 | Remaps / font scale / a11y copy | `blazium-accessibility` |
 | GOAP planner | `blazium-goap` |
+| Behavior tree / utility scores | `blazium-behavior` |
+| Texture import / NinePatchRect margins | `blazium-assets` |
 | addons/ / plugin.cfg / AssetLib | `blazium-addons` |
 | Official script templates | `blazium-gdscript-templates` |
 | `.env` / `.ini` / ENV | `blazium-config` |
