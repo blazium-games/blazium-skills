@@ -53,6 +53,12 @@ label.text = tr("MENU_START")
 
 Keys are stable IDs. Whole sentences in one key so translators can reorder.
 
+### Batch string pass
+
+Walk player-facing Control text. Each literal becomes one CSV row: key,
+source, then one column per locale. Register the CSV in Project Settings.
+Autowork `set_locale` on two keys, not one. Large files → `blazium-csv`.
+
 ## Output contract
 
 - Locale codes enabled

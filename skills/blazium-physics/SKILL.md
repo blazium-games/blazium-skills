@@ -29,7 +29,8 @@ Layers and masks are the usual silent bug. Baseline: **Blazium 0.8.x
 - Use when adding colliders, Areas, rigid bodies, one-way floors, or raycasts.
 - Use when two bodies pass through each other or a ray never hits.
 
-**When not to use:** movement feel / coyote / `move_and_slide` →
+**When not to use:** gravity, friction, bounce, or damping →
+`blazium-physics-tuning`. Movement feel / coyote / `move_and_slide` →
 `blazium-2d-movement`. Nav bake → `blazium-navigation`. Juice / squash →
 `blazium-game-feel`. Tile painting → `blazium-tilemap` (this skill only
 owns the collider bits on those tiles).
@@ -110,6 +111,18 @@ Do not query `ConcavePolygonShape3D` (trimesh) and expect stable hits.
 JustAMCP: `setup_collision` / `setup_physics_body`, then
 `validate_physics_setup`.
 
+### 3D miss order
+
+When a 3D overlap or ray misses, check in this order:
+
+1. `collision_layer` / `collision_mask` bits.
+2. Body type: `CharacterBody3D` moves in `_physics_process`. A frozen
+   `RigidBody3D` ignores velocity writes.
+3. `Area3D` `monitoring` and `monitorable`.
+4. Ray `collision_mask`, plus `collide_with_bodies` / `collide_with_areas`.
+5. Shape size, not node scale.
+6. Target is not `ConcavePolygonShape3D`.
+
 ## Output contract
 
 - Scene path(s) and nodes touched
@@ -137,6 +150,7 @@ JustAMCP: `setup_collision` / `setup_physics_body`, then
 
 ## Related skills
 
+- `blazium-physics-tuning` — gravity, friction, damping
 - `blazium-2d-movement` — CharacterBody velocity / coyote
 - `blazium-navigation` — pathfinding
 - `blazium-3d` — 3D bodies in scenes

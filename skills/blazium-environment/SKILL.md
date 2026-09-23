@@ -43,6 +43,14 @@ func _ready() -> void:
 
 JustAMCP: `environment_create` then `setup_environment` (also on `scene3d_tools`).
 
+### Post-process order
+
+1. Sky / background.
+2. Tonemap.
+3. Glow.
+4. Fog.
+5. SSAO only when the renderer is Forward+. Skip it on Compatibility.
+
 ## Pitfalls
 
 - **Invented URP Volume profiles** → Environment resource on WorldEnvironment.

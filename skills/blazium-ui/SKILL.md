@@ -55,6 +55,11 @@ func _ready() -> void:
 	title.text = "HUD"
 ```
 
+Lists: `VBoxContainer` inside `MarginContainer`. HUD corners: anchors.
+Button colors: one Theme (`Button` normal / hover / pressed), not a
+different Theme on every control. Do not put a container and custom
+anchors on the same Control.
+
 ## Output contract
 
 - Scene path and root Control

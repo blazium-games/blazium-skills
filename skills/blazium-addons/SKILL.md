@@ -67,6 +67,12 @@ Place at `res://addons/my_plugin/plugin.cfg`. Script is the official
 | Your editor UI / import hook | author `plugin.cfg` |
 | Engine singleton / C++ | engine module — out of scope here |
 
+### Choose and pin
+
+Read `plugin.cfg` `version` before copying an addon in. Keep that version
+string. Do not replace an enabled addon with a newer archive until its
+notes are read. Enable it in Project Settings so the plugin list is saved.
+
 ## Pitfalls
 
 - **Wrote a Unity `Packages/manifest.json`** → wrong ecosystem.

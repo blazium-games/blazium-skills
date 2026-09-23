@@ -65,12 +65,31 @@ Default Autowork dir if unset: `res://test` if it exists, else `res://`.
 Leave `allow_eval` false unless the user needs it. Prefer `exec` of known
 commands. Never bind `0.0.0.0` unless the user wants LAN exposure.
 
+### Several editors
+
+`blazium-cli remote instances --json` lists listeners. Pass `--instance <id>`
+or `--project <path>` when more than one editor is running. Without that,
+the command follows the current directory.
+
+### Not controllable
+
+If `status` fails or `exec` does nothing:
+
+1. `blazium-cli remote errors`
+2. `blazium-cli remote debugger stack`
+3. Fix script parse errors, then `blazium-cli remote debugger clear` and
+   retry `status`.
+
+Do not keep calling `eval` while `errors` is non-empty.
+
 ## Pitfalls
 
 - **Treated this as MCP** → `/v1` HTTP, not `POST /mcp`.
 - **Nothing listening on 6508** → remote disabled, or the project still uses 6507.
 - **`--aw-*` on the editor** → starts Autowork, not remote_control; enable the setting.
 - **Autowork `include_subdirs` false** → default; pass `--include-subdirs`.
+- **Two editors, no `--instance`** → the command may hit the wrong project.
+- **Eval while script errors are pending** → the editor is not controllable yet.
 
 ## Resources
 

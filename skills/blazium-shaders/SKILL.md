@@ -46,6 +46,15 @@ void fragment() {
 JustAMCP: `create_shader` / `edit_shader`, then `assign_shader_material` and
 `set_shader_param` for `tint`.
 
+### Author checklist
+
+1. `shader_type` is `canvas_item` or `spatial`.
+2. Uniforms use hints (`source_color` for colors).
+3. `fragment()` or `vertex()` only.
+4. `ShaderMaterial` is assigned (`assign_shader_material`).
+5. `set_shader_param` names match the `uniform` identifiers.
+6. The editor log has no shader compile error.
+
 ## Pitfalls
 
 - **Wrote HLSL** → Godot SL only (`.gdshader`).

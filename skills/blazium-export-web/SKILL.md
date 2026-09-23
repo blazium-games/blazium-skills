@@ -69,6 +69,12 @@ threaded web builds fail or silently fall back.
 
 No-threads export if the host cannot set headers.
 
+### Size and runtime
+
+Exclude unused resources from the export. Compress long audio. Use the
+no-threads template when the host cannot set COOP/COEP. Report the exported
+artifact size. Do not invent a byte budget the preset does not show.
+
 ### YouTube Playables
 
 `YoutubePlayablesClient` (`socialexports`). Official SDK:

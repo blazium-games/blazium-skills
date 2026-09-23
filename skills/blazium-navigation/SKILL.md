@@ -60,6 +60,15 @@ func go_to(world_point: Vector2) -> void:
 Same pattern on `CharacterBody3D` + `NavigationAgent3D`. Bake after tile/mesh
 changes. Agent radius must fit baked geometry.
 
+### Agent checklist
+
+- `NavigationRegion2D` or `NavigationRegion3D` covers the walkable surface and is baked.
+- Agent radius and height fit the corridor.
+- `navigation_layers` match the region (`navigation_set_layers`).
+- `path_desired_distance` and `target_desired_distance` are smaller than the corridor.
+- Avoidance only when agents must steer around each other.
+- Re-bake after tile or mesh edits (`spatial_bake_navigation`).
+
 ## Output contract
 
 - Region type (2D/3D)

@@ -60,6 +60,13 @@ func _ready() -> void:
 
 JustAMCP: `add_audio_bus` then `add_audio_player` onto that bus.
 
+### Bus layout and cost
+
+Buses under Master: Music, SFX, UI. Dialogue ducks Music only.
+
+Reuse SFX players. Do not instance a new `AudioStreamPlayer` per shot.
+Prefer a compressed stream for long music. Cap how many SFX can overlap.
+
 ## Output contract
 
 - Bus names (Master / Music / SFX)

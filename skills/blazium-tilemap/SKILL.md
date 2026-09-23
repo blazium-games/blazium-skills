@@ -65,6 +65,15 @@ func paint_floor(cell: Vector2i, source_id: int, atlas: Vector2i) -> void:
 JustAMCP: `tilemap_configure_atlas` then `tilemap_set_cell` / `tilemap_fill_rect`.
 Assign the TileSet before any paint.
 
+### Palette and rule tiles
+
+The TileSet atlas source is the paint palette. One source id per sheet
+(`tilemap_configure_atlas`).
+
+Edge rules: add a TileSet terrain set with peering bits, then
+`set_cells_terrain_connect(cells, terrain_set, terrain)`. Do not hand-place
+every edge cell when that terrain set already matches the art.
+
 ## Output contract
 
 - TileSet path

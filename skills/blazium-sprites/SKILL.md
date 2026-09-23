@@ -45,6 +45,12 @@ func _ready() -> void:
 Pixel art: nearest filter on the texture (see `blazium-pixel-perfect`).
 JustAMCP: `asset_tools` for pixels; SpriteFrames via `animation_tools`.
 
+### Atlas and 9-slice
+
+`AtlasTexture.region` is one cell. Leave padding between cells so filtering
+does not bleed. Stretchable panels use `NinePatchRect` margins
+(`blazium-assets`), not a scaled `Sprite2D`.
+
 ## Pitfalls
 
 - **Linear filter on pixel art** → blurry sprites. Use nearest + integer scale.
