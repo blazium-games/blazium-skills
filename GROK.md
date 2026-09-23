@@ -7,6 +7,12 @@ Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. GDScript-first. Do not apply
 Godot 4.7-only APIs. Do not invent JustAMCP tools, `blazium-cli` verbs, or
 classes.
 
+## Community
+
+- Official website: [https://blazium.app/](https://blazium.app/)
+- IndieDB blog: [https://www.indiedb.com/engines/blazium-engine](https://www.indiedb.com/engines/blazium-engine)
+- Official community: [Blazium Discord](https://discord.gg/sZaf9KYzDp)
+
 ## Install
 
 Grok routes on each skill's YAML `description`. It reads `SKILL.md` from a

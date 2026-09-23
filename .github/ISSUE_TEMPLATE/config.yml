@@ -1,1 +1,5 @@
 blank_issues_enabled: true
+contact_links:
+  - name: Official Discord
+    url: https://discord.gg/sZaf9KYzDp
+    about: Ask questions and get help in the official Blazium Discord.

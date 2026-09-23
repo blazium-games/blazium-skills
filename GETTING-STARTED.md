@@ -3,6 +3,15 @@
 Agent skills for **Blazium 0.6.x (Godot 4.3.2 fork)**. GDScript-first.
 Same files load on Claude Code, Cursor, Codex, and Grok.
 
+## Community
+
+- Official website: [https://blazium.app/](https://blazium.app/)
+- IndieDB blog: [https://www.indiedb.com/engines/blazium-engine](https://www.indiedb.com/engines/blazium-engine)
+- Official community: [Blazium Discord](https://discord.gg/sZaf9KYzDp)
+- Docs: [docs.blazium.app](https://docs.blazium.app)
+
+Pack releases: [skills.json](https://cdn.blazium.app/skills/skills.json).
+
 ## Install the marketplace
 
 After clone:

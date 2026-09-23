@@ -6,6 +6,26 @@ Each skill lives at `skills/<name>/` with a loadable `SKILL.md` and a `SPEC.md` 
 
 [GETTING-STARTED.md](GETTING-STARTED.md) · [CONTRIBUTING.md](CONTRIBUTING.md)
 
+Skill packs publish their own semver to [skills.json](https://cdn.blazium.app/skills/skills.json). That product version is separate from the 0.6.x API baseline.
+
+## Community
+
+- Official website: [https://blazium.app/](https://blazium.app/)
+- IndieDB blog: [https://www.indiedb.com/engines/blazium-engine](https://www.indiedb.com/engines/blazium-engine)
+- Official community: [Blazium Discord](https://discord.gg/sZaf9KYzDp)
+- Docs: [docs.blazium.app](https://docs.blazium.app)
+
+## Ecosystem
+
+| Product | Role | Release |
+|---------|------|---------|
+| [CLI](https://github.com/blazium-games/blazium-cli) | Install editors, projects, remote control, Steam/itch deploy | Linux and Windows, x86_64 and x86_32. Catalog: [cli.json](https://cdn.blazium.app/cli/cli.json) |
+| [Hub](https://github.com/blazium-games/blazium-hub) | Desktop companion; installers bundle the CLI | Linux and Windows, x86_64 and x86_32. Engine builds track `blazium_4.8` |
+| [Crash reporter](https://github.com/blazium-games/blazium_crash_reporter) | Sidecar UI for engine and Hub crash reports | Linux and Windows, x86_64 and x86_32. Catalog: [crash_reporter.json](https://cdn.blazium.app/crash_reporter/crash_reporter.json). Engine builds track `blazium_4.8` |
+| [Toolchain](https://github.com/blazium-games/blazium-toolchain) | PS1, PS2, N64, and Interactive DVD | Linux and Windows, x86_64 and x86_32. Catalog: [toolchain.json](https://cdn.blazium.app/toolchain/toolchain.json) |
+| [Skills](https://github.com/blazium-games/blazium-skills) | Agent skill packs for Claude, Cursor, Codex, and Grok | Own semver, separate from the 0.6.x API baseline. Catalog: [skills.json](https://cdn.blazium.app/skills/skills.json) |
+| [Subagents](https://github.com/blazium-games/blazium-subagents) | Studio roster that loads those skills | Own semver. Catalog: [subagents.json](https://cdn.blazium.app/subagents/subagents.json) |
+
 ## Install
 
 After clone:
@@ -63,6 +83,7 @@ codex plugin marketplace add blazium-games/blazium-skills
 | [blazium-verify](skills/blazium-verify/SKILL.md) | Evidence verdicts ([ref](skills/blazium-verify/SPEC.md)) |
 | [blazium-project-config](skills/blazium-project-config/SKILL.md) | `project.blazium` and settings ([ref](skills/blazium-project-config/SPEC.md)) |
 | [blazium-new-project](skills/blazium-new-project/SKILL.md) | Bootstrap a versioned project ([ref](skills/blazium-new-project/SPEC.md)) |
+| [blazium-prototype](skills/blazium-prototype/SKILL.md) | One-mechanic vertical slice ([ref](skills/blazium-prototype/SPEC.md)) |
 
 ### Engine
 
@@ -77,6 +98,7 @@ codex plugin marketplace add blazium-games/blazium-skills
 | [blazium-tilemap](skills/blazium-tilemap/SKILL.md) | TileMapLayer paint ([ref](skills/blazium-tilemap/SPEC.md)) |
 | [blazium-tiled](skills/blazium-tiled/SKILL.md) | Tiled TMX / Tileson import ([ref](skills/blazium-tiled/SPEC.md)) |
 | [blazium-physics](skills/blazium-physics/SKILL.md) | Collision layers and raycasts ([ref](skills/blazium-physics/SPEC.md)) |
+| [blazium-physics-tuning](skills/blazium-physics-tuning/SKILL.md) | Gravity, friction, damping ([ref](skills/blazium-physics-tuning/SPEC.md)) |
 | [blazium-navigation](skills/blazium-navigation/SKILL.md) | Nav bake and agents ([ref](skills/blazium-navigation/SPEC.md)) |
 | [blazium-ui](skills/blazium-ui/SKILL.md) | Control / Theme ([ref](skills/blazium-ui/SPEC.md)) |
 | [blazium-animation](skills/blazium-animation/SKILL.md) | AnimationPlayer / Tween ([ref](skills/blazium-animation/SPEC.md)) |
@@ -88,6 +110,7 @@ codex plugin marketplace add blazium-games/blazium-skills
 | [blazium-input](skills/blazium-input/SKILL.md) | InputMap / rebind ([ref](skills/blazium-input/SPEC.md)) |
 | [blazium-sprites](skills/blazium-sprites/SKILL.md) | AtlasTexture / SpriteFrames ([ref](skills/blazium-sprites/SPEC.md)) |
 | [blazium-pixel-perfect](skills/blazium-pixel-perfect/SKILL.md) | Pixel camera snap ([ref](skills/blazium-pixel-perfect/SPEC.md)) |
+| [blazium-camera](skills/blazium-camera/SKILL.md) | Follow, orbit, and bounds ([ref](skills/blazium-camera/SPEC.md)) |
 | [blazium-localization](skills/blazium-localization/SKILL.md) | `tr()` and locales ([ref](skills/blazium-localization/SPEC.md)) |
 | [blazium-multiplayer-core](skills/blazium-multiplayer-core/SKILL.md) | `@rpc` / ENet / synchronizer ([ref](skills/blazium-multiplayer-core/SPEC.md)) |
 
@@ -123,6 +146,7 @@ codex plugin marketplace add blazium-games/blazium-skills
 | [blazium-example-crash-server](skills/blazium-example-crash-server/SKILL.md) | Self-hosted crash ingest ([ref](skills/blazium-example-crash-server/SPEC.md)) |
 | [blazium-example-crash-sidecar](skills/blazium-example-crash-sidecar/SKILL.md) | Fork crash consent UI ([ref](skills/blazium-example-crash-sidecar/SPEC.md)) |
 | [blazium-coldstorage](skills/blazium-coldstorage/SKILL.md) | Editor VCS sidecar ([ref](skills/blazium-coldstorage/SPEC.md)) |
+| [blazium-release-checklist](skills/blazium-release-checklist/SKILL.md) | Launch and patch gates ([ref](skills/blazium-release-checklist/SPEC.md)) |
 
 ### Content
 
@@ -132,6 +156,8 @@ codex plugin marketplace add blazium-games/blazium-skills
 | [blazium-semantic-search](skills/blazium-semantic-search/SKILL.md) | Similar-asset search ([ref](skills/blazium-semantic-search/SPEC.md)) |
 | [blazium-sqlite](skills/blazium-sqlite/SKILL.md) | Embedded SQL ([ref](skills/blazium-sqlite/SPEC.md)) |
 | [blazium-goap](skills/blazium-goap/SKILL.md) | Native GOAP planner ([ref](skills/blazium-goap/SPEC.md)) |
+| [blazium-behavior](skills/blazium-behavior/SKILL.md) | Behavior-tree tick and utility scores ([ref](skills/blazium-behavior/SPEC.md)) |
+| [blazium-assets](skills/blazium-assets/SKILL.md) | Import filter and nine-patch margins ([ref](skills/blazium-assets/SPEC.md)) |
 | [blazium-addons](skills/blazium-addons/SKILL.md) | addons / AssetLib ([ref](skills/blazium-addons/SPEC.md)) |
 | [blazium-gdscript-templates](skills/blazium-gdscript-templates/SKILL.md) | Official script templates ([ref](skills/blazium-gdscript-templates/SPEC.md)) |
 
@@ -156,6 +182,10 @@ codex plugin marketplace add blazium-games/blazium-skills
 | [blazium-save-systems](skills/blazium-save-systems/SKILL.md) | Versioned `user://` slots ([ref](skills/blazium-save-systems/SPEC.md)) |
 | [blazium-dialogue](skills/blazium-dialogue/SKILL.md) | Data-driven talk graph ([ref](skills/blazium-dialogue/SPEC.md)) |
 | [blazium-game-feel](skills/blazium-game-feel/SKILL.md) | Tween / camera punch juice ([ref](skills/blazium-game-feel/SPEC.md)) |
+| [blazium-procedural](skills/blazium-procedural/SKILL.md) | Seeded noise, rooms, and loot ([ref](skills/blazium-procedural/SPEC.md)) |
+| [blazium-level-design](skills/blazium-level-design/SKILL.md) | Beat map and spatial metrics ([ref](skills/blazium-level-design/SPEC.md)) |
+| [blazium-playtest](skills/blazium-playtest/SKILL.md) | Session note and one regression ([ref](skills/blazium-playtest/SPEC.md)) |
+| [blazium-balance](skills/blazium-balance/SKILL.md) | Economy and combat tables ([ref](skills/blazium-balance/SPEC.md)) |
 | [blazium-accessibility](skills/blazium-accessibility/SKILL.md) | Remaps, font scale, `tr()` ([ref](skills/blazium-accessibility/SPEC.md)) |
 | [blazium-genre-platformer](skills/blazium-genre-platformer/SKILL.md) | Side-scroll jump composition ([ref](skills/blazium-genre-platformer/SPEC.md)) |
 | [blazium-genre-roguelike](skills/blazium-genre-roguelike/SKILL.md) | Roguelike composition ([ref](skills/blazium-genre-roguelike/SPEC.md)) |

@@ -4,6 +4,12 @@ Canonical skills live in `skills/<name>/` with `SKILL.md` plus `SPEC.md`.
 Do not invent APIs, CLI verbs, or Godot 4.7-only calls. Baseline:
 **Blazium 0.6.x (Godot 4.3.2 fork)**.
 
+## Community
+
+- Official website: [https://blazium.app/](https://blazium.app/)
+- IndieDB blog: [https://www.indiedb.com/engines/blazium-engine](https://www.indiedb.com/engines/blazium-engine)
+- Official community: [Blazium Discord](https://discord.gg/sZaf9KYzDp)
+
 ## Add a skill
 
 1. Copy `templates/SKILL.template.md` and `templates/SPEC.template.md`.
