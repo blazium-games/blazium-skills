@@ -102,10 +102,38 @@
     },
     {
       "id": "clicker-bignum-only",
-      "prompt": "Use BlaziumBigNum from_string and as_string so cookie counts do not overflow int. Do not build the idle HUD or prestige loop.",
+      "prompt": "Use BlaziumBigNum from_string and as_string to construct and serialize huge numbers that overflow int. Do not compose an incremental game.",
       "expected": "blazium-clicker",
       "catalog": ["blazium-clicker", "blazium-genre-idle", "blazium-csv"],
       "not": ["blazium-genre-idle"]
+    },
+    {
+      "id": "physics-tuning-feel",
+      "prompt": "Tune default gravity, friction, bounce, and damping so jumps stop feeling floaty and bodies stop feeling icy. Leave collision layers, masks, and raycasts alone.",
+      "expected": "blazium-physics-tuning",
+      "catalog": ["blazium-physics-tuning", "blazium-physics", "blazium-2d-movement"],
+      "not": ["blazium-physics", "blazium-2d-movement"]
+    },
+    {
+      "id": "behavior-tree-tick",
+      "prompt": "Implement a GDScript behavior tree with a blackboard, sequence, selector, and utility scoring curves. Do not use BlaziumGoapAgent or a planned world state.",
+      "expected": "blazium-behavior",
+      "catalog": ["blazium-behavior", "blazium-goap", "blazium-navigation"],
+      "not": ["blazium-goap", "blazium-navigation"]
+    },
+    {
+      "id": "camera-follow-orbit",
+      "prompt": "Build Camera2D follow with a deadzone, look-ahead, level bounds, and SpringArm3D orbit smoothing. Not pixel snap and not a camera punch.",
+      "expected": "blazium-camera",
+      "catalog": ["blazium-camera", "blazium-game-feel", "blazium-pixel-perfect"],
+      "not": ["blazium-game-feel", "blazium-pixel-perfect"]
+    },
+    {
+      "id": "prototype-slice",
+      "prompt": "Prove one mechanic as a throwaway vertical slice, idea-to-running, in the existing project. Do not bootstrap git, res://mcp, or a new Blazium game folder.",
+      "expected": "blazium-prototype",
+      "catalog": ["blazium-prototype", "blazium-new-project", "blazium-gdscript"],
+      "not": ["blazium-new-project", "blazium-gdscript"]
     }
   ]
 }

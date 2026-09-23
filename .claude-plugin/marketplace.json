@@ -20,7 +20,8 @@
         "./skills/blazium-autowork",
         "./skills/blazium-verify",
         "./skills/blazium-project-config",
-        "./skills/blazium-new-project"
+        "./skills/blazium-new-project",
+        "./skills/blazium-prototype"
       ]
     },
     {
@@ -38,6 +39,7 @@
         "./skills/blazium-tilemap",
         "./skills/blazium-tiled",
         "./skills/blazium-physics",
+        "./skills/blazium-physics-tuning",
         "./skills/blazium-navigation",
         "./skills/blazium-ui",
         "./skills/blazium-animation",
@@ -50,7 +52,8 @@
         "./skills/blazium-multiplayer-core",
         "./skills/blazium-input",
         "./skills/blazium-sprites",
-        "./skills/blazium-pixel-perfect"
+        "./skills/blazium-pixel-perfect",
+        "./skills/blazium-camera"
       ]
     },
     {
@@ -89,7 +92,8 @@
         "./skills/blazium-crash-reporter",
         "./skills/blazium-example-crash-server",
         "./skills/blazium-example-crash-sidecar",
-        "./skills/blazium-coldstorage"
+        "./skills/blazium-coldstorage",
+        "./skills/blazium-release-checklist"
       ]
     },
     {
@@ -102,6 +106,8 @@
         "./skills/blazium-semantic-search",
         "./skills/blazium-sqlite",
         "./skills/blazium-goap",
+        "./skills/blazium-behavior",
+        "./skills/blazium-assets",
         "./skills/blazium-addons",
         "./skills/blazium-gdscript-templates"
       ]
@@ -133,6 +139,10 @@
         "./skills/blazium-dialogue",
         "./skills/blazium-game-feel",
         "./skills/blazium-accessibility",
+        "./skills/blazium-procedural",
+        "./skills/blazium-level-design",
+        "./skills/blazium-playtest",
+        "./skills/blazium-balance",
         "./skills/blazium-genre-platformer",
         "./skills/blazium-genre-roguelike",
         "./skills/blazium-genre-rpg",
@@ -163,6 +173,7 @@
         "./skills/blazium-verify",
         "./skills/blazium-project-config",
         "./skills/blazium-new-project",
+        "./skills/blazium-prototype",
         "./skills/blazium-gdscript",
         "./skills/blazium-luau",
         "./skills/blazium-csharp",
@@ -172,6 +183,7 @@
         "./skills/blazium-tilemap",
         "./skills/blazium-tiled",
         "./skills/blazium-physics",
+        "./skills/blazium-physics-tuning",
         "./skills/blazium-navigation",
         "./skills/blazium-ui",
         "./skills/blazium-animation",
@@ -185,6 +197,7 @@
         "./skills/blazium-input",
         "./skills/blazium-sprites",
         "./skills/blazium-pixel-perfect",
+        "./skills/blazium-camera",
         "./skills/blazium-services",
         "./skills/blazium-jwt",
         "./skills/blazium-lobby",
@@ -208,10 +221,13 @@
         "./skills/blazium-example-crash-server",
         "./skills/blazium-example-crash-sidecar",
         "./skills/blazium-coldstorage",
+        "./skills/blazium-release-checklist",
         "./skills/blazium-asset-tags",
         "./skills/blazium-semantic-search",
         "./skills/blazium-sqlite",
         "./skills/blazium-goap",
+        "./skills/blazium-behavior",
+        "./skills/blazium-assets",
         "./skills/blazium-addons",
         "./skills/blazium-gdscript-templates",
         "./skills/blazium-config",
@@ -227,6 +243,10 @@
         "./skills/blazium-dialogue",
         "./skills/blazium-game-feel",
         "./skills/blazium-accessibility",
+        "./skills/blazium-procedural",
+        "./skills/blazium-level-design",
+        "./skills/blazium-playtest",
+        "./skills/blazium-balance",
         "./skills/blazium-genre-platformer",
         "./skills/blazium-genre-roguelike",
         "./skills/blazium-genre-rpg",

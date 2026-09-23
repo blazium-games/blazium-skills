@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "blazium-growth",
   "version": "0.6.0",
-  "description": "Growth adapters: nine genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork).",
+  "description": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork).",
   "author": {
     "name": "blazium"
   },
@@ -17,8 +17,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Blazium Growth",
-        "shortDescription": "Growth adapters: nine genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork).",
-        "longDescription": "Growth adapters: nine genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork).",
+        "shortDescription": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork).",
+        "longDescription": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork).",
         "developerName": "blazium",
         "category": "Developer Tools",
         "capabilities": [
@@ -28,7 +28,7 @@
         "websiteURL": "https://docs.blazium.app",
         "defaultPrompt": [
           "Use Blazium Growth to work on a Blazium 0.6.x (Godot 4.3.2 fork) project.",
-          "Growth adapters: nine genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork)."
+          "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.6.x (Godot 4.3.2 fork)."
         ]
       }
     }
