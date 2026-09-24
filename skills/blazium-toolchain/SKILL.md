@@ -13,7 +13,14 @@ Retro compilers are a **separate GPL binary**. The editor only spawns it.
 Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. Do not vendor GPL sources
 into the engine or this skill pack.
 
-Install the sidecar: `blazium-cli update apply --product toolchain`.
+Install the sidecar from npm. Linux and Windows, x64 and ia32. When npm installed the matching optional package, that binary is used.
+
+```text
+npx @blazium-engine/toolchain
+npm install -g @blazium-engine/toolchain
+```
+
+`blazium-cli update apply --product toolchain` is the other way to place the sidecar.
 Config: `.blazium-toolchain.yml` or `blazium-toolchain.yml` (or
 `--settings` / `$BLAZIUM_TOOLCHAIN_SETTINGS`). Dump resolved:
 `blazium-toolchain settings`.

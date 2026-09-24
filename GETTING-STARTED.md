@@ -46,6 +46,6 @@ python scripts/validate-plugin-packs.py
 
 Games cloud is `https://mcp.blazium.games/mcp` (`blazium-games-mcp`).
 
-Prefer Autowork, JustAMCP, or `blazium-cli --json` over unverified clicks.
+Prefer Autowork, JustAMCP, or `blazium-cli --json` over unverified clicks. Get the CLI with `npx @blazium-engine/cli` and the toolchain with `npx @blazium-engine/toolchain` (Linux and Windows, x64 and ia32).
 Grok `code_execution` and screenshots are not evidence — see [GROK.md](GROK.md).
 See [CONTRIBUTING.md](CONTRIBUTING.md) to add a skill.

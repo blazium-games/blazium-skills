@@ -42,6 +42,15 @@ Export presets → `blazium-export`. Retro cooks → `blazium-toolchain`
 
 ## Workflow
 
+Get the binary from npm before any verb. Linux and Windows, x64 and ia32. When npm installed the matching optional package, that binary is used.
+
+```text
+npx @blazium-engine/cli
+npm install -g @blazium-engine/cli
+```
+
+A blog zip is still wrong. After the binary exists, `install` and `update apply` remain the verbs.
+
 1. **Inspect.** `blazium-cli editors`, `install-path`, `templates path`.
 2. **Choose.** Channel + version. Default policy: latest **release** among
    installed editors unless pinned.
