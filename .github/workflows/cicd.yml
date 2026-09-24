@@ -247,6 +247,22 @@ jobs:
           source: skills.json
           out_dir: skills/${{ needs.resolve-version.outputs.simple_version }}
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      - name: Publish npm package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+          VERSION: ${{ needs.resolve-version.outputs.simple_version }}
+        run: |
+          set -euo pipefail
+          test -n "$NODE_AUTH_TOKEN"
+          test -n "$VERSION"
+          node -e 'const fs=require("fs"); const v=process.env.VERSION; if(!/^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/.test(v)) process.exit(1); const p=JSON.parse(fs.readFileSync("package.json","utf8")); p.version=v; fs.writeFileSync("package.json", JSON.stringify(p,null,2)+"\n"); console.log(p.name+"@"+p.version);'
+          npm publish --access public
+
       - name: Register with Cerebro
         env:
           CEREBRO_URL: ${{ secrets.CEREBRO_URL }}

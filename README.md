@@ -28,6 +28,12 @@ Skill packs publish their own semver to [skills.json](https://cdn.blazium.app/sk
 
 ## Install
 
+```text
+npm install @blazium-engine/skills
+```
+
+The package contains `skills/`, this README, and the MIT license. Host zip packs stay on the CDN catalog.
+
 After clone:
 
 ```bash

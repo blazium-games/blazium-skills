@@ -1,0 +1,22 @@
+{
+  "name": "@blazium-engine/skills",
+  "version": "0.0.0",
+  "description": "Agent skills for Blazium 0.8.x.",
+  "repository": "https://github.com/blazium-games/blazium-skills",
+  "license": "MIT",
+  "files": [
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://blazium.app",
+  "bugs": "https://github.com/blazium-games/blazium-skills/issues",
+  "author": "Blazium Games",
+  "keywords": [
+    "blazium",
+    "skills"
+  ]
+}
