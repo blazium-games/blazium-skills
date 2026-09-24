@@ -23,7 +23,8 @@ port **39218**, then `show_hub` / `focus_window`.
 ## When to use
 
 - Use when the user wants the Hub window, `hub-remote ensure`, or
-  `blazium://hub` / `blazium://project/<encoded-path>`.
+  `blazium://hub`. `blazium://open` and `blazium://project/<encoded-path>`
+  open the project in the editor, not as a running game.
 - Use when diagnosing Hub bind/token on port 39218.
 
 **When not to use:** install editors/templates → `blazium-cli`. Control a

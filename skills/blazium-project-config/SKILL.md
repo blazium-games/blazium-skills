@@ -59,7 +59,7 @@ not a settings store.
    was enabled.
 6. **Handoff.** List keys changed.
 
-CLI: `blazium-cli load`, `blazium-cli open`. Log path default:
+CLI: `blazium-cli load` and `blazium-cli open` launch the editor (`--editor --path`). Log path default:
 `user://logs/blazium.log`.
 
 ## Patterns
@@ -105,7 +105,7 @@ Pin editor version to the installed Blazium 0.8.x build. Do not write `features`
 - Project file touched (`project.blazium` and/or `project.godot`)
 - Keys changed (name = value)
 - Dangerous flags left off, or user-requested exceptions
-- Verify path (`blazium-cli load` / `remote doctor` / editor opened)
+- Verify path (`blazium-cli load` / `blazium-cli open` opens the editor / `remote doctor`)
 - Next skill (`blazium-mcp`, `blazium-cli-remote`, `blazium-new-project`)
 
 ## Pitfalls

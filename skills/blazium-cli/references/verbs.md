@@ -12,8 +12,10 @@ Do not invent `blazium-cli hub install`.
 | `editors` | List / `add` / `default` / `path` |
 | `install-path [path]` | Persist editor root (`--move` relocates) |
 | `templates` | `list` / `download` / `path` |
-| `open <project>` | Open a project |
-| `load <project>` | Load + profile |
+| `open <project>` | Open the project in the editor (`--editor --path`) |
+| `load <project>` | Open the editor and print the project profile |
+| `run <project>` | Play the main scene (`--path`, no `--editor`). Alias `play`. JSON error `no main scene` when `application/run/main_scene` is empty; the binary is not started |
+| `project-manager` | Start the default editor with `--project-manager` and no project |
 | `projects` | `add` / `remove` / `create <dir>` |
 | `handle-uri <uri>` | `blazium://` OS protocol |
 | `upgrade` | Upgrade this CLI from CDN `cli.json` |
