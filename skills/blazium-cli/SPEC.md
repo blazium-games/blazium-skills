@@ -13,7 +13,7 @@ Agents try to download random editor zips. Top-level CLI verbs install editors, 
 
 ## What
 
-`install`, `uninstall`, `editors`, `install-path`, `templates`, `open`, `load`, `projects create`, `handle-uri`, `upgrade`, `update check|apply|replace-bin`. `update apply --product` is `cli|hub|crash_reporter|toolchain`. `update check` may include `editor|templates`.
+`install`, `uninstall`, `editors`, `install-path`, `templates`, `open`, `load`, `run`, `play`, `project-manager`, `projects create`, `handle-uri`, `upgrade`, `update check|apply|replace-bin`. `update apply --product` is `cli|hub|crash_reporter|toolchain`. `update check` may include `editor|templates`.
 
 **Non-goals:** Hub UI, `hub-remote`, port 39218 (`blazium-hub`). HTTP `/v1` of a running instance (`blazium-cli-remote`). Do not invent `blazium-cli hub install`.
 
