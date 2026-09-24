@@ -50,7 +50,9 @@ Unity/Unreal layout. Do not implement a player controller in this skill.
 3. **Scaffold** Autowork, `res://mcp`, and `.gitignore` from sibling assets.
 4. **Git.** `git init` if missing. Apply [assets/.gitignore](assets/.gitignore).
 5. **Open.** `blazium-cli open` or `blazium-cli handle-uri` with
-   `blazium://open?path=<abs>`.
+   `blazium://open?path=<abs>`. That starts the editor (`--editor --path`).
+   `run` / `play` is for playing the game. A new project has no main scene,
+   so `run` is expected to fail with `no main scene` until one is set.
 6. **Verify.** Editor opens. GDScript-only:
    `blazium --headless --path <dir> --aw-dir=res://tests/gdscript`. Mixed
    suffixes: `-s run_tests.gd`. Exit 0.

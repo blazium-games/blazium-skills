@@ -75,6 +75,7 @@ blazium-cli update apply --product cli
 blazium-cli upgrade
 blazium-cli open D:\games\my_game --crash-reporter C:\Blazium\crash_reporter.exe
 blazium-cli open D:\games\my_game --analytics accepted --analytics-mode anonymous
+blazium-cli run D:\games\my_game
 ```
 
 Launch flags: `--crash-reporter`, `--no-crash-reporter`, `--analytics`,
@@ -82,6 +83,7 @@ Launch flags: `--crash-reporter`, `--no-crash-reporter`, `--analytics`,
 
 ## Pitfalls
 
+- **`open` to play the game** → `open` and `load` pass `--editor`. Use `run` (alias `play`) to play. `run` fails with `no main scene` until `application/run/main_scene` is set.
 - **Nested `hub install`** → not a verb; use `install`.
 - **`update apply --product editor`** → use `install` instead.
 - **Downloaded a random zip from a blog** → CDN / `install` only.
