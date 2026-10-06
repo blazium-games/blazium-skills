@@ -47,16 +47,22 @@ Unity/Unreal layout. Do not implement a player controller in this skill.
    live-ops (Services vs local-only).
 2. **Editor.** Confirm a Blazium 0.8.x editor exists
    (`blazium-cli editors`).
-3. **Scaffold** Autowork, `res://mcp`, and `.gitignore` from sibling assets.
-4. **Git.** `git init` if missing. Apply [assets/.gitignore](assets/.gitignore).
-5. **Open.** `blazium-cli open` or `blazium-cli handle-uri` with
+3. **Starter.** When the user wants a starter, `blazium-cli starters list`,
+   then `blazium-cli starters download <name> -dir <path>`. The catalog is
+   `https://cdn.blazium.app/starters/starters.json`. Each entry has `github`
+   and `git`. Clone `git` and check out `commit` when the zip cannot be
+   unpacked. An empty project still uses the scaffold below. Export templates
+   stay on `blazium-cli templates`.
+4. **Scaffold** Autowork, `res://mcp`, and `.gitignore` from sibling assets.
+5. **Git.** `git init` if missing. Apply [assets/.gitignore](assets/.gitignore).
+6. **Open.** `blazium-cli open` or `blazium-cli handle-uri` with
    `blazium://open?path=<abs>`. That starts the editor (`--editor --path`).
    `run` / `play` is for playing the game. A new project has no main scene,
    so `run` is expected to fail with `no main scene` until one is set.
-6. **Verify.** Editor opens. GDScript-only:
+7. **Verify.** Editor opens. GDScript-only:
    `blazium --headless --path <dir> --aw-dir=res://tests/gdscript`. Mixed
    suffixes: `-s run_tests.gd`. Exit 0.
-7. **Handoff** to `blazium-router` for the next task (gameplay, MCP, Services).
+8. **Handoff** to `blazium-router` for the next task (gameplay, MCP, Services).
 
 Config lives in `%APPDATA%\blazium\hub.json` (Windows).
 

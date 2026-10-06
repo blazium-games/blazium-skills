@@ -12,6 +12,7 @@ Do not invent `blazium-cli hub install`.
 | `editors` | List / `add` / `default` / `path` |
 | `install-path [path]` | Persist editor root (`--move` relocates) |
 | `templates` | `list` / `download` / `path` |
+| `starters` | `list` / `download <name> -dir <path>`. Project starters from [starters.json](https://cdn.blazium.app/starters/starters.json). Not export templates. |
 | `open <project>` | Open the project in the editor (`--editor --path`) |
 | `load <project>` | Open the editor and print the project profile |
 | `run <project>` | Play the main scene (`--path`, no `--editor`). Alias `play`. JSON error `no main scene` when `application/run/main_scene` is empty; the binary is not started |
@@ -42,6 +43,18 @@ blazium-cli templates path
 
 `list` filters: `--platform`, `--channel`, `--variant`, `--mono`, `--no-mono`.
 `download` modes (exactly one): `--file`, `--platform`, `--runtime`, `--all`, `--tpz`.
+
+## Starters
+
+```text
+blazium-cli starters list
+blazium-cli starters list --format json
+blazium-cli starters download template_2d_empty -dir D:\games\my_game
+```
+
+`list` prints each starter's name, description, and `github` URL.
+`download` unpacks that version's zip into `-dir` after a sha256 check.
+Each catalog entry also has `git` and `commit`. When the zip cannot be unpacked, clone `git` and check out `commit`.
 
 ## Update
 

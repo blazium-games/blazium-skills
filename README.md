@@ -29,6 +29,7 @@ Skill packs publish their own semver to [skills.json](https://cdn.blazium.app/sk
 |---------|------|---------|
 | [Engine](https://github.com/blazium-games/blazium) | The editor. Two lines: `blazium-dev` (Godot 4.3+) and `blazium_4.8` (Godot 4.8+). Hub, crash reporter, skills, and subagents track `blazium_4.8`. | [blazium.app/download](https://blazium.app/download) |
 | [CLI](https://github.com/blazium-games/blazium-cli) | Install editors, projects, remote control, Steam and itch.io deploy. Not the Games uploader. | Linux and Windows, x86_64 and x86_32. Catalog: [cli.json](https://cdn.blazium.app/cli/cli.json) |
+| [Starters](https://github.com/blazium-games/blazium-templates) | Project starters the CLI and Hub can download. Each catalog entry includes the GitHub URL for a clone. Export templates stay on `blazium-cli templates`. | Catalog: [starters.json](https://cdn.blazium.app/starters/starters.json) |
 | [Hub](https://github.com/blazium-games/blazium-hub) | Desktop companion; installers bundle the CLI. Engine builds track `blazium_4.8`. | Linux and Windows, x86_64 and x86_32. |
 | [Crash reporter](https://github.com/blazium-games/blazium_crash_reporter) | Sidecar UI for engine and Hub crash reports. Engine builds track `blazium_4.8`. | Linux and Windows, x86_64 and x86_32. Catalog: [crash_reporter.json](https://cdn.blazium.app/crash_reporter/crash_reporter.json) |
 | [Toolchain](https://github.com/blazium-games/blazium-toolchain) | PS1, PS2, N64, and Interactive DVD. `ps3` and `ps4` are reserved and do not ship. | Linux and Windows, x86_64 and x86_32. Catalog: [toolchain.json](https://cdn.blazium.app/toolchain/toolchain.json) |
@@ -203,6 +204,9 @@ codex plugin marketplace add blazium-games/blazium-skills
 | [blazium-procedural](skills/blazium-procedural/SKILL.md) | Seeded noise, rooms, and loot ([ref](skills/blazium-procedural/SPEC.md)) |
 | [blazium-level-design](skills/blazium-level-design/SKILL.md) | Beat map and spatial metrics ([ref](skills/blazium-level-design/SPEC.md)) |
 | [blazium-playtest](skills/blazium-playtest/SKILL.md) | Session note and one regression ([ref](skills/blazium-playtest/SPEC.md)) |
+| [blazium-visual-proof](skills/blazium-visual-proof/SKILL.md) | Same camera, before and after screenshots, then compare |
+| [blazium-editor-ui](skills/blazium-editor-ui/SKILL.md) | Editor camera, dialogs, unsaved files, and actions |
+| [blazium-vfx](skills/blazium-vfx/SKILL.md) | Fire, smoke, sparks, muzzle, hit, and dissolve |
 | [blazium-balance](skills/blazium-balance/SKILL.md) | Economy and combat tables ([ref](skills/blazium-balance/SPEC.md)) |
 | [blazium-accessibility](skills/blazium-accessibility/SKILL.md) | Remaps, font scale, `tr()` ([ref](skills/blazium-accessibility/SPEC.md)) |
 | [blazium-genre-platformer](skills/blazium-genre-platformer/SKILL.md) | Side-scroll jump composition ([ref](skills/blazium-genre-platformer/SPEC.md)) |
