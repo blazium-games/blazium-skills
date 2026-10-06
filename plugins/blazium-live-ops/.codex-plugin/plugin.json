@@ -1,4 +1,19 @@
 {
+  "name": "blazium-live-ops",
+  "version": "0.8.0",
+  "description": "Identity and live services: login, JWT, lobby, Steam/Discord, ENet-WebRTC, dedicated ENet, RCON, Games cloud MCP, crash analytics. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
+  "author": {
+    "name": "blazium"
+  },
+  "homepage": "https://docs.blazium.app",
+  "repository": "https://github.com/blazium-games/blazium-skills",
+  "license": "MIT",
+  "keywords": [
+    "blazium",
+    "godot",
+    "gamedev",
+    "live-ops"
+  ],
   "interface": {
     "displayName": "Blazium Live Ops",
     "shortDescription": "Identity and live services: login, JWT, lobby, Steam/Discord, ENet-WebRTC, dedicated ENet, RCON, Games cloud MCP, crash analytics. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",

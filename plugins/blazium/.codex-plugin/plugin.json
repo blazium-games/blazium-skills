@@ -1,4 +1,19 @@
 {
+  "name": "blazium",
+  "version": "0.8.0",
+  "description": "Full bundle: router, MCP, Autowork, engine, live-ops, export/toolchain, content-intelligence, extra-module, and growth-adapter skills. Baseline Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
+  "author": {
+    "name": "blazium"
+  },
+  "homepage": "https://docs.blazium.app",
+  "repository": "https://github.com/blazium-games/blazium-skills",
+  "license": "MIT",
+  "keywords": [
+    "blazium",
+    "godot",
+    "gamedev",
+    "bundle"
+  ],
   "interface": {
     "displayName": "Blazium",
     "shortDescription": "Full bundle: router, MCP, Autowork, engine, live-ops, export/toolchain, content-intelligence, extra-module, and growth-adapter skills. Baseline Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",

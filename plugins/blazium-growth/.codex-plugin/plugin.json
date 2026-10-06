@@ -1,4 +1,19 @@
 {
+  "name": "blazium-growth",
+  "version": "0.8.0",
+  "description": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
+  "author": {
+    "name": "blazium"
+  },
+  "homepage": "https://docs.blazium.app",
+  "repository": "https://github.com/blazium-games/blazium-skills",
+  "license": "MIT",
+  "keywords": [
+    "blazium",
+    "godot",
+    "gamedev",
+    "growth"
+  ],
   "interface": {
     "displayName": "Blazium Growth",
     "shortDescription": "Growth adapters: ten genre wrappers, save/dialogue/feel/a11y craft, Steam/itch/Games publish, JustAMCP performance. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",

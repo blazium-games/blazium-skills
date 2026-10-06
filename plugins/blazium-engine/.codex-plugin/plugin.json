@@ -1,4 +1,19 @@
 {
+  "name": "blazium-engine",
+  "version": "0.8.0",
+  "description": "Engine skills: languages, scenes, 2D/physics, presentation, resources, localization, and multiplayer core. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
+  "author": {
+    "name": "blazium"
+  },
+  "homepage": "https://docs.blazium.app",
+  "repository": "https://github.com/blazium-games/blazium-skills",
+  "license": "MIT",
+  "keywords": [
+    "blazium",
+    "godot",
+    "gamedev",
+    "engine"
+  ],
   "interface": {
     "displayName": "Blazium Engine",
     "shortDescription": "Engine skills: languages, scenes, 2D/physics, presentation, resources, localization, and multiplayer core. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",

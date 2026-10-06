@@ -14,6 +14,13 @@ CLAUDE = ROOT / ".claude-plugin" / "marketplace.json"
 PLUGINS = ROOT / "plugins"
 VERSION = "0.8.0"
 HOMEPAGE = "https://docs.blazium.app"
+REPOSITORY = "https://github.com/blazium-games/blazium-skills"
+LICENSE_NAME = "MIT"
+CODEXIGNORE = """.env
+.env.*
+*.local
+__pycache__/
+"""
 
 
 PACK_DISPLAY = {
@@ -108,6 +115,20 @@ def link_skill(src: Path, dest: Path) -> None:
     dest.symlink_to(src, target_is_directory=True)
 
 
+def write_pack_docs(pack: Path, name: str, desc: str) -> None:
+    label = display_name(name)
+    (pack / "README.md").write_text(
+        f"# {label}\n\n{desc}\n\n"
+        "Install this pack from the "
+        f"[blazium-skills]({REPOSITORY}) marketplace. "
+        "The skill files are linked into `skills/` by `scripts/sync-plugin-packs.py`.\n",
+        encoding="utf-8",
+    )
+    shutil.copyfile(ROOT / "SECURITY.md", pack / "SECURITY.md")
+    shutil.copyfile(ROOT / "LICENSE", pack / "LICENSE")
+    (pack / ".codexignore").write_text(CODEXIGNORE, encoding="utf-8")
+
+
 def write_json(path: Path, data: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
@@ -132,6 +153,7 @@ def main() -> int:
         interface = openai_interface(name, desc)
         tags = keywords_for(name)
 
+        author = {"name": owner.get("name", "blazium")}
         write_json(
             pack / "plugin.json",
             {
@@ -139,16 +161,29 @@ def main() -> int:
                 "name": name,
                 "version": VERSION,
                 "description": desc,
-                "author": {"name": owner.get("name", "blazium")},
+                "author": author,
                 "homepage": HOMEPAGE,
+                "repository": REPOSITORY,
+                "license": LICENSE_NAME,
                 "keywords": tags,
                 "extensions": {"com.openai": {"interface": interface}},
             },
         )
         write_json(
             pack / ".codex-plugin" / "plugin.json",
-            {"interface": interface},
+            {
+                "name": name,
+                "version": VERSION,
+                "description": desc,
+                "author": author,
+                "homepage": HOMEPAGE,
+                "repository": REPOSITORY,
+                "license": LICENSE_NAME,
+                "keywords": tags,
+                "interface": interface,
+            },
         )
+        write_pack_docs(pack, name, desc)
         write_json(
             pack / ".cursor-plugin" / "plugin.json",
             {

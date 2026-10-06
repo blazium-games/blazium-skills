@@ -1,4 +1,19 @@
 {
+  "name": "blazium-ship",
+  "version": "0.8.0",
+  "description": "Export and toolchain: desktop/mobile/web export, GPL retro sidecar, specialty targets, GitHub Actions, CI watch, CLI, Hub, Crash Reporter, ColdStorage. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",
+  "author": {
+    "name": "blazium"
+  },
+  "homepage": "https://docs.blazium.app",
+  "repository": "https://github.com/blazium-games/blazium-skills",
+  "license": "MIT",
+  "keywords": [
+    "blazium",
+    "godot",
+    "gamedev",
+    "ship"
+  ],
   "interface": {
     "displayName": "Blazium Ship",
     "shortDescription": "Export and toolchain: desktop/mobile/web export, GPL retro sidecar, specialty targets, GitHub Actions, CI watch, CLI, Hub, Crash Reporter, ColdStorage. Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`).",

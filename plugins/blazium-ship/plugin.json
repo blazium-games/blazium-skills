@@ -7,6 +7,8 @@
     "name": "blazium"
   },
   "homepage": "https://docs.blazium.app",
+  "repository": "https://github.com/blazium-games/blazium-skills",
+  "license": "MIT",
   "keywords": [
     "blazium",
     "godot",
