@@ -49,6 +49,7 @@
       "editors",
       "install-path",
       "templates",
+      "starters",
       "open",
       "load",
       "run",

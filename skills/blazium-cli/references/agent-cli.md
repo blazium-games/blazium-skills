@@ -20,6 +20,7 @@ Every input is a flag or argument. Do not wait for an interactive menu.
 blazium-cli --help
 blazium-cli install --help
 blazium-cli templates list --help
+blazium-cli starters list --help
 blazium-cli update apply --help
 ```
 
@@ -34,6 +35,8 @@ blazium-cli templates list nightly --platform web --format json
 blazium-cli templates download nightly --tpz --json
 blazium-cli templates download 0.6.748 --platform android --json
 blazium-cli templates download nightly --runtime --variant release --json
+blazium-cli starters list --json
+blazium-cli starters download template_2d_empty -dir D:\games\my_game --json
 blazium-cli update check --product editor --json
 blazium-cli update apply --product cli --dry-run --json
 blazium-cli upgrade --dry-run --json

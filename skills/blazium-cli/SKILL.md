@@ -17,6 +17,8 @@ Editor and product lifecycle. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branc
 
 `update apply --product` is only `cli|hub|crash_reporter|toolchain`.
 Editors/templates use `install` / `templates download`.
+Project starters use `starters list` and `starters download`. They are not export templates.
+Each catalog entry has `github` and `git`. Clone `git` and check out `commit` when the zip cannot be unpacked.
 `update check --product` may include `editor|templates`.
 
 Config: `%APPDATA%\blazium\cli.json` (Linux/macOS: `~/.config/blazium/`).
@@ -70,6 +72,8 @@ Flags before prompts. Discover `blazium-cli --help` then
 ```text
 blazium-cli install 0.6.714 --json
 blazium-cli projects create D:\games\my_game
+blazium-cli starters list
+blazium-cli starters download template_2d_empty -dir D:\games\my_game
 blazium-cli update check --product editor
 blazium-cli update apply --product cli
 blazium-cli upgrade
