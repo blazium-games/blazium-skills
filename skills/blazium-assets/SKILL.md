@@ -57,6 +57,8 @@ func _ready() -> void:
 
 Name files by role (`ui_panel`, `hero_idle`), not by export date.
 
+A dropped GLB is loaded from the exact path the tool returned. No Blender installer and no hosted Blender lane.
+
 ## Output contract
 
 - Imported paths

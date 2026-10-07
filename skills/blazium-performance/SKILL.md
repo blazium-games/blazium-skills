@@ -66,6 +66,8 @@ dock. Grok `code_execution` is not Blazium evidence.
 
 ### Autowork soak
 
+`WorkerThreadPool` for background loads. Keep the frame on the main thread.
+
 Long `wait` / input simulate in `test_*.gd` — see `blazium-autowork`.
 Do not treat a single screenshot as proof.
 

@@ -60,7 +60,7 @@ crafting menu.
 | `blazium-sqlite` | world / inventory save |
 | `blazium-3d` | world / props |
 
-Recipe as a `Resource`; persist crafted counts in `user://`:
+Economy loops (gather, craft, spend) live here: a stock resource goes down when a recipe runs and the output stock goes up. Recipe as a `Resource`; persist crafted counts in `user://`:
 
 ```gdscript
 extends Resource

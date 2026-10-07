@@ -77,6 +77,7 @@ into instanced GLB / `.tscn` (`scene_file_path` set).
 - **Recursed into instanced GLB** → inlines meshes and can blow the file.
 - **`.gdignore` under game assets** → importer skips the directory.
 - **Everything in one autoload** → compose scenes instead.
+- **Invented `uid://`, hand-edited `load_steps`, or rewrote `ext_resource` / `sub_resource` ids** → refuse. Scalar properties and `[connection]` lines may be edited. Prefer `scene_tools`.
 
 ## Related skills
 

@@ -70,7 +70,7 @@ Prefer project files over memory. Evidence is Autowork (BigNum round-trip
 
 ### Scene sketch (4.8.x)
 
-`Control` HUD (currency `Label`, click `Button`, shop list) + one Autoload
+Economy loops (click, generator, spend, prestige) live here: currency goes up on the tick and down on the buy. `Control` HUD (currency `Label`, click `Button`, shop list) + one Autoload
 economy node that owns `BlaziumBigNum` fields. Persist with
 `blazium-save-systems` using `as_string()`. Balance rows live in CSV or
 `.tres` — not hardcoded `float`.

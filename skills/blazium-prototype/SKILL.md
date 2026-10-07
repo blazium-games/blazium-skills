@@ -31,7 +31,7 @@ that the verb happened.
 ## Workflow
 
 1. **Inspect.** Project exists (`blazium-new-project` if not).
-2. **Choose.** One mechanic. Cut everything else.
+2. **Choose.** Ask numbered design questions, record the choice, then build. One mechanic. Cut everything else.
 3. **Implement.** One scene, one script, input already on `blazium-input`
    if actions are needed. No save, no net, no store.
 4. **Verify.** Autowork smoke: the verb’s outcome is true after simulate

@@ -74,6 +74,24 @@ func _on_body_entered(body: Node2D) -> void:
 - Autowork or parse evidence (or `INCONCLUSIVE`)
 - Next skill
 
+## Godot 3 names
+
+Refuse these and write the 4.8 form:
+
+| Godot 3 | Blazium 4.8 |
+|---------|-------------|
+| `yield(...)` | `await` |
+| `export var` / `onready var` | `@export var` / `@onready var` |
+| `.instance()` | `instantiate()` |
+| `KinematicBody2D` | `CharacterBody2D` |
+| `Spatial` | `Node3D` |
+| `Sprite` | `Sprite2D` or `Sprite3D` |
+| `File.new()` / `Directory.new()` | `FileAccess` / `DirAccess` |
+| `Pool*Array` | `Packed*Array` |
+| `connect("signal_name", self, "_method")` | `signal_name.connect(_method)` |
+
+After a `class_name` add, rename, or delete, the editor scan must finish or run `blazium --headless --import` before the next script uses that name.
+
 ## Pitfalls
 
 - **Used non-`blazium_4.8` syntax** → stay on 4.8.x.

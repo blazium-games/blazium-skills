@@ -46,6 +46,8 @@ Resource or CSV plus one Autowork read of a row.
 |----|------|--------|------------|--------|
 | strike | 2 | 5 | 0.4 | 10 |
 
+Run a headless simulation with playstyle bands (cautious, expected, aggressive). Record the band, the seed, and the outcome. No Rust lab.
+
 Keep ids stable. Designers change numbers; programmers change columns.
 Generation code reads the weight column (`blazium-procedural`).
 
