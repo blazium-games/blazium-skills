@@ -60,6 +60,8 @@ A blog zip is still wrong. After the binary exists, `install` and `update apply`
 4. **Verify.** `editors path <ver>` launches; `--json` status is clean.
 5. **Handoff.** Installed version → `blazium-new-project` or `blazium-export`.
 
+A headless session that adds, renames, or deletes a `class_name` must finish the editor scan or run `blazium --headless --import` before the next script uses that name.
+
 ## Agent invocation
 
 Flags before prompts. Discover `blazium-cli --help` then

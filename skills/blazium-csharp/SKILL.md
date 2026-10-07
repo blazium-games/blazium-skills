@@ -42,13 +42,26 @@ using Godot;
 
 public partial class Spinner : Node2D
 {
+    [Signal]
+    public delegate void SpunEventHandler(float degrees);
+
     [Export] public float Speed { get; set; } = 90f;
 
     public override void _Process(double delta)
     {
         RotationDegrees += Speed * (float)delta;
+        EmitSignal(SignalName.Spun, RotationDegrees);
     }
 }
+```
+
+```gdscript
+signal spun(degrees: float)
+@export var speed: float = 90.0
+
+func _process(delta: float) -> void:
+	rotation_degrees += speed * delta
+	spun.emit(rotation_degrees)
 ```
 
 ## Pitfalls

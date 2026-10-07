@@ -130,6 +130,7 @@ codex plugin marketplace add blazium-games/blazium-skills
 | [blazium-sprites](skills/blazium-sprites/SKILL.md) | AtlasTexture / SpriteFrames ([ref](skills/blazium-sprites/SPEC.md)) |
 | [blazium-pixel-perfect](skills/blazium-pixel-perfect/SKILL.md) | Pixel camera snap ([ref](skills/blazium-pixel-perfect/SPEC.md)) |
 | [blazium-camera](skills/blazium-camera/SKILL.md) | Follow, orbit, and bounds ([ref](skills/blazium-camera/SPEC.md)) |
+| [blazium-gdextension](skills/blazium-gdextension/SKILL.md) | godot-cpp after a profile |
 | [blazium-localization](skills/blazium-localization/SKILL.md) | `tr()` and locales ([ref](skills/blazium-localization/SPEC.md)) |
 | [blazium-multiplayer-core](skills/blazium-multiplayer-core/SKILL.md) | `@rpc` / ENet / synchronizer ([ref](skills/blazium-multiplayer-core/SPEC.md)) |
 
@@ -218,6 +219,22 @@ codex plugin marketplace add blazium-games/blazium-skills
 | [blazium-genre-visual-novel](skills/blazium-genre-visual-novel/SKILL.md) | Visual-novel composition ([ref](skills/blazium-genre-visual-novel/SPEC.md)) |
 | [blazium-genre-survival-crafting](skills/blazium-genre-survival-crafting/SKILL.md) | Survival-crafting composition ([ref](skills/blazium-genre-survival-crafting/SPEC.md)) |
 | [blazium-genre-puzzle](skills/blazium-genre-puzzle/SKILL.md) | Puzzle composition ([ref](skills/blazium-genre-puzzle/SPEC.md)) |
+| [blazium-genre-idle](skills/blazium-genre-idle/SKILL.md) | Idle / incremental composition |
+| [blazium-genre-fighting](skills/blazium-genre-fighting/SKILL.md) | Fighting composition |
+| [blazium-genre-horror](skills/blazium-genre-horror/SKILL.md) | Horror composition |
+| [blazium-genre-racing](skills/blazium-genre-racing/SKILL.md) | Racing composition |
+| [blazium-genre-rhythm](skills/blazium-genre-rhythm/SKILL.md) | Rhythm composition |
+| [blazium-genre-rts](skills/blazium-genre-rts/SKILL.md) | RTS composition |
+| [blazium-genre-stealth](skills/blazium-genre-stealth/SKILL.md) | Stealth composition |
+| [blazium-genre-moba](skills/blazium-genre-moba/SKILL.md) | MOBA composition |
+| [blazium-genre-battle-royale](skills/blazium-genre-battle-royale/SKILL.md) | Battle royale composition |
+| [blazium-genre-educational](skills/blazium-genre-educational/SKILL.md) | Educational composition |
+| [blazium-genre-romance](skills/blazium-genre-romance/SKILL.md) | Romance composition |
+| [blazium-genre-sports](skills/blazium-genre-sports/SKILL.md) | Sports composition |
+| [blazium-genre-simulation](skills/blazium-genre-simulation/SKILL.md) | Simulation composition |
+| [blazium-genre-open-world](skills/blazium-genre-open-world/SKILL.md) | Open world composition |
+| [blazium-genre-flight](skills/blazium-genre-flight/SKILL.md) | Flight composition |
+| [blazium-version-migration](skills/blazium-version-migration/SKILL.md) | Godot 4.x hop onto the 4.8 line |
 | [blazium-steam-publish](skills/blazium-steam-publish/SKILL.md) | SteamPipe / steamcmd ([ref](skills/blazium-steam-publish/SPEC.md)) |
 | [blazium-itch-publish](skills/blazium-itch-publish/SKILL.md) | itch butler ([ref](skills/blazium-itch-publish/SPEC.md)) |
 | [blazium-games-publish](skills/blazium-games-publish/SKILL.md) | blazium.games store page ([ref](skills/blazium-games-publish/SPEC.md)) |

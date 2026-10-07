@@ -53,7 +53,7 @@ that up as `VERIFIED`.
    MCP `:6506`, or game MCP `:6507`. Do not mix ports.
 3. **Measure.** Same command, same project path, same warmup.
 4. **Compare.** Raw output: Autowork JSON, remote `--json`, MCP tool result.
-5. **Verdict.** One of the three labels. Quote the artifact.
+5. **Verdict.** One of the three labels. Quote the artifact. A `.gd` or `.tscn` edit in the turn ends with parse or play evidence.
 
 ## Surfaces
 

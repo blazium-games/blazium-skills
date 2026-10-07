@@ -39,7 +39,7 @@ plus the Autowork result or `INCONCLUSIVE`.
    Autowork `test_*` that fails before the fix and passes after.
 4. **Verify.** Run that test. Quote the result. Do not treat a screenshot
    of the session as the regression.
-5. **Handoff.** Note path, test path, and the fixer.
+5. **Handoff.** Note path, test path, and the fixer. Commit a check whose pass is behavior, and keep a short last-run note (what the probe saw, what failed) for the next session.
 
 ## Patterns
 
@@ -60,6 +60,10 @@ One regression per note. If the failure is not assertable yet, say
 - **Passed the build from a screenshot** → quote the test or say inconclusive.
 - **Bundled five bugs in one assert** → one failure, one test.
 - **Skipped expected vs actual** → the fixer cannot tell what broke.
+
+## Play clock
+
+Repeat a session with `blazium_editor_play_scene` `seed`, `fixed_fps`, and `frozen`. Advance with `blazium_runtime_step` or `blazium_runtime_step_until`. Put inputs on the step. Set speed with `blazium_runtime_set_time_scale`. Read `blazium://play/clock`. Prompt: `blazium_runtime_test_loop`.
 
 ## Resources
 

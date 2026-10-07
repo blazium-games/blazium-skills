@@ -38,8 +38,9 @@ InterDVD → `blazium-specialty-export`. GitHub Actions matrix →
 3. **Implement.** Prefer `list_export_presets` then `export_release` /
    `export_debug` / `export_project`. Android: `list_android_devices` →
    `deploy_to_android`.
-4. **Verify.** Artifact exists and launches (or adb install succeeds). Not a
-   screenshot alone.
+4. **Verify.** After the export, run the built binary for a bounded interval
+   and check the exit status (`export_smoke`). Android: adb install succeeds.
+   Not a screenshot alone.
 5. **Handoff.** Paths + preset names. Bake `app_id`/`build_id` notes →
    `blazium-crash-analytics` (do not re-teach consent).
 
@@ -59,7 +60,8 @@ InterDVD → `blazium-specialty-export`. GitHub Actions matrix →
 
 `list_export_presets`, `export_project` (`preset_index` / `preset_name`,
 `debug`), `export_release`, `export_debug`, `export_custom`, `get_export_info`,
-`list_android_devices`, `get_android_preset_info`, `deploy_to_android`
+`list_android_devices`, `get_android_preset_info`, `deploy_to_android`,
+`export_smoke` (`path`, `timeout_ms`)
 (`device_serial`, `skip_export`, `launch`).
 
 ### Templates (real CLI)

@@ -46,13 +46,13 @@ paths and the save query used.
 
 | Pin | Owns |
 |-----|------|
-| `blazium-resources` | items / stats `.tres` |
+| `blazium-resources` | items / stats `.tres`, slot rules, quest state |
 | `blazium-localization` | `tr()` / locales |
 | `blazium-ui` | menus / HUD |
 | `blazium-goap` | NPC plans (`init(actor)`) |
 | `blazium-sqlite` | save (`user://`) |
 
-Plan NPCs with GOAP; persist slot data with SQLite:
+Slot rules, quest state, and stat resources live on `blazium-resources`. Party stays in this skill. Plan NPCs with GOAP; persist slot data with SQLite:
 
 ```gdscript
 agent.init(actor)  # BlaziumGoapAgent — required or planning never starts

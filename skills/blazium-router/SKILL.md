@@ -62,7 +62,7 @@ Secondary Blazium signals (do not override a clear Godot-only tree):
 `blazium/justamcp/` settings, Hub `hub.json`, `blazium-cli` in path.
 
 Pin version from the project `config_version` / `features` / installed editor.
-Keep the project's pin unless migration is requested.
+Keep the project's pin unless migration is requested. A requested migration loads `blazium-version-migration`.
 
 ## 2. Task classifier (minimal load)
 
@@ -71,6 +71,8 @@ Keep the project's pin unless migration is requested.
 | New / empty / "make a Blazium game" | `blazium-new-project` |
 | One-mechanic vertical slice / idea-to-running proof | `blazium-prototype` |
 | `project.blazium` / settings / migrate from Godot | `blazium-project-config` |
+| Godot 4.x hop onto the 4.8 line | `blazium-version-migration` |
+| Native hot path / C library | `blazium-gdextension` |
 | Connect editor MCP, toolsets, `blazium://` resources | `blazium-mcp` |
 | `res://mcp`, game tools, `user-blazium-game` | `blazium-game-mcp` |
 | `blazium-cli remote`, eval, instance discovery | `blazium-cli-remote` |
@@ -159,6 +161,20 @@ Keep the project's pin unless migration is requested.
 | Visual novel | `blazium-genre-visual-novel` |
 | Survival / crafting | `blazium-genre-survival-crafting` |
 | Puzzle | `blazium-genre-puzzle` |
+| Fighting | `blazium-genre-fighting` |
+| Horror | `blazium-genre-horror` |
+| Racing | `blazium-genre-racing` |
+| Rhythm | `blazium-genre-rhythm` |
+| RTS | `blazium-genre-rts` |
+| Stealth | `blazium-genre-stealth` |
+| MOBA | `blazium-genre-moba` |
+| Battle royale | `blazium-genre-battle-royale` |
+| Educational | `blazium-genre-educational` |
+| Romance | `blazium-genre-romance` |
+| Sports | `blazium-genre-sports` |
+| Simulation | `blazium-genre-simulation` |
+| Open world | `blazium-genre-open-world` |
+| Flight | `blazium-genre-flight` |
 | SteamPipe / steamcmd | `blazium-steam-publish` |
 | itch butler | `blazium-itch-publish` |
 | blazium.games page | `blazium-games-publish` |

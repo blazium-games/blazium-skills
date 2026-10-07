@@ -69,7 +69,7 @@ the Autowork runner — quote `user://autowork_results.json` or
    `blazium-cli remote autowork run --dir res://tests/gdscript --include-subdirs --wait`.
 5. **Read.** `user://autowork_results.json` or `autowork://latest_results`.
 6. **Fix.** Prompt `blazium_autowork_fix_loop` / `analyze_autowork_test_failures`.
-7. **Handoff.** Pass/fail counts. Exit code = fail count in headless.
+7. **Handoff.** Pass/fail counts. Exit code = fail count in headless. Commit a check whose pass is behavior, and keep a short last-run note (what the probe saw, what failed) for the next session.
 
 ## Patterns
 
@@ -102,6 +102,10 @@ under `user://`. Nested runs are blocked. E2E autoload name is
 - **Looked up `AutoworkE2EServer` autoload** → name is `AutomationServer`.
 - **MCP autowork tools missing** → family default off.
 - **Second run errors "already running"** → nested Autowork blocked.
+
+## Headless script
+
+`blazium_remote_control_run_headless_script` on port 6508 runs one `extends SceneTree` script in a separate editor process sandboxed to the project. `blazium_execute_gdscript_snippet` stays Expression-only. `.gd` writes from create, edit, and patch refuse until `blazium_validate_script` would pass unless `validate` is false.
 
 ## Resources
 
